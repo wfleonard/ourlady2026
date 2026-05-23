@@ -1,0 +1,82 @@
+# Primos Maternos — Our Lady of Guadalupe Store
+
+E-commerce site for Saxon Enterprises, Inc (dba Primos Maternos). Sells
+Church-authorized canvas replicas of the tilma of Saint Juan Diego.
+
+## Stack
+
+- Next.js 16 + React 19 + Tailwind v4 (`./app`)
+- Postgres 16 in Docker
+- Stripe Checkout (hosted) for payments
+- Docker Compose for both services
+
+## Local dev
+
+```bash
+cp .env.example .env
+# Fill in POSTGRES_PASSWORD and STRIPE_* keys
+
+docker compose up -d
+# App on http://localhost:3001
+# Postgres on 127.0.0.1:5434
+```
+
+To work on the Next.js app outside Docker:
+
+```bash
+cd app
+npm install
+npm run dev   # http://localhost:3001
+```
+
+The dev server reads `DATABASE_URL` if set, otherwise falls back to
+`postgresql://primos:primos@localhost:5434/primos_store` (the docker-compose
+default). Start `docker compose up -d postgres` first.
+
+## Stripe setup
+
+1. Create a Stripe account (test mode is fine to start).
+2. Copy your test keys into `.env`:
+   - `STRIPE_SECRET_KEY=sk_test_...`
+   - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...`
+3. Webhook for order persistence:
+   - In Stripe Dashboard → Developers → Webhooks, add an endpoint pointing to
+     `https://<your-domain>/api/webhooks/stripe`.
+   - Subscribe to `checkout.session.completed`.
+   - Copy the signing secret into `STRIPE_WEBHOOK_SECRET`.
+4. For local webhook testing, use the Stripe CLI:
+   ```bash
+   stripe listen --forward-to http://localhost:3001/api/webhooks/stripe
+   ```
+
+## Catalog
+
+SKUs live in `db/init.sql` and seed on first Postgres boot. Edit the seed
+block to change products, or `UPDATE products` directly for price changes.
+
+| SKU                  | Product                       | Price |
+|----------------------|-------------------------------|-------|
+| olg-24x36-gold       | 24"x36" Gold framed canvas    | $197  |
+| olg-24x36-rolled     | 24"x36" Rolled canvas         | $87   |
+| olg-36x54-rolled     | 36"x54" Rolled canvas         | $267  |
+| olg-12x18-frameless  | 12"x18" Stretched canvas      | $43   |
+
+## Deploy
+
+See `deploy.sh` — Ubuntu 22.04/24.04 setup script that installs Docker,
+clones the repo, and brings up the stack. After initial setup, push updates
+with `pm-update` on the server.
+
+## Project layout
+
+```
+website2026/
+├── app/              Next.js application
+│   ├── src/app/      Routes (App Router)
+│   ├── src/lib/      db.ts, stripe.ts
+│   └── src/components/
+├── db/init.sql       Schema + seed
+├── docker-compose.yml
+├── deploy.sh         One-shot server setup
+└── .env.example
+```
