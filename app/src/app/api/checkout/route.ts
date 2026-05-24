@@ -38,7 +38,8 @@ export async function POST(req: NextRequest) {
           },
         },
       ],
-      shipping_address_collection: { allowed_countries: ["US"] },
+      // US 50 states + DC + Puerto Rico (PR is a separate ISO-3166 code from US)
+      shipping_address_collection: { allowed_countries: ["US", "PR"] },
       metadata: { sku: product.sku },
       success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/checkout/cancel`,

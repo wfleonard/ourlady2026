@@ -24,12 +24,12 @@ export default async function ProductPage({
       </Link>
 
       <div className="mt-6 grid md:grid-cols-2 gap-10">
-        <div className="bg-stone-100 rounded-lg overflow-hidden">
+        <div className="bg-stone-50 rounded-lg p-10 flex items-center justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={product.image_path}
             alt={product.name}
-            className="w-full h-auto object-contain"
+            className="max-w-full h-auto object-contain drop-shadow-[0_12px_30px_rgba(0,0,0,0.3)]"
           />
         </div>
         <div>
@@ -50,7 +50,7 @@ export default async function ProductPage({
             <li>Blessed by Pope John Paul II and Pope Francis</li>
             <li>Digitally scanned directly from the tilma of Saint Juan Diego</li>
             <li>Certificate of authenticity included</li>
-            <li>Free shipping within the United States</li>
+            <li>Free shipping to all 50 U.S. states and Puerto Rico</li>
           </ul>
           <div className="mt-8">
             <BuyButton sku={product.sku} />

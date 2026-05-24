@@ -28,7 +28,8 @@ export default async function HomePage() {
             <p className="mt-5 text-lg text-stone-700 leading-relaxed">
               The only replica of the tilma of Saint Juan Diego authorized by the
               Catholic Church. Digitally scanned from the original tilma and
-              blessed by Pope John Paul II and Pope Francis. Free U.S. shipping.
+              blessed by Pope John Paul II and Pope Francis. Free shipping to all
+              50 U.S. states and Puerto Rico.
             </p>
             <a
               href="#products"
@@ -87,12 +88,38 @@ export default async function HomePage() {
             miraculously imprinted on the fabric. That cloak — nearly 500 years
             old — still hangs today in the Basilica of Our Lady of Guadalupe.
           </p>
-          <p className="text-stone-700 leading-relaxed">
+          <p className="text-stone-700 leading-relaxed mb-8">
             Our canvases are printed from a high-resolution digital scan made
             directly from the tilma, on the most advanced canvas press in
             Mexico. Each comes with a certificate of authenticity from the
             archdiocese.
           </p>
+
+          <h3 className="text-xl font-semibold mb-4 mt-10">Certificates of Authenticity</h3>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <figure className="bg-white p-4 rounded-lg shadow-md">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/about/certification.jpg"
+                alt="Mexican Catholic Church certification of authenticity"
+                className="w-full h-auto object-contain"
+              />
+              <figcaption className="mt-2 text-sm text-stone-600 text-center">
+                Mexican Catholic Church Certification
+              </figcaption>
+            </figure>
+            <figure className="bg-white p-4 rounded-lg shadow-md">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/about/jubileo.jpg"
+                alt="Mexico 2000 Jubileo seal of authenticity"
+                className="w-full h-auto object-contain"
+              />
+              <figcaption className="mt-2 text-sm text-stone-600 text-center">
+                Mexico 2000 Jubileo Seal
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
