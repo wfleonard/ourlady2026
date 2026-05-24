@@ -54,12 +54,28 @@ default). Start `docker compose up -d postgres` first.
 SKUs live in `db/init.sql` and seed on first Postgres boot. Edit the seed
 block to change products, or `UPDATE products` directly for price changes.
 
-| SKU                  | Product                       | Price |
-|----------------------|-------------------------------|-------|
-| olg-24x36-gold       | 24"x36" Gold framed canvas    | $197  |
-| olg-24x36-rolled     | 24"x36" Rolled canvas         | $87   |
-| olg-36x54-rolled     | 36"x54" Rolled canvas         | $267  |
-| olg-12x18-frameless  | 12"x18" Stretched canvas      | $43   |
+| SKU                          | Product                              | Price |
+|------------------------------|--------------------------------------|-------|
+| olg-24x36-gold               | 24"x36" Gold frame                   | $197  |
+| olg-24x36-cherry             | 24"x36" Cherry frame                 | $197  |
+| olg-24x36-beaded-mahogany    | 24"x36" Beaded Mahogany frame        | $197  |
+| olg-24x36-black-red-oak      | 24"x36" Black Red Oak frame          | $197  |
+| olg-24x36-silver-ornate      | 24"x36" Silver Ornate frame          | $197  |
+| olg-12x18-rolled             | 12"x18" Rolled canvas                | $43   |
+| olg-24x36-rolled             | 24"x36" Rolled canvas                | $87   |
+| olg-36x54-rolled             | 36"x54" Rolled canvas                | $267  |
+
+### Reseeding after a catalog change
+
+`init.sql` only runs on a brand-new Postgres volume. To apply seed changes
+to an already-running DB without losing orders:
+
+```bash
+docker compose exec -T postgres psql -U primos -d primos_store < db/init.sql
+```
+
+The seed uses `ON CONFLICT DO UPDATE` for products and marks any SKU not in
+the list as `active = FALSE` (soft-delete, keeps order history intact).
 
 ## Deploy
 
