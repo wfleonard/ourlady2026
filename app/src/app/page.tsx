@@ -1,10 +1,10 @@
-import { listProducts } from "@/lib/db";
+import { listProducts, type Product } from "@/lib/db";
 import { ProductCard } from "@/components/ProductCard";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  let products;
+  let products: Product[] = [];
   try {
     products = await listProducts();
   } catch {
