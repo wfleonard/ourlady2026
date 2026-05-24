@@ -63,9 +63,38 @@ block to change products, or `UPDATE products` directly for price changes.
 
 ## Deploy
 
-See `deploy.sh` — Ubuntu 22.04/24.04 setup script that installs Docker,
-clones the repo, and brings up the stack. After initial setup, push updates
-with `pm-update` on the server.
+Production target: **primosmaternos.com** on a fresh Ubuntu host.
+
+`deploy.sh` is a one-shot script that, on a fresh Ubuntu 22.04/24.04 box:
+- installs Docker + Compose
+- installs Caddy and configures it as a reverse proxy with auto-HTTPS for
+  `primosmaternos.com` (and `www.`)
+- opens UFW for 80/443 only (3001 stays bound to localhost)
+- clones this repo, builds, and starts the app stack
+- drops `pm-update` at `/usr/local/bin/`
+
+### First deploy
+
+```bash
+# On the server (as root)
+curl -O https://raw.githubusercontent.com/wfleonard/ourlady2026/main/deploy.sh
+bash deploy.sh
+# Fill in .env when prompted (Postgres password + Stripe keys)
+```
+
+DNS: point `primosmaternos.com` and `www.primosmaternos.com` A records at the
+server's IP. Caddy will issue the Let's Encrypt cert automatically within a
+couple of minutes.
+
+### Subsequent deploys
+
+```bash
+# Locally
+git push origin main
+
+# On the server
+pm-update     # pulls, rebuilds, restarts
+```
 
 ## Project layout
 

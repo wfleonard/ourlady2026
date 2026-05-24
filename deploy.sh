@@ -3,6 +3,13 @@
 # Primos Maternos Store — Server Deploy Script
 # Run on a fresh Ubuntu 22.04/24.04 host as root.
 #
+# Sets up:
+#   - Docker + Compose
+#   - UFW firewall
+#   - Caddy reverse proxy with auto-HTTPS for primosmaternos.com
+#   - App stack (Postgres + Next.js) via docker compose
+#   - /usr/local/bin/pm-update helper for "git pull + restart"
+#
 # Usage:
 #   bash deploy.sh
 # ──────────────────────────────────────────────────────────────
@@ -10,71 +17,96 @@ set -euo pipefail
 
 APP_USER="deploy"
 APP_DIR="/opt/primos-store"
-REPO="git@github.com:wfleonard/primos-maternos.git"
+REPO="git@github.com:wfleonard/ourlady2026.git"
+REPO_HTTPS="https://github.com/wfleonard/ourlady2026.git"
 BRANCH="main"
+DOMAIN="primosmaternos.com"
 
 echo "═══════════════════════════════════════════════"
 echo "  Primos Maternos Store — Server Setup"
+echo "  Domain: $DOMAIN"
 echo "═══════════════════════════════════════════════"
 
-# System
+# ── 1. System & deps ──────────────────────────────────────────
 apt-get update -qq && apt-get upgrade -y -qq
 
 if ! command -v docker &>/dev/null; then
   curl -fsSL https://get.docker.com | sh
 fi
-apt-get install -y -qq docker-compose-plugin ufw fail2ban git
+apt-get install -y -qq docker-compose-plugin ufw fail2ban git curl debian-keyring debian-archive-keyring apt-transport-https
 
-# Firewall
+# ── 2. Caddy (reverse proxy + auto-TLS) ───────────────────────
+if ! command -v caddy &>/dev/null; then
+  curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' \
+    | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+  curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' \
+    | tee /etc/apt/sources.list.d/caddy-stable.list
+  apt-get update -qq
+  apt-get install -y -qq caddy
+fi
+
+# ── 3. Firewall ───────────────────────────────────────────────
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow OpenSSH
-ufw allow 80/tcp
-ufw allow 443/tcp
-ufw allow 3001/tcp comment "Next.js (primos store)"
+ufw allow 80/tcp   comment "Caddy HTTP (ACME challenge)"
+ufw allow 443/tcp  comment "Caddy HTTPS"
+# Note: 3001 stays internal — Caddy proxies it
 echo "y" | ufw enable
 
-# User
+# ── 4. Deploy user ────────────────────────────────────────────
 if ! id "$APP_USER" &>/dev/null; then
   useradd -m -s /bin/bash -G docker "$APP_USER"
 else
   usermod -aG docker "$APP_USER"
 fi
 
-# Repo
+# ── 5. Clone repo ─────────────────────────────────────────────
 mkdir -p "$APP_DIR"
 chown "$APP_USER:$APP_USER" "$APP_DIR"
 if [ -d "$APP_DIR/.git" ]; then
   sudo -u "$APP_USER" git -C "$APP_DIR" pull origin "$BRANCH"
 else
   if ! sudo -u "$APP_USER" git clone -b "$BRANCH" "$REPO" "$APP_DIR" 2>/dev/null; then
-    sudo -u "$APP_USER" git clone -b "$BRANCH" \
-      "https://github.com/wfleonard/primos-maternos.git" "$APP_DIR"
+    echo "  SSH clone failed — falling back to HTTPS"
+    sudo -u "$APP_USER" git clone -b "$BRANCH" "$REPO_HTTPS" "$APP_DIR"
   fi
 fi
 
-# Env
+# ── 6. .env ───────────────────────────────────────────────────
 ENV_FILE="$APP_DIR/.env"
 if [ ! -f "$ENV_FILE" ]; then
-  cat > "$ENV_FILE" <<'ENVEOF'
+  cat > "$ENV_FILE" <<ENVEOF
 POSTGRES_PASSWORD=CHANGE_ME
-STRIPE_SECRET_KEY=sk_live_or_test_...
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_or_test_...
+STRIPE_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
 STRIPE_WEBHOOK_SECRET=whsec_...
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_SITE_URL=https://$DOMAIN
 ENVEOF
   chown "$APP_USER:$APP_USER" "$ENV_FILE"
   chmod 600 "$ENV_FILE"
-  echo "  ⚠  Edit $ENV_FILE with real credentials, then re-run this script."
+  echo ""
+  echo "  ⚠  Edit $ENV_FILE with real credentials before continuing:"
+  echo "     nano $ENV_FILE"
   read -p "  Press Enter after editing (or Ctrl+C to do it later)..."
 fi
 
-# Build & start
+# ── 7. Caddyfile ──────────────────────────────────────────────
+cat > /etc/caddy/Caddyfile <<CADDYEOF
+$DOMAIN, www.$DOMAIN {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:3001
+}
+CADDYEOF
+systemctl reload caddy || systemctl restart caddy
+systemctl enable caddy
+
+# ── 8. Build & start app stack ────────────────────────────────
 cd "$APP_DIR"
 sudo -u "$APP_USER" docker compose build
 sudo -u "$APP_USER" docker compose up -d
 
-# Update helper
+# ── 9. pm-update helper ───────────────────────────────────────
 cat > /usr/local/bin/pm-update <<'SCRIPT'
 #!/bin/bash
 set -euo pipefail
@@ -88,11 +120,20 @@ chmod +x /usr/local/bin/pm-update
 
 systemctl enable docker
 
+# ── 10. Done ──────────────────────────────────────────────────
 echo ""
 echo "═══════════════════════════════════════════════"
 echo "  ✓ Setup complete!"
 echo "═══════════════════════════════════════════════"
-echo "  Store:    http://$(hostname -I | awk '{print $1}'):3001"
-echo "  Update:   pm-update"
-echo "  Logs:     cd $APP_DIR && docker compose logs -f"
+echo ""
+echo "  Site:        https://$DOMAIN"
+echo "  Update:      pm-update"
+echo "  App logs:    cd $APP_DIR && docker compose logs -f"
+echo "  Caddy logs:  journalctl -u caddy -f"
+echo ""
+echo "  Next steps:"
+echo "    1. Point DNS A records for $DOMAIN and www.$DOMAIN at this server's IP"
+echo "    2. Wait a couple minutes — Caddy will auto-issue Let's Encrypt certs"
+echo "    3. Add the Stripe webhook endpoint: https://$DOMAIN/api/webhooks/stripe"
+echo "       and paste its signing secret into $APP_DIR/.env, then run pm-update"
 echo ""
