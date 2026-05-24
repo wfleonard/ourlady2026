@@ -7,6 +7,6 @@ if (!key) {
   console.warn("STRIPE_SECRET_KEY is not set — checkout will fail until it is.");
 }
 
-export const stripe = new Stripe(key ?? "sk_test_placeholder", {
-  apiVersion: "2025-09-30.clover",
-});
+// Omit apiVersion so the SDK uses the version it ships with —
+// pinning here just creates churn every time we upgrade stripe-node.
+export const stripe = new Stripe(key ?? "sk_test_placeholder");
