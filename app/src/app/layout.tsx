@@ -30,6 +30,9 @@ export default function RootLayout({
               <Link href="/#products" className="hover:text-[var(--accent)]">
                 Shop
               </Link>
+              <Link href="/blog" className="hover:text-[var(--accent)]">
+                Blog
+              </Link>
               <Link href="/#about" className="hover:text-[var(--accent)]">
                 About
               </Link>
