@@ -11,14 +11,24 @@ Same Docker Compose pattern as `/Users/saxon/trading-signals`:
 - Deploy via `deploy.sh` → `pm-update` on the server (parallel to `trading-update`)
 
 ## Catalog
-Products seeded in `db/init.sql`. Four launch SKUs:
-- olg-24x36-gold ($197) — primary framed product
-- olg-24x36-rolled ($87)
-- olg-36x54-rolled ($267)
-- olg-12x18-frameless ($43)
+Eight SKUs, seeded in `db/init.sql`, ranging $57–$267. The authoritative list
+with prices is the table in `README.md` — it is deliberately not duplicated
+here, because the copy that used to live here drifted out of date.
 
-To change prices or add SKUs, edit the seed block. ON CONFLICT updates on
-reseed, so a `docker compose down && up -d` re-applies changes.
+**Changing a price or adding a SKU:** edit the seed block in `db/init.sql`, then
+apply it to the running database:
+
+```bash
+docker compose exec -T postgres psql -U primos -d primos_store < db/init.sql
+```
+
+`docker compose down && up -d` does **not** apply seed changes. `postgres_data`
+is a named volume, plain `down` does not remove it, and Postgres runs
+`init.sql` only when the data directory is empty. The reseed silently never
+happens and the old price stays live on the store.
+
+The seed uses `ON CONFLICT DO UPDATE` for products and marks any SKU absent from
+the list `active = FALSE`, so order history survives a catalog change.
 
 ## Stripe flow
 1. Click "Buy now" on a product page → `POST /api/checkout`
