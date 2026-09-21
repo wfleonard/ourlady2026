@@ -48,9 +48,9 @@ export default function ParishesPage() {
           <div className="flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/products/olg-24x36-rolled.jpg"
-              alt="24 by 36 inch rolled canvas of Our Lady of Guadalupe"
-              className="rounded-lg shadow-xl drop-shadow-[0_12px_30px_rgba(0,0,0,0.3)] max-h-[480px] w-auto object-contain bg-white p-6"
+              src="/parishes/tilma-basilica-framed.jpg"
+              alt="The tilma of Saint Juan Diego in its ornate frame at the Basilica of Our Lady of Guadalupe, Mexico City"
+              className="rounded-lg shadow-xl drop-shadow-[0_12px_30px_rgba(0,0,0,0.35)] max-h-[520px] w-auto object-contain"
             />
           </div>
         </div>
