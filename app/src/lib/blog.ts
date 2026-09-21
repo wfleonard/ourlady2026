@@ -10,6 +10,16 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "jubilee-2026",
+    title: "A Jubilee Year for Guadalupe: 50 Years Since the Transfer",
+    excerpt:
+      "On October 12, 2026, Pope Leo XIV opens a Jubilee Year marking a half-century since the tilma was carried into the New Basilica. Here's what it is, what it means, and how to receive the plenary indulgence.",
+    image: "/blog/basilica-tilma.jpg",
+    imageAlt: "The tilma of Saint Juan Diego hanging in the New Basilica of Guadalupe, Mexico City",
+    date: "October 12, 2026 – October 12, 2027",
+    readTime: "4 min read",
+  },
+  {
     slug: "apparition",
     title: "The Sign on the Tilma: How Mary Appeared to Juan Diego",
     excerpt:
