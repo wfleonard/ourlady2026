@@ -6,12 +6,13 @@ Three-email sequence, sent over ~10–12 days, to a 100-contact list of U.S. Cat
 
 Split your CSV into two OpenMoves lists before sending:
 
-| Segment | Who | File |
-|---------|-----|------|
-| **A** | Parishes and shrines dedicated to Our Lady of Guadalupe (named for her, or her shrine is central) | [segment-a-guadalupe-parishes.md](segment-a-guadalupe-parishes.md) |
-| **B** | Guadalupe / Hispanic ministries at Catholic parishes not named for her | [segment-b-guadalupe-ministries.md](segment-b-guadalupe-ministries.md) |
+| Segment | Who | File | Lands on |
+|---------|-----|------|----------|
+| **A** | Parishes and shrines dedicated to Our Lady of Guadalupe (named for her, or her shrine is central) | [segment-a-guadalupe-parishes.md](segment-a-guadalupe-parishes.md) | `/parishes` |
+| **B** | Guadalupe / Hispanic ministries at Catholic parishes not named for her | [segment-b-guadalupe-ministries.md](segment-b-guadalupe-ministries.md) | `/parishes` |
+| **C** | Catholic schools (K–12) with Hispanic enrollment or a Marian devotional culture | [segment-c-catholic-schools.md](segment-c-catholic-schools.md) | `/schools` |
 
-Same 3-email cadence, different opening framing per segment. Everything else is identical.
+Same 3-email cadence, different opening framing per segment. Segment C uses the schools-specific landing page and emphasizes bulk pricing for outfitting multiple classrooms.
 
 ## Cadence
 
@@ -46,9 +47,12 @@ Append UTM parameters to every link so Google Analytics on primosmaternos.com at
 ?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=<segment>-<email-number>
 ```
 
-Example for Segment A, Email 1:
+Segments A and B use `utm_campaign=parish-outreach-2026`. Segment C uses `utm_campaign=school-outreach-2026` (separate campaign so schools traffic doesn't co-mingle with parish traffic in GA).
+
+Examples:
 ```
 https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-1
+https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-1
 ```
 
 The email files below already include the UTM-tagged URLs.
