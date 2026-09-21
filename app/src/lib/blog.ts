@@ -14,8 +14,8 @@ export const posts: Post[] = [
     title: "A Jubilee Year for Guadalupe: 50 Years Since the Transfer",
     excerpt:
       "On October 12, 2026, Pope Leo XIV opens a Jubilee Year marking a half-century since the tilma was carried into the New Basilica. Here's what it is, what it means, and how to receive the plenary indulgence.",
-    image: "/blog/basilica-tilma.jpg",
-    imageAlt: "The tilma of Saint Juan Diego hanging in the New Basilica of Guadalupe, Mexico City",
+    image: "/blog/tilma-basilica-framed.jpg",
+    imageAlt: "The tilma of Saint Juan Diego in its ornate silver-and-gold frame at the Basilica of Guadalupe, Mexico City",
     date: "October 12, 2026 – October 12, 2027",
     readTime: "4 min read",
   },
