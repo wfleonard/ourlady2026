@@ -10,6 +10,16 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "pope-latin-america-2026",
+    title: "Every Stop a Marian Stop: Pope Leo XIV in Latin America",
+    excerpt:
+      "Pope Leo XIV's first apostolic voyage to Latin America runs November 6–17, 2026, across Uruguay, Argentina, and Peru. It doesn't include Mexico — but the itinerary is deeply Marian, with an Our Lady of Guadalupe parish, the Basilica of Luján, Our Lady of Peace, and a Marian coronation on the schedule.",
+    image: "/blog/basilica-tilma.jpg",
+    imageAlt: "The interior of a Marian basilica",
+    date: "November 6 – 17, 2026",
+    readTime: "5 min read",
+  },
+  {
     slug: "jubilee-2026",
     title: "A Jubilee Year for Guadalupe: 50 Years Since the Transfer",
     excerpt:
