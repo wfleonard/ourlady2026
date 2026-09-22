@@ -2,9 +2,9 @@ import Link from "next/link";
 import { posts } from "@/lib/blog";
 
 export const metadata = {
-  title: "Blog — Primos Maternos",
+  title: "Reflections — Primos Maternos",
   description:
-    "Stories, science, and symbolism of Our Lady of Guadalupe and the tilma of Saint Juan Diego.",
+    "Reflections, science, and symbolism of Our Lady of Guadalupe and the tilma of Saint Juan Diego.",
 };
 
 export default function BlogIndex() {
@@ -15,7 +15,7 @@ export default function BlogIndex() {
           Stories of the Tilma
         </p>
         <h1 className="mt-2 text-4xl md:text-5xl font-bold leading-tight">
-          Blog
+          Reflections
         </h1>
         <p className="mt-4 text-lg text-stone-700 max-w-2xl">
           The apparition, the science that cannot explain the image, and the

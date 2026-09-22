@@ -34,7 +34,7 @@ export default function RootLayout({
                 Shop
               </Link>
               <Link href="/blog" className="hover:text-[var(--accent)]">
-                Blog
+                Reflections
               </Link>
               <Link href="/#about" className="hover:text-[var(--accent)]">
                 About
