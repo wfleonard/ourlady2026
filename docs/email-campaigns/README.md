@@ -11,6 +11,7 @@ Split your CSV into two OpenMoves lists before sending:
 | **A** | Parishes and shrines dedicated to Our Lady of Guadalupe (named for her, or her shrine is central) | [segment-a-guadalupe-parishes.md](segment-a-guadalupe-parishes.md) | `/parishes` |
 | **B** | Guadalupe / Hispanic ministries at Catholic parishes not named for her | [segment-b-guadalupe-ministries.md](segment-b-guadalupe-ministries.md) | `/parishes` |
 | **C** | Catholic schools (K–12) with Hispanic enrollment or a Marian devotional culture | [segment-c-catholic-schools.md](segment-c-catholic-schools.md) | `/schools` |
+| **Retail — Holiday** | Individual customers + newsletter subscribers, Nov–Dec 2026 | [holiday-retail-2026.md](holiday-retail-2026.md) | `/gifts` |
 
 Same 3-email cadence, different opening framing per segment. Segment C uses the schools-specific landing page and emphasizes bulk pricing for outfitting multiple classrooms.
 
