@@ -11,7 +11,7 @@ Same Docker Compose pattern as `/Users/saxon/trading-signals`:
 - Deploy via `deploy.sh` → `pm-update` on the server (parallel to `trading-update`)
 
 ## Catalog
-Eight SKUs, seeded in `db/init.sql`, ranging $57–$267. The authoritative list
+Eight SKUs, seeded in `db/init.sql`, ranging $57–$324. The authoritative list
 with prices is the table in `README.md` — it is deliberately not duplicated
 here, because the copy that used to live here drifted out of date.
 

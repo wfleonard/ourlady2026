@@ -107,13 +107,13 @@ export default async function GiftsPage() {
             </p>
             <ul className="mt-4 text-sm space-y-1 text-stone-700">
               <li>· 12"×18" Gallery Wrap — $57</li>
-              <li>· 24"×36" Rolled — $87</li>
+              <li>· 24"×36" Rolled — $114</li>
             </ul>
           </div>
 
           <div className="bg-white p-6 rounded-lg border-2 border-[var(--accent)] shadow-md">
             <div className="text-xs uppercase tracking-widest text-[var(--accent)] font-semibold">
-              Most popular · $197
+              Most popular · $214
             </div>
             <h3 className="mt-1 text-xl font-bold">24"×36" framed canvas</h3>
             <p className="mt-3 text-sm text-stone-600 leading-relaxed">
@@ -129,7 +129,7 @@ export default async function GiftsPage() {
 
           <div className="bg-white p-6 rounded-lg border border-stone-200 shadow-sm">
             <div className="text-xs uppercase tracking-widest text-[var(--gold)] font-semibold">
-              Statement piece · $267
+              Statement piece · $324
             </div>
             <h3 className="mt-1 text-xl font-bold">36"×54" rolled canvas</h3>
             <p className="mt-3 text-sm text-stone-600 leading-relaxed">
@@ -138,7 +138,7 @@ export default async function GiftsPage() {
               Ships rolled, ready for a local framer.
             </p>
             <ul className="mt-4 text-sm space-y-1 text-stone-700">
-              <li>· 36"×54" Rolled — $267</li>
+              <li>· 36"×54" Rolled — $324</li>
             </ul>
           </div>
         </div>
@@ -239,7 +239,7 @@ export default async function GiftsPage() {
       <section className="max-w-4xl mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl font-bold mb-3">Ready to pick one</h2>
         <p className="text-stone-600 mb-6">
-          {formatPrice(5700)}–{formatPrice(26700)} · free shipping ·
+          {formatPrice(5700)}–{formatPrice(32400)} · free shipping ·
           certificate of authenticity · secure checkout by Stripe
         </p>
         <Link

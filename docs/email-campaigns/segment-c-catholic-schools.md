@@ -38,7 +38,7 @@ Same base set as Segments A and B, plus school-specific fields:
 
 **Subject:** An authentic Our Lady of Guadalupe canvas for {{SchoolName}}
 
-**Preview text:** 24×36 rolled canvas, printed from the tilma scan in Mexico. $87 each, bulk pricing for multiple classrooms.
+**Preview text:** 24×36 rolled canvas, printed from the tilma scan in Mexico. $114 each, bulk pricing for multiple classrooms.
 
 **Body:**
 
@@ -48,7 +48,7 @@ I'm writing to the {{ContactRole}} at {{SchoolName}} in {{City}}, {{State}} beca
 
 Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego, printed in Mexico from a high-resolution digital scan of the original at the Basilica. Every canvas ships with a certificate of authenticity.
 
-**$87 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Bulk quotes for multiple classrooms.**
+**$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Bulk quotes for multiple classrooms.**
 
 The year is well-timed: Pope Leo XIV has opened a Jubilee Year for Our Lady of Guadalupe (October 12, 2026 through October 12, 2027) marking 50 years since the tilma was transferred into the current New Basilica in Mexico City. It runs through the entire school year and into next.
 
@@ -86,7 +86,7 @@ Not a sales email — two short reads your religion, history, or Spanish teacher
 
 Both are free to link in your LMS or share in a bulletin.
 
-For schools that would like the image itself in the classroom, we make a 24" × 36" rolled canvas — printed from the same high-resolution scan — for $87 with free U.S. shipping and certificate of authenticity. Bulk pricing for multiple classrooms.
+For schools that would like the image itself in the classroom, we make a 24" × 36" rolled canvas — printed from the same high-resolution scan — for $114 with free U.S. shipping and certificate of authenticity. Bulk pricing for multiple classrooms.
 
 [See it for your school →](https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-2c)
 
@@ -124,7 +124,7 @@ The 24" × 36" rolled canvas we make has been ordered by Catholic schools for:
 - Graduation gift or class legacy — framed and installed permanently
 - Diocesan bulk orders across multiple schools
 
-**$87 per canvas. Free shipping. Certificate of authenticity. Bulk quotes on request.**
+**$114 per canvas. Free shipping. Certificate of authenticity. Bulk quotes on request.**
 
 If {{SchoolName}} is thinking about outfitting more than one classroom — a typical order is 5 to 15 for a religion department — reply to this email or text me at 732-673-4260 for a bulk quote. Purchase orders accepted.
 

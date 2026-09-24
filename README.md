@@ -56,14 +56,14 @@ block to change products, or `UPDATE products` directly for price changes.
 
 | SKU                          | Product                              | Price |
 |------------------------------|--------------------------------------|-------|
-| olg-24x36-gold               | 24"x36" Gold frame                   | $197  |
-| olg-24x36-cherry             | 24"x36" Cherry frame                 | $197  |
-| olg-24x36-beaded-mahogany    | 24"x36" Beaded Mahogany frame        | $197  |
-| olg-24x36-black-red-oak      | 24"x36" Black Red Oak frame          | $197  |
-| olg-24x36-silver-ornate      | 24"x36" Silver Ornate frame          | $197  |
+| olg-24x36-gold               | 24"x36" Gold frame                   | $214  |
+| olg-24x36-cherry             | 24"x36" Cherry frame                 | $214  |
+| olg-24x36-beaded-mahogany    | 24"x36" Beaded Mahogany frame        | $214  |
+| olg-24x36-black-red-oak      | 24"x36" Black Red Oak frame          | $214  |
+| olg-24x36-silver-ornate      | 24"x36" Silver Ornate frame          | $214  |
 | olg-12x18-gallery-wrap       | 12"x18" Thin Gallery Wrap (0.75")    | $57   |
-| olg-24x36-rolled             | 24"x36" Rolled canvas                | $87   |
-| olg-36x54-rolled             | 36"x54" Rolled canvas                | $267  |
+| olg-24x36-rolled             | 24"x36" Rolled canvas                | $114  |
+| olg-36x54-rolled             | 36"x54" Rolled canvas                | $324  |
 
 ### Reseeding after a catalog change
 

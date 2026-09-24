@@ -102,8 +102,8 @@ export default function DiocesesPage() {
         <div className="max-w-4xl mx-auto px-6 py-16">
           <h2 className="text-3xl font-bold mb-3">Volume pricing</h2>
           <p className="text-stone-700 mb-8 leading-relaxed">
-            Retail is {formatPrice(8700)} for a 24" × 36" rolled canvas and{" "}
-            {formatPrice(19700)} for a framed 24" × 36". Diocesan bulk
+            Retail is {formatPrice(11400)} for a 24" × 36" rolled canvas and{" "}
+            {formatPrice(21400)} for a framed 24" × 36". Diocesan bulk
             orders receive tiered pricing — email or text with your
             approximate quantity and we'll send a written quote within one
             business day.

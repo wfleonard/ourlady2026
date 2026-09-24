@@ -10,7 +10,7 @@ For parishes and shrines named for or centered on Our Lady of Guadalupe. The fra
 
 **Subject:** An authentic Our Lady of Guadalupe canvas for {{ParishName}}
 
-**Preview text:** 24×36 rolled canvas, printed from the tilma scan in Mexico. $87 with free shipping and certificate of authenticity.
+**Preview text:** 24×36 rolled canvas, printed from the tilma scan in Mexico. $114 with free shipping and certificate of authenticity.
 
 **Body:**
 
@@ -20,7 +20,7 @@ I'm writing because {{ParishName}} in {{City}}, {{State}} is dedicated to Our La
 
 Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego, printed in Mexico from a high-resolution digital scan of the original image at the Basilica in Mexico City. Every canvas ships with a certificate of authenticity.
 
-**$87 per canvas. Free shipping to the 50 U.S. states and Puerto Rico.**
+**$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico.**
 
 The timing may also matter to you — Pope Leo XIV has opened a Jubilee Year for Our Lady of Guadalupe, running October 12, 2026 through October 12, 2027, marking 50 years since the tilma was carried into the current New Basilica.
 
@@ -58,7 +58,7 @@ Full breakdown with sources, in about seven minutes of reading:
 
 [**Read: A Codex in the Image →**](https://primosmaternos.com/blog/codex-symbols?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-2)
 
-For parishes and ministries that would like the image itself, we make a 24" × 36" rolled canvas — printed from the same high-resolution scan of the tilma — available for $87, with free U.S. shipping and certificate of authenticity.
+For parishes and ministries that would like the image itself, we make a 24" × 36" rolled canvas — printed from the same high-resolution scan of the tilma — available for $114, with free U.S. shipping and certificate of authenticity.
 
 [See the image →](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-2b)
 
@@ -95,7 +95,7 @@ The 24" × 36" rolled canvas we make has been ordered by parishes for:
 
 With the Jubilee Year opening October 12 and the feast day on December 12, this is a natural year to add the image somewhere in the parish that doesn't have it yet, or refresh what does.
 
-**$87 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Certificate of authenticity included. Ships rolled, ready for local framing.**
+**$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Certificate of authenticity included. Ships rolled, ready for local framing.**
 
 [**Order for {{ParishName}} →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-3)
 
