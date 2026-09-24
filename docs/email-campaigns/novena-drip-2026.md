@@ -291,7 +291,7 @@ Saxon Enterprises, Inc. — dba Primos Maternos
 
 ## Notes for setup
 
-- **Automate delivery**, don't hand-send. Load all 11 emails into OpenMoves as a scheduled drip, tied to a "Novena 2026" list — send from `wfleonard@saxonenterprises.net` so replies land in Bill's inbox.
+- **Automate delivery**, don't hand-send. Load all 11 emails into OpenMoves as a scheduled drip, tied to a "Novena 2026" list — send from `wfleonard@primosmaternos.com` so replies land in Bill's inbox.
 - **6:00 AM Eastern** puts the email in inbox before most subscribers' morning coffee. Late morning / afternoon opens are fine — the meditation still applies to the day.
 - **Signup should stay open until Dec 2 evening**, then automatically close. Late signups (Dec 3+) either get backfilled every day from Day 1 or wait until 2027. Simpler to close signup than to backfill.
 - **No sales language.** The store link is present but always small, always at the bottom, always the same wording. This series is a devotional gift to the list — a hard sell any day of the nine will read as breaking faith with the format.

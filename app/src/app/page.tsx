@@ -131,10 +131,10 @@ export default async function HomePage() {
         </p>
         <p className="mt-2">
           <a
-            href="mailto:wfleonard@saxonenterprises.net"
+            href="mailto:wfleonard@primosmaternos.com"
             className="text-[var(--accent)] underline"
           >
-            wfleonard@saxonenterprises.net
+            wfleonard@primosmaternos.com
           </a>{" "}
           ·{" "}
           <a href="sms:+17326734260" className="text-[var(--accent)] underline">

@@ -232,10 +232,10 @@ export default function DiocesesPage() {
             <p>
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:wfleonard@saxonenterprises.net?subject=Diocesan%20quote%20request&body=Diocese%3A%20%0AApproximate%20quantity%3A%20%0ASKU%20mix%20(framed%20%2F%20rolled%20%2F%20gallery%20wrap)%3A%20%0AShip-to%20(single%20chancery%20or%20split%20to%20parishes)%3A%20%0ATarget%20delivery%3A%20"
+                href="mailto:wfleonard@primosmaternos.com?subject=Diocesan%20quote%20request&body=Diocese%3A%20%0AApproximate%20quantity%3A%20%0ASKU%20mix%20(framed%20%2F%20rolled%20%2F%20gallery%20wrap)%3A%20%0AShip-to%20(single%20chancery%20or%20split%20to%20parishes)%3A%20%0ATarget%20delivery%3A%20"
                 className="underline"
               >
-                wfleonard@saxonenterprises.net
+                wfleonard@primosmaternos.com
               </a>
             </p>
             <p>

@@ -197,10 +197,10 @@ export default function ParishesPage() {
             Ordering multiple canvases for a diocesan initiative, retreat,
             or school? Email{" "}
             <a
-              href="mailto:wfleonard@saxonenterprises.net?subject=Bulk%20order%20—%20Our%20Lady%20of%20Guadalupe%20canvas"
+              href="mailto:wfleonard@primosmaternos.com?subject=Bulk%20order%20—%20Our%20Lady%20of%20Guadalupe%20canvas"
               className="text-[var(--accent)] underline"
             >
-              wfleonard@saxonenterprises.net
+              wfleonard@primosmaternos.com
             </a>{" "}
             or text 732-673-4260 for a quote.
           </p>

@@ -176,10 +176,10 @@ export default function SchoolsPage() {
           <p className="text-stone-800">
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:wfleonard@saxonenterprises.net?subject=Bulk%20order%20for%20our%20school%20%2F%20diocese&body=How%20many%20canvases%3A%20%0AShipping%20address(es)%3A%20%0AAny%20deadline%3A%20"
+              href="mailto:wfleonard@primosmaternos.com?subject=Bulk%20order%20for%20our%20school%20%2F%20diocese&body=How%20many%20canvases%3A%20%0AShipping%20address(es)%3A%20%0AAny%20deadline%3A%20"
               className="text-[var(--accent)] underline"
             >
-              wfleonard@saxonenterprises.net
+              wfleonard@primosmaternos.com
             </a>
           </p>
           <p className="text-stone-800">

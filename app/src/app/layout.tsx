@@ -52,7 +52,7 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto px-6">
             <p>
               Saxon Enterprises, Inc — dba Primos Maternos · Tinton Falls, NJ
-              · <a href="mailto:wfleonard@saxonenterprises.net" className="underline">wfleonard@saxonenterprises.net</a>
+              · <a href="mailto:wfleonard@primosmaternos.com" className="underline">wfleonard@primosmaternos.com</a>
             </p>
             <p className="mt-3 text-xs text-stone-400 space-x-4">
               <Link href="/parishes" className="hover:text-[var(--accent)]">
