@@ -46,7 +46,7 @@ Dear @firstname,
 
 I'm writing to the @contactrole at @schoolname in @city, @state because the students you teach may find the image of Our Lady of Guadalupe especially meaningful this year.
 
-Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego, printed on archival canvas from a high-resolution digital scan of the original tilma at the Basilica in Mexico City. Every canvas ships with a certificate of authenticity.
+Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego. The original digital image was created in Mexico from a high-resolution scan made directly from the tilma at the Basilica in Mexico City. The canvas is printed in the USA on archival stock. Two certificates from Mexico verifying the authenticity of the image are included with every order.
 
 **$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Bulk quotes for multiple classrooms.**
 
@@ -86,7 +86,7 @@ Not a sales email — two short reads your religion, history, or Spanish teacher
 
 Both are free to link in your LMS or share in a bulletin.
 
-For schools that would like the image itself in the classroom, we make a 24" × 36" rolled canvas — printed from the same high-resolution scan — for $114 with free U.S. shipping and certificate of authenticity. Bulk pricing for multiple classrooms.
+For schools that would like the image itself in the classroom, we make a 24" × 36" rolled canvas — printed in the USA from the same authenticated high-resolution scan of the tilma — for $114 with free U.S. shipping and two Mexican certificates of authenticity. Bulk pricing for multiple classrooms.
 
 [See it for your school →](https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-2c)
 
@@ -124,7 +124,7 @@ The 24" × 36" rolled canvas we make has been ordered by Catholic schools for:
 - Graduation gift or class legacy — framed and installed permanently
 - Diocesan bulk orders across multiple schools
 
-**$114 per canvas. Free shipping. Certificate of authenticity. Bulk quotes on request.**
+**$114 per canvas. Free shipping. Printed in the USA. Two certificates from Mexico. Bulk quotes on request.**
 
 If @schoolname is thinking about outfitting more than one classroom — a typical order is 5 to 15 for a religion department — reply to this email or text me at 732-673-4260 for a bulk quote. Purchase orders accepted.
 

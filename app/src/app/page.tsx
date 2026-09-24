@@ -53,8 +53,9 @@ export default async function HomePage() {
       <section id="products" className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-3xl font-bold mb-2">The Collection</h2>
         <p className="text-stone-600 mb-8">
-          Framed and rolled canvas, in four sizes. Every piece ships with a
-          certificate of authenticity.
+          Framed and rolled canvas, in four sizes. Every piece ships with
+          two certificates from Mexico verifying the authenticity of the
+          image.
         </p>
         {products.length === 0 ? (
           <div className="p-8 bg-amber-50 border border-amber-200 rounded-lg text-amber-900">
@@ -89,10 +90,11 @@ export default async function HomePage() {
             old — still hangs today in the Basilica of Our Lady of Guadalupe.
           </p>
           <p className="text-stone-700 leading-relaxed mb-8">
-            Our canvases are printed from a high-resolution digital scan made
-            directly from the tilma, on the most advanced canvas press in
-            Mexico. Each comes with a certificate of authenticity from the
-            archdiocese.
+            The original digital image was created in Mexico from a
+            high-resolution scan made directly from the tilma. Our canvases
+            are printed on archival stock in the USA from that authenticated
+            image. Each ships with two certificates from Mexico verifying
+            the image's authenticity.
           </p>
 
           <h3 className="text-xl font-semibold mb-4 mt-10">Certificates of Authenticity</h3>

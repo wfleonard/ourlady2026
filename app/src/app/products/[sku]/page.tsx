@@ -49,7 +49,7 @@ export default async function ProductPage({
             <li>The only Church-authorized replica of the tilma</li>
             <li>Blessed by Pope John Paul II and Pope Francis</li>
             <li>Digitally scanned directly from the tilma of Saint Juan Diego</li>
-            <li>Certificate of authenticity included</li>
+            <li>Two certificates from Mexico verifying the authenticity of the image, included</li>
             <li>Free shipping to all 50 U.S. states and Puerto Rico</li>
           </ul>
           <div className="mt-8">

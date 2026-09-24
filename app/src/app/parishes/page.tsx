@@ -83,10 +83,10 @@ export default function ParishesPage() {
         </div>
       </section>
 
-      {/* Certificate of authenticity */}
+      {/* Certificates of authenticity */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold">Certificate of authenticity</h2>
+          <h2 className="text-3xl font-bold">Two certificates from Mexico</h2>
           <p className="mt-3 text-stone-700 max-w-2xl mx-auto">
             Every canvas ships with two certificates from Mexico verifying
             that the image was printed from the authorized high-resolution

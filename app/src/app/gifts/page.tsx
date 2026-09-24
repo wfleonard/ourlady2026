@@ -34,11 +34,12 @@ export default async function GiftsPage() {
             The Guadalupe canvas gift guide
           </h1>
           <p className="mt-5 text-lg text-stone-700 leading-relaxed max-w-2xl mx-auto">
-            The Church-authorized tilma image on archival canvas, printed
-            from a high-resolution digital scan of the original tilma at
-            the Basilica in Mexico City. From{" "}
+            The Church-authorized tilma image on archival canvas. The
+            digital image was created in Mexico from a scan of the original
+            tilma at the Basilica; the canvas is printed in the USA. Two
+            certificates from Mexico verifying the image included. From{" "}
             <strong>$57</strong>. Free shipping to the 50 U.S. states and
-            Puerto Rico. Certificate of authenticity with every canvas.
+            Puerto Rico. Two certificates from Mexico with every canvas.
           </p>
         </div>
       </section>
@@ -241,7 +242,7 @@ export default async function GiftsPage() {
         <h2 className="text-3xl font-bold mb-3">Ready to pick one</h2>
         <p className="text-stone-600 mb-6">
           {formatPrice(5700)}–{formatPrice(32400)} · free shipping ·
-          certificate of authenticity · secure checkout by Stripe
+          two certificates from Mexico · secure checkout by Stripe
         </p>
         <Link
           href="#all"
