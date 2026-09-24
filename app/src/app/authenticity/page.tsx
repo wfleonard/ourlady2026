@@ -20,7 +20,7 @@ const faq = [
   },
   {
     q: "Why do Our Lady of Guadalupe prints look so different from each other?",
-    a: "Most prints on the market descend from photographs of photographs. Each generation loses detail and shifts color, which is why the face, the gold edging, and the stars on the mantle vary so much between sellers. A print made from a high-resolution digital archive of the original keeps detail that a re-photographed copy has already lost.",
+    a: "Most prints on the market descend from photographs of photographs, and each generation loses detail and shifts color, which is why the face, the gold edging, and the stars on the mantle vary so much between sellers. Ask any seller which digital source their file came from: a print made from a high-resolution archive keeps detail a re-photographed copy has already lost. Ours descends from the digital archive of the Sacred Original that Cardinal Rivera certified in 1998 as a faithful reproduction.",
   },
   {
     q: "What documents come with a Primos Maternos canvas?",
@@ -145,10 +145,17 @@ export default function AuthenticityPage() {
             </li>
           </ul>
           <p className="mt-4">
-            Our file comes from the digital archive described below, so those details are still
-            there at full size. It is the difference you notice at arm&apos;s length from a
-            24&quot; × 36&quot; canvas, and the reason we would rather show the image large than
-            describe it.
+            What we can say about ours is documentary, and it is narrower than most shops would
+            claim: the December 12, 1998 certification below calls the associated print a
+            faithful reproduction — <em>reproducción fiel</em> — of the digital archive of the
+            Sacred Original. Our canvases are printed in the United States from that historical
+            image lineage.
+          </p>
+          <p className="mt-4">
+            What the surviving documents do <strong>not</strong> establish is every intermediate
+            file transfer between that 1998 print and the file we print from today, and we will
+            not pretend otherwise. So rather than ask you to take the difference on faith, look
+            at the image itself at full size and judge the detail with your own eyes.
           </p>
         </section>
 
@@ -202,13 +209,16 @@ export default function AuthenticityPage() {
               version available, and add crops for the fidelity section above. */}
           <figure className="mt-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/about/certification.jpg"
-              alt="Mexican certification dated December 12, 1998, signed by Cardinal Norberto Rivera Carrera, certifying the print as a faithful reproduction of the digital archive of the Sacred Original"
-              className="rounded-lg shadow-lg max-w-full h-auto"
-            />
+            <a href="/about/certification.jpg" target="_blank" rel="noopener">
+              <img
+                src="/about/certification.jpg"
+                alt="Mexican certification dated December 12, 1998, signed by Cardinal Norberto Rivera Carrera, certifying the print as a faithful reproduction of the digital archive of the Sacred Original"
+                className="rounded-lg shadow-lg max-w-full h-auto"
+              />
+            </a>
             <figcaption className="mt-3 text-sm text-stone-500">
-              Certificate of faithful reproduction, December 12, 1998.
+              Certificate of faithful reproduction, December 12, 1998. Open the image to enlarge it
+              and read the Spanish for yourself.
             </figcaption>
           </figure>
         </section>
@@ -237,13 +247,15 @@ export default function AuthenticityPage() {
           </p>
           <figure className="mt-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/about/jubileo.jpg"
-              alt="Mexican certification recording that the Virgen Peregrina was blessed by Pope John Paul II on January 25, 1999 and traveled through Mexico until April 2000 for the Great Jubilee"
-              className="rounded-lg shadow-lg max-w-full h-auto"
-            />
+            <a href="/about/jubileo.jpg" target="_blank" rel="noopener">
+              <img
+                src="/about/jubileo.jpg"
+                alt="Mexican certification recording that the Virgen Peregrina was blessed by Pope John Paul II on January 25, 1999 and traveled through Mexico until April 2000 for the Great Jubilee"
+                className="rounded-lg shadow-lg max-w-full h-auto"
+              />
+            </a>
             <figcaption className="mt-3 text-sm text-stone-500">
-              Virgen Peregrina and Great Jubilee certification.
+              Virgen Peregrina and Great Jubilee certification. Open the image to enlarge it.
             </figcaption>
           </figure>
         </section>
@@ -267,6 +279,10 @@ export default function AuthenticityPage() {
               <strong>No individual canvas sold today</strong> was examined, certified, or
               blessed by Cardinal Rivera, Pope John Paul II, the Basilica, or the Archdiocese of
               Mexico.
+            </li>
+            <li>
+              The certification does not prove <strong>every intermediate file transfer</strong>
+              between the certified 1998 reproduction and the file used for production today.
             </li>
             <li>
               None of this is an <strong>endorsement of Primos Maternos</strong> by the Church.
