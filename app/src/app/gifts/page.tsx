@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Advent + December 12 Gift Guide — Primos Maternos",
   description:
-    "Church-authorized Our Lady of Guadalupe canvas gifts for Advent, December 12, and Christmas. Framed and rolled, from $57. Free shipping to the 50 U.S. states and Puerto Rico.",
+    "Our Lady of Guadalupe canvas gifts for Advent, December 12, and Christmas, printed from a digital archive of the Sacred Original certified in Mexico in 1998. Framed and rolled, from $57. Free shipping to the 50 U.S. states and Puerto Rico.",
 };
 
 export default async function GiftsPage() {
@@ -34,10 +34,10 @@ export default async function GiftsPage() {
             The Guadalupe canvas gift guide
           </h1>
           <p className="mt-5 text-lg text-stone-700 leading-relaxed max-w-2xl mx-auto">
-            The Church-authorized tilma image on archival canvas. The
-            digital image was created in Mexico from a scan of the original
-            tilma at the Basilica; the canvas is printed in the USA. Two
-            certificates from Mexico verifying the image included. From{" "}
+            The tilma image on archival canvas, printed from a digital archive
+            of the Sacred Original certified in Mexico in 1998 as a faithful
+            reproduction; the canvas is printed in the USA. Two Mexican
+            certifications included. From{" "}
             <strong>$57</strong>. Free shipping to the 50 U.S. states and
             Puerto Rico. Two certificates from Mexico with every canvas.
           </p>

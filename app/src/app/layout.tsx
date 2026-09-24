@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Primos Maternos — Our Lady of Guadalupe Canvas",
   description:
-    "Church-authorized canvas replicas of the tilma of Saint Juan Diego. Framed and rolled canvas, shipped from Tinton Falls, NJ.",
+    "Our Lady of Guadalupe canvases printed from a digital archive of the Sacred Original, certified in Mexico in 1998 as a faithful reproduction. Framed and rolled, shipped from Tinton Falls, NJ.",
   alternates: { canonical: "/" },
 };
 
@@ -71,6 +71,9 @@ export default function RootLayout({
               </Link>
               <Link href="/blog" className="hover:text-[var(--accent)]">
                 Reflections
+              </Link>
+              <Link href="/authenticity" className="hover:text-[var(--accent)]">
+                Authenticity
               </Link>
               <Link href="/#about" className="hover:text-[var(--accent)]">
                 About

@@ -5,7 +5,7 @@ import { formatPrice } from "@/lib/db";
 export const metadata = {
   title: "For Your Catholic School — Our Lady of Guadalupe Canvas",
   description:
-    "24\" × 36\" rolled canvas of the tilma. The digital image was created in Mexico from a scan of the original tilma at the Basilica in Mexico City; the canvas is printed in the USA. Two certificates from Mexico included. $114 per canvas, free U.S. shipping — for religious ed classrooms, school chapels, and December 12 celebrations.",
+    "24\" × 36\" rolled canvas of the tilma, printed from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction; the canvas is printed in the USA. Two Mexican certifications included. $114 per canvas, free U.S. shipping — for religious ed classrooms, school chapels, and December 12 celebrations.",
 };
 
 const PRICE_CENTS = 11400;
@@ -26,11 +26,11 @@ export default function SchoolsPage() {
             </h1>
             <p className="mt-5 text-lg text-stone-700 leading-relaxed">
               A 24" × 36" rolled canvas reproduction of the tilma of Saint
-              Juan Diego. The original digital image was created in Mexico
-              from a high-resolution scan made directly from the tilma at
-              the Basilica in Mexico City. The canvas is printed in the
-              USA. Two certificates from Mexico verifying the authenticity
-              of the image are included.
+              Juan Diego, printed from a digital archive of the Sacred
+              Original created in Mexico and certified in 1998 by the
+              Archbishop Primate of Mexico as a faithful reproduction. The
+              canvas is printed in the USA. Two Mexican certifications are
+              included with every canvas.
             </p>
             <div className="mt-6 flex items-baseline gap-4">
               <span className="text-4xl font-bold text-[var(--accent)]">

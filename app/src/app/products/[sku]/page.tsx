@@ -80,10 +80,15 @@ export default async function ProductPage({
             {product.description}
           </p>
           <ul className="mt-6 space-y-2 text-sm text-stone-600 list-disc list-inside">
-            <li>The only Church-authorized replica of the tilma</li>
-            <li>Blessed by Pope John Paul II and Pope Francis</li>
-            <li>Digitally scanned directly from the tilma of Saint Juan Diego</li>
-            <li>Two certificates from Mexico verifying the authenticity of the image, included</li>
+            <li>
+              Printed from a digital archive of the Sacred Original, certified in
+              1998 by the Archbishop Primate of Mexico as a faithful reproduction
+            </li>
+            <li>
+              The image, known as the Virgen Peregrina, was blessed by Pope John
+              Paul II on January 25, 1999
+            </li>
+            <li>Two Mexican certifications included with every canvas</li>
             <li>Free shipping to all 50 U.S. states and Puerto Rico</li>
           </ul>
           <div className="mt-8">

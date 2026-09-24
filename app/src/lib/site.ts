@@ -19,7 +19,7 @@ export const ORG = {
   name: "Primos Maternos",
   legalName: "Saxon Enterprises, Inc.",
   description:
-    "Church-authorized canvas replicas of the tilma of Saint Juan Diego, digitally scanned from the original image at the Basilica in Mexico City.",
+    "Our Lady of Guadalupe canvases printed from a digital archive of the Sacred Original, certified in Mexico in 1998 as a faithful reproduction. Printed in the United States.",
   email: "wfleonard@primosmaternos.com",
   city: "Tinton Falls",
   state: "NJ",

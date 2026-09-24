@@ -20,12 +20,11 @@ export default function DiocesesPage() {
             An authentic Guadalupe canvas for every parish in the diocese
           </h1>
           <p className="mt-5 text-lg text-stone-700 leading-relaxed max-w-3xl">
-            The Church-authorized 24" × 36" tilma reproduction. The
-            original digital image was created in Mexico from a
-            high-resolution scan of the original tilma at the Basilica in
-            Mexico City; the canvas is printed in the USA. Two
-            certificates from Mexico verifying the authenticity of the
-            image are included. Volume pricing, purchase orders accepted,
+            The 24" × 36" tilma reproduction, printed from a digital archive
+            of the Sacred Original that the Archbishop Primate of Mexico
+            certified in 1998 as a faithful reproduction; the canvas is
+            printed in the USA. Two Mexican certifications are included with
+            every canvas. Volume pricing, purchase orders accepted,
             single-PO fulfillment across every parish or school in your
             diocese.
           </p>

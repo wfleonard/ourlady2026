@@ -26,17 +26,26 @@ export default async function HomePage() {
               <span className="text-stone-500 text-3xl md:text-4xl">on canvas</span>
             </h1>
             <p className="mt-5 text-lg text-stone-700 leading-relaxed">
-              The only replica of the tilma of Saint Juan Diego authorized by the
-              Catholic Church. Digitally scanned from the original tilma and
-              blessed by Pope John Paul II and Pope Francis. Free shipping to all
+              Printed from a digital archive of the Sacred Original, certified in
+              Mexico in 1998 as a faithful reproduction and carried through Mexico
+              as the Virgen Peregrina after Pope John Paul II blessed it in 1999.
+              Two Mexican certifications with every canvas. Free shipping to all
               50 U.S. states and Puerto Rico.
             </p>
-            <a
-              href="#products"
-              className="inline-block mt-8 px-8 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 transition"
-            >
-              Shop the collection
-            </a>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#products"
+                className="inline-block px-8 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 transition"
+              >
+                Shop the collection
+              </a>
+              <a
+                href="/authenticity"
+                className="inline-block text-sm underline hover:text-[var(--accent)]"
+              >
+                How to tell if a Guadalupe print is authentic
+              </a>
+            </div>
           </div>
           <div className="flex justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -90,11 +99,15 @@ export default async function HomePage() {
             old — still hangs today in the Basilica of Our Lady of Guadalupe.
           </p>
           <p className="text-stone-700 leading-relaxed mb-8">
-            The original digital image was created in Mexico from a
-            high-resolution scan made directly from the tilma. Our canvases
-            are printed on archival stock in the USA from that authenticated
-            image. Each ships with two certificates from Mexico verifying
-            the image's authenticity.
+            The digital archive of the Sacred Original was created in Mexico by
+            Digital Color, S.A. de C.V., and on December 12, 1998 Cardinal
+            Norberto Rivera Carrera, Archbishop Primate of Mexico, certified a
+            print from it as a faithful reproduction. Our canvases are printed on
+            archival stock in the USA from that image lineage, and each ships with
+            both Mexican certifications.{" "}
+            <a href="/authenticity" className="underline hover:text-[var(--accent)]">
+              Read the certificates and what they do and do not say.
+            </a>
           </p>
 
           <h3 className="text-xl font-semibold mb-4 mt-10">Certificates of Authenticity</h3>

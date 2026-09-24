@@ -96,9 +96,9 @@ export default function Jubilee2026Post() {
 
       <p>
         Most of us can't. But the year is also an invitation to bring the
-        image into daily life at home — the same image that hangs above the
-        Holy Door in Mexico City, printed on canvas from a high-resolution
-        digital scan of the original tilma.
+        image into daily life at home — printed on canvas from the digital
+        archive of the Sacred Original certified in Mexico in 1998 as a
+        faithful reproduction.
       </p>
 
       <p>
