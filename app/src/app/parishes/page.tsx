@@ -5,7 +5,7 @@ import { formatPrice } from "@/lib/db";
 export const metadata = {
   title: "For Your Parish — Our Lady of Guadalupe Canvas",
   description:
-    "24\" × 36\" rolled canvas reproduction of the tilma of Saint Juan Diego, printed in Mexico from a high-resolution scan of the original. $114 with free U.S. shipping. Certificate of authenticity included.",
+    "24\" × 36\" rolled canvas reproduction of the tilma of Saint Juan Diego, on archival canvas, from a high-resolution digital scan of the original tilma at the Basilica in Mexico City. $114 with free U.S. shipping. Certificate of authenticity included.",
 };
 
 const PRICE_CENTS = 11400;
@@ -26,7 +26,7 @@ export default function ParishesPage() {
             </h1>
             <p className="mt-5 text-lg text-stone-700 leading-relaxed">
               A 24" × 36" rolled canvas reproduction of the tilma of Saint
-              Juan Diego. Printed in Mexico from a high-resolution digital
+              Juan Diego. Printed on archival canvas from a high-resolution digital
               scan of the original image at the Basilica in Mexico City.
               Certificate of authenticity included with every canvas.
             </p>

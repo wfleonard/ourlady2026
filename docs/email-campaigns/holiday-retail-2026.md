@@ -60,7 +60,7 @@ The full gift guide is up:
 
 [**See the gift guide →**](https://primosmaternos.com/gifts?utm_source=openmoves&utm_medium=email&utm_campaign=holiday-2026&utm_content=1)
 
-Eight SKUs, from a $57 gallery wrap to a $324 large rolled canvas, with five framed 24"×36" options in the middle at $214. All Church-authorized, printed in Mexico from the original tilma scan, certificate of authenticity, free U.S. shipping.
+Eight SKUs, from a $57 gallery wrap to a $324 large rolled canvas, with five framed 24"×36" options in the middle at $214. All Church-authorized, printed on archival canvas from the high-resolution scan of the original tilma at the Basilica in Mexico City, certificate of authenticity, free U.S. shipping.
 
 Thanks,
 Peace Bill
@@ -85,7 +85,7 @@ Dear @firstname,
 
 No discount code. No "Cyber Monday" panic.
 
-Just this: the canvas is Church-authorized, printed in Mexico from a high-resolution scan of the original tilma, and it lasts. The 24"×36" framed at $214 is the piece most people give — ready to hang the moment it's unwrapped, five frame styles to match the recipient's home.
+Just this: the canvas is Church-authorized, printed on archival canvas from a high-resolution digital scan of the original tilma at the Basilica in Mexico City, and it lasts. The 24"×36" framed at $214 is the piece most people give — ready to hang the moment it's unwrapped, five frame styles to match the recipient's home.
 
 Some ideas for who to give it to:
 

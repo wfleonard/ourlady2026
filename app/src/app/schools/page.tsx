@@ -5,7 +5,7 @@ import { formatPrice } from "@/lib/db";
 export const metadata = {
   title: "For Your Catholic School — Our Lady of Guadalupe Canvas",
   description:
-    "24\" × 36\" rolled canvas of the tilma, printed in Mexico from a high-resolution scan of the original. $114 per canvas, free U.S. shipping, certificate of authenticity — for religious ed classrooms, school chapels, and December 12 celebrations.",
+    "24\" × 36\" rolled canvas of the tilma, on archival canvas, from a high-resolution digital scan of the original tilma at the Basilica in Mexico City. $114 per canvas, free U.S. shipping, certificate of authenticity — for religious ed classrooms, school chapels, and December 12 celebrations.",
 };
 
 const PRICE_CENTS = 11400;
@@ -26,7 +26,7 @@ export default function SchoolsPage() {
             </h1>
             <p className="mt-5 text-lg text-stone-700 leading-relaxed">
               A 24" × 36" rolled canvas reproduction of the tilma of Saint
-              Juan Diego. Printed in Mexico from a high-resolution digital
+              Juan Diego. Printed on archival canvas from a high-resolution digital
               scan of the original at the Basilica. Certificate of
               authenticity with every canvas.
             </p>

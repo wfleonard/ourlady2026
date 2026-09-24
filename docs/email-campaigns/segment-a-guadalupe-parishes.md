@@ -18,7 +18,7 @@ Dear @firstname,
 
 I'm writing because @parishname in @city, @state is dedicated to Our Lady of Guadalupe, and I wanted you to know about something that may be useful for your parish or ministry.
 
-Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego, printed in Mexico from a high-resolution digital scan of the original image at the Basilica in Mexico City. Every canvas ships with a certificate of authenticity.
+Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego, printed on archival canvas from a high-resolution digital scan of the original tilma at the Basilica in Mexico City. Every canvas ships with a certificate of authenticity.
 
 **$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico.**
 

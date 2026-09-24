@@ -34,8 +34,9 @@ export default async function GiftsPage() {
             The Guadalupe canvas gift guide
           </h1>
           <p className="mt-5 text-lg text-stone-700 leading-relaxed max-w-2xl mx-auto">
-            The Church-authorized tilma image, printed in Mexico from a
-            high-resolution scan of the original, on canvas. From{" "}
+            The Church-authorized tilma image on archival canvas, printed
+            from a high-resolution digital scan of the original tilma at
+            the Basilica in Mexico City. From{" "}
             <strong>$57</strong>. Free shipping to the 50 U.S. states and
             Puerto Rico. Certificate of authenticity with every canvas.
           </p>
