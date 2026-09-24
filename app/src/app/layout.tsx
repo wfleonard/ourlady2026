@@ -1,14 +1,48 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { JsonLd } from "@/components/JsonLd";
+import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
+  // Makes every relative URL in page metadata resolve to the real site.
+  metadataBase: new URL(SITE_URL),
   title: "Primos Maternos — Our Lady of Guadalupe Canvas",
   description:
     "Church-authorized canvas replicas of the tilma of Saint Juan Diego. Framed and rolled canvas, shipped from Tinton Falls, NJ.",
+  alternates: { canonical: "/" },
+};
+
+/** Who this business is, in the form a machine reads. */
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: ORG.name,
+  legalName: ORG.legalName,
+  url: SITE_URL,
+  email: ORG.email,
+  description: ORG.description,
+  logo: absoluteUrl("/icon.png"),
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: ORG.city,
+    addressRegion: ORG.state,
+    addressCountry: ORG.country,
+  },
+  areaServed: { "@type": "Country", name: "United States" },
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: ORG.name,
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function RootLayout({
@@ -19,6 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={webSiteJsonLd} />
         <header className="border-b border-stone-200 bg-white/80 backdrop-blur sticky top-0 z-10">
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3">

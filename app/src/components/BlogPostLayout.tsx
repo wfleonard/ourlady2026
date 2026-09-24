@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { type Post } from "@/lib/blog";
+import { JsonLd } from "@/components/JsonLd";
+import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
 
 export function BlogPostLayout({
   post,
@@ -8,8 +10,27 @@ export function BlogPostLayout({
   post: Post;
   children: React.ReactNode;
 }) {
+  // No datePublished: post.date is the date of the events written about
+  // (December 12, 1531 for the apparition), not the day the piece was posted.
+  // Inventing one would be worse than leaving it out.
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: absoluteUrl(post.image),
+    url: absoluteUrl(`/blog/${post.slug}`),
+    author: { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@type": "Thing", name: "Our Lady of Guadalupe" },
+    inLanguage: "en-US",
+    keywords: ORG.name,
+  };
+
   return (
     <article className="max-w-3xl mx-auto px-6 py-12">
+      <JsonLd data={articleJsonLd} />
       <Link
         href="/blog"
         className="text-sm text-stone-500 hover:text-[var(--accent)]"

@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getProduct, formatPrice } from "@/lib/db";
 import { BuyButton } from "@/components/BuyButton";
+import { JsonLd } from "@/components/JsonLd";
+import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -14,8 +16,40 @@ export default async function ProductPage({
   const product = await getProduct(sku);
   if (!product) notFound();
 
+  // The price, the size, and "in stock" are what an assistant quotes when a
+  // buyer asks what this costs. Leaving them to the prose alone hides them.
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    sku: product.sku,
+    image: absoluteUrl(product.image_path),
+    url: absoluteUrl(`/products/${product.sku}`),
+    brand: { "@type": "Brand", name: ORG.name },
+    size: `${product.size} inches`,
+    material: "Canvas",
+    offers: {
+      "@type": "Offer",
+      url: absoluteUrl(`/products/${product.sku}`),
+      priceCurrency: "USD",
+      price: (product.price_cents / 100).toFixed(2),
+      availability: "https://schema.org/InStock",
+      seller: { "@id": `${SITE_URL}/#organization` },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "US",
+        },
+      },
+    },
+  };
+
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
+      <JsonLd data={productJsonLd} />
       <Link
         href="/#products"
         className="text-sm text-stone-500 hover:text-[var(--accent)]"
