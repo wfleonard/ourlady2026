@@ -18,7 +18,7 @@ export default async function HomePage() {
         <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <p className="text-sm uppercase tracking-widest text-[var(--gold)] font-semibold">
-              Church-Authorized · From the Original Tilma
+              Authenticated Tilma Image · Printed in the USA
             </p>
             <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">
               Our Lady of Guadalupe

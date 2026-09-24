@@ -5,7 +5,7 @@ import { formatPrice } from "@/lib/db";
 export const metadata = {
   title: "For Your Parish — Our Lady of Guadalupe Canvas",
   description:
-    "24\" × 36\" rolled canvas reproduction of the tilma of Saint Juan Diego, on archival canvas, from a high-resolution digital scan of the original tilma at the Basilica in Mexico City. $114 with free U.S. shipping. Certificate of authenticity included.",
+    "24\" × 36\" rolled canvas reproduction of the tilma of Saint Juan Diego. The digital image was created in Mexico from a scan made directly from the original tilma at the Basilica in Mexico City; the canvas is printed in the USA. Two certificates from Mexico included. $114 with free U.S. shipping.",
 };
 
 const PRICE_CENTS = 11400;
@@ -26,9 +26,12 @@ export default function ParishesPage() {
             </h1>
             <p className="mt-5 text-lg text-stone-700 leading-relaxed">
               A 24" × 36" rolled canvas reproduction of the tilma of Saint
-              Juan Diego. Printed on archival canvas from a high-resolution digital
-              scan of the original image at the Basilica in Mexico City.
-              Certificate of authenticity included with every canvas.
+              Juan Diego. The original digital image was created in Mexico
+              from a high-resolution digital scan made directly from the
+              original tilma at the Basilica of Our Lady of Guadalupe in
+              Mexico City. The canvas is printed in the USA. Two
+              certificates from Mexico verifying the authenticity of the
+              image are included.
             </p>
             <div className="mt-6 flex items-baseline gap-4">
               <span className="text-4xl font-bold text-[var(--accent)]">
@@ -164,8 +167,9 @@ export default function ParishesPage() {
           <li className="flex gap-3">
             <span className="text-[var(--gold)] font-bold">·</span>
             <span>
-              Printed on archival canvas in <strong>Mexico</strong>, from a
-              high-resolution digital scan of the original tilma
+              Printed on archival canvas in <strong>the USA</strong> from
+              an authenticated high-resolution digital image created in
+              Mexico from a scan made directly from the original tilma
             </span>
           </li>
           <li className="flex gap-3">
@@ -178,8 +182,8 @@ export default function ParishesPage() {
           <li className="flex gap-3">
             <span className="text-[var(--gold)] font-bold">·</span>
             <span>
-              <strong>Certificate of authenticity</strong> included with
-              every canvas
+              <strong>Two certificates from Mexico</strong> verifying the
+              authenticity of the image, included with every canvas
             </span>
           </li>
           <li className="flex gap-3">
