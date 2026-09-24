@@ -8,15 +8,15 @@ For parishes and shrines named for or centered on Our Lady of Guadalupe. The fra
 
 **Send:** Day 0 (Tuesday or Wednesday morning)
 
-**Subject:** An authentic Our Lady of Guadalupe canvas for {{ParishName}}
+**Subject:** An authentic Our Lady of Guadalupe canvas for @parishname
 
 **Preview text:** 24×36 rolled canvas, printed from the tilma scan in Mexico. $114 with free shipping and certificate of authenticity.
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
-I'm writing because {{ParishName}} in {{City}}, {{State}} is dedicated to Our Lady of Guadalupe, and I wanted you to know about something that may be useful for your parish or ministry.
+I'm writing because @parishname in @city, @state is dedicated to Our Lady of Guadalupe, and I wanted you to know about something that may be useful for your parish or ministry.
 
 Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego, printed in Mexico from a high-resolution digital scan of the original image at the Basilica in Mexico City. Every canvas ships with a certificate of authenticity.
 
@@ -24,7 +24,7 @@ Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of S
 
 The timing may also matter to you — Pope Leo XIV has opened a Jubilee Year for Our Lady of Guadalupe, running October 12, 2026 through October 12, 2027, marking 50 years since the tilma was carried into the current New Basilica.
 
-[**Order for {{ParishName}} →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-1)
+[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-1)
 
 Thanks,
 Peace Bill
@@ -46,7 +46,7 @@ wfleonard@primosmaternos.com · 732-673-4260
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 Not a sales email — just an article your Guadalupe ministry may find useful for catechesis, a bulletin insert, or December 12 preparation.
 
@@ -74,13 +74,13 @@ Saxon Enterprises, Inc. — dba Primos Maternos
 
 **Send:** Day 10
 
-**Subject:** Ideas for the Guadalupe canvas at {{ParishName}}
+**Subject:** Ideas for the Guadalupe canvas at @parishname
 
 **Preview text:** Shrines, Dec 12 processions, Hispanic ministry, religious education, raffles — six ways parishes have used it.
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 A last note, then I'll stop.
 
@@ -97,7 +97,7 @@ With the Jubilee Year opening October 12 and the feast day on December 12, this 
 
 **$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Certificate of authenticity included. Ships rolled, ready for local framing.**
 
-[**Order for {{ParishName}} →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-3)
+[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-3)
 
 Ordering more than one for a diocesan or school initiative? Reply to this email or text me at 732-673-4260 for a bulk quote.
 

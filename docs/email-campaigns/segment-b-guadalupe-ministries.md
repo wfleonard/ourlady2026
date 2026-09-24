@@ -14,9 +14,9 @@ For Guadalupe and Hispanic ministries at parishes not specifically named for Our
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
-I'm writing to the {{ContactRole}} at {{ParishName}} in {{City}}, {{State}} because your parish's Guadalupe and Hispanic ministry may find this useful.
+I'm writing to the @contactrole at @parishname in @city, @state because your parish's Guadalupe and Hispanic ministry may find this useful.
 
 Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego, printed in Mexico from a high-resolution digital scan of the original image at the Basilica in Mexico City. Every canvas ships with a certificate of authenticity.
 
@@ -46,7 +46,7 @@ wfleonard@primosmaternos.com · 732-673-4260
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 Not a sales email — just an article your Guadalupe ministry may find useful for catechesis, a bulletin insert, or December 12 preparation.
 
@@ -74,13 +74,13 @@ Saxon Enterprises, Inc. — dba Primos Maternos
 
 **Send:** Day 10
 
-**Subject:** Ideas for the Guadalupe canvas at {{ParishName}}
+**Subject:** Ideas for the Guadalupe canvas at @parishname
 
 **Preview text:** Shrine, ministry room, Dec 12 procession, religious education, raffle — six ways parishes have used it.
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 A last note, then I'll stop.
 
@@ -97,7 +97,7 @@ With the Jubilee Year opening October 12 and the feast day on December 12, this 
 
 **$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Certificate of authenticity included. Ships rolled, ready for local framing.**
 
-[**Order for {{ParishName}} →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-3)
+[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-3)
 
 Ordering more than one? Reply to this email or text me at 732-673-4260 for a bulk quote.
 

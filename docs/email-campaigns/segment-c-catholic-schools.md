@@ -21,14 +21,14 @@ Same base set as Segments A and B, plus school-specific fields:
 
 | Variable | Example |
 |----------|---------|
-| `{{FirstName}}` | David |
-| `{{SchoolName}}` | St. Ignatius Catholic School |
-| `{{City}}` | Chicago |
-| `{{State}}` | IL |
-| `{{ContactRole}}` | Religion Department Chair |
-| `{{SchoolLevel}}` | K-8 / High School / PK-12 |
+| `@firstname` | David |
+| `@schoolname` | St. Ignatius Catholic School |
+| `@city` | Chicago |
+| `@state` | IL |
+| `@contactrole` | Religion Department Chair |
+| `@schoollevel` | K-8 / High School / PK-12 |
 
-`{{SchoolLevel}}` doesn't have to appear in the copy but is useful for CSV filtering (e.g., only send the "graduation-gift" angle to high schools).
+`@schoollevel` doesn't have to appear in the copy but is useful for CSV filtering (e.g., only send the "graduation-gift" angle to high schools).
 
 ---
 
@@ -36,15 +36,15 @@ Same base set as Segments A and B, plus school-specific fields:
 
 **Send:** Day 0 (Tuesday or Wednesday morning)
 
-**Subject:** An authentic Our Lady of Guadalupe canvas for {{SchoolName}}
+**Subject:** An authentic Our Lady of Guadalupe canvas for @schoolname
 
 **Preview text:** 24×36 rolled canvas, printed from the tilma scan in Mexico. $114 each, bulk pricing for multiple classrooms.
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
-I'm writing to the {{ContactRole}} at {{SchoolName}} in {{City}}, {{State}} because the students you teach may find the image of Our Lady of Guadalupe especially meaningful this year.
+I'm writing to the @contactrole at @schoolname in @city, @state because the students you teach may find the image of Our Lady of Guadalupe especially meaningful this year.
 
 Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of Saint Juan Diego, printed in Mexico from a high-resolution digital scan of the original at the Basilica. Every canvas ships with a certificate of authenticity.
 
@@ -74,7 +74,7 @@ wfleonard@primosmaternos.com · 732-673-4260
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 Not a sales email — two short reads your religion, history, or Spanish teachers may find useful for the Dec 12 unit or Advent programming.
 
@@ -102,13 +102,13 @@ Saxon Enterprises, Inc. — dba Primos Maternos
 
 **Send:** Day 10
 
-**Subject:** Ideas for the Guadalupe canvas at {{SchoolName}}
+**Subject:** Ideas for the Guadalupe canvas at @schoolname
 
 **Preview text:** Classrooms, chapel, hallway, gym, graduation gift — nine places schools have put it, plus how bulk quotes work.
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 A last note.
 
@@ -126,9 +126,9 @@ The 24" × 36" rolled canvas we make has been ordered by Catholic schools for:
 
 **$114 per canvas. Free shipping. Certificate of authenticity. Bulk quotes on request.**
 
-If {{SchoolName}} is thinking about outfitting more than one classroom — a typical order is 5 to 15 for a religion department — reply to this email or text me at 732-673-4260 for a bulk quote. Purchase orders accepted.
+If @schoolname is thinking about outfitting more than one classroom — a typical order is 5 to 15 for a religion department — reply to this email or text me at 732-673-4260 for a bulk quote. Purchase orders accepted.
 
-[**Order for {{SchoolName}} →**](https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-3)
+[**Order for @schoolname →**](https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-3)
 
 Thanks,
 Peace Bill

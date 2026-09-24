@@ -4,7 +4,7 @@ Three-email sequence, sent over ~10–12 days, to a 100-contact list of U.S. Cat
 
 ## Segments
 
-Split your CSV into two OpenMoves lists before sending:
+Split the list into per-segment tabs (or per-segment Google Sheets) before sending. In Gmail native mail merge (Compose → toggle **Multi-send**), each send draws from one recipient list.
 
 | Segment | Who | File | Lands on |
 |---------|-----|------|----------|
@@ -28,16 +28,31 @@ Send Tuesday/Wednesday mornings, Eastern time. Avoid Mondays and Fridays.
 
 ## Personalization variables
 
-The CSV should include these OpenMoves merge fields. All emails below use them.
+Emails use **Gmail native mail merge syntax** — an `@` prefix, all lowercase, no spaces. The column headers in your Google Sheet (or CSV imported into Sheets) must match these names exactly.
+
+A ready-to-fill CSV template with all columns is at [`list-template.csv`](list-template.csv) in this folder — download, open in Google Sheets, add your rows.
+
+All email files below use these merge fields:
 
 | Variable | Example |
 |----------|---------|
-| `{{FirstName}}` | Maria |
-| `{{ParishName}}` | Our Lady of Guadalupe Parish |
-| `{{City}}` | Newark |
-| `{{State}}` | NJ |
-| `{{ContactRole}}` | Hispanic Ministry Coordinator |
-| `{{GuadalupeConnection}}` | Parish patronage / Guadalupe shrine / Hispanic ministry |
+| `@firstname` | Maria |
+| `@parishname` | Our Lady of Guadalupe Parish |
+| `@city` | Newark |
+| `@state` | NJ |
+| `@contactrole` | Hispanic Ministry Coordinator |
+| `@guadalupeconnection` | Parish patronage / Guadalupe shrine / Hispanic ministry |
+
+Segment-specific extras (add only for the segment that uses them):
+
+| Variable | Used by | Example |
+|----------|---------|---------|
+| `@schoolname` | Segment C | St. Ignatius Catholic School |
+| `@schoollevel` | Segment C (optional) | K-8 / High School / PK-12 |
+| `@diocesename` | Segment D | Diocese of Trenton |
+| `@parishcount` | Segment D (optional) | 97 |
+| `@lastordersku` | Holiday retail (optional) | 24"×36" Gold Frame |
+| `@lastorderyear` | Holiday retail (optional) | 2024 |
 
 If any field is missing for a row, either fill a sensible default in the CSV or exclude the row from that send — an email that says `Dear ,` is worse than no email.
 
@@ -59,15 +74,21 @@ https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_cam
 
 The email files below already include the UTM-tagged URLs.
 
-## Compliance
+## Compliance (CAN-SPAM)
 
-Include a physical mailing address and unsubscribe link in the footer of every email — OpenMoves handles both automatically, but confirm the template has them turned on before sending.
+Every commercial email needs these in the footer — Gmail multi-send doesn't add them automatically, so include them in the email template you save in Gmail:
+
+- Physical mailing address (Saxon Enterprises, Inc. · Tinton Falls, NJ)
+- Clear opt-out — e.g., "Reply UNSUBSCRIBE and I'll take you off the list."
+- Honest subject line and from-address (already covered)
+
+The Novena drip and holiday retail are subscriber-consent based (people opted in), so the compliance surface is lower — but include the unsubscribe line anyway.
 
 ## After the campaign
 
 Watch three signals over the first 14 days:
 
-1. **Open rate** by segment — if Segment A opens noticeably better than B, next campaign leans on that framing
+1. **Open rate** by segment — Gmail multi-send doesn't track opens natively. If you need per-recipient open tracking, use YAMM (Yet Another Mail Merge) instead — it uses `{{First Name}}`-style tags, which means converting the emails back to `{{Var}}` syntax.
 2. **Landing-page traffic** in GA filtered by `utm_campaign=parish-outreach-2026`
 3. **Actual orders** — check `orders` table in Postgres for `stripe_payment_intent` records placed by parish emails
 

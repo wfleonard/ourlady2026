@@ -21,14 +21,14 @@ Bulk B2B campaign targeting U.S. diocesan chanceries and their departmental offi
 
 | Variable | Example |
 |----------|---------|
-| `{{FirstName}}` | Fr. Miguel |
-| `{{DioceseName}}` | Diocese of Trenton |
-| `{{City}}` | Trenton |
-| `{{State}}` | NJ |
-| `{{ContactRole}}` | Director of Hispanic Ministry |
-| `{{ParishCount}}` | 97 |
+| `@firstname` | Fr. Miguel |
+| `@diocesename` | Diocese of Trenton |
+| `@city` | Trenton |
+| `@state` | NJ |
+| `@contactrole` | Director of Hispanic Ministry |
+| `@parishcount` | 97 |
 
-`{{ParishCount}}` is optional but adds real weight to the "one canvas per parish" pitch. The U.S. Conference of Catholic Bishops publishes parish counts by diocese — worth a couple of hours to fill in for your top targets.
+`@parishcount` is optional but adds real weight to the "one canvas per parish" pitch. The U.S. Conference of Catholic Bishops publishes parish counts by diocese — worth a couple of hours to fill in for your top targets.
 
 ## UTM tracking
 
@@ -44,19 +44,19 @@ Distinct campaign ID so diocesan traffic is separable in GA from parish and scho
 
 **Send:** Day 0 (Tuesday or Wednesday morning)
 
-**Subject:** A Jubilee-year Guadalupe canvas for every parish in the {{DioceseName}}
+**Subject:** A Jubilee-year Guadalupe canvas for every parish in the @diocesename
 
 **Preview text:** Church-authorized 24×36 tilma reproduction, bulk pricing, PO invoicing. Written quote in one business day.
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
-I'm writing to the {{ContactRole}} at the {{DioceseName}} because the Guadalupe Jubilee Year Pope Leo XIV opened on October 12 offers a natural occasion for a diocesan-wide initiative.
+I'm writing to the @contactrole at the @diocesename because the Guadalupe Jubilee Year Pope Leo XIV opened on October 12 offers a natural occasion for a diocesan-wide initiative.
 
 Primos Maternos produces a Church-authorized 24" × 36" canvas reproduction of the tilma of Saint Juan Diego, printed in Mexico from a high-resolution digital scan of the original at the Basilica. Every canvas ships with a certificate of authenticity.
 
-At the diocesan scale — for example, one canvas per parish across the {{DioceseName}}'s {{ParishCount}} parishes — the pricing works out to a per-piece cost well below retail, on a single PO, with either single-address delivery to the chancery or split-shipping to each parish.
+At the diocesan scale — for example, one canvas per parish across the @diocesename's @parishcount parishes — the pricing works out to a per-piece cost well below retail, on a single PO, with either single-address delivery to the chancery or split-shipping to each parish.
 
 Common diocesan uses:
 
@@ -91,7 +91,7 @@ wfleonard@primosmaternos.com · 732-673-4260
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 Not a sales email — a resource your Hispanic Ministry or Faith Formation office may find useful for Guadalupe-year catechesis, deanery programming, or a bulletin insert.
 
@@ -129,11 +129,11 @@ Saxon Enterprises, Inc. — dba Primos Maternos
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 A last note.
 
-If a diocesan-scale Guadalupe canvas program is on the {{DioceseName}}'s radar at any point in the next 12 months of the Jubilee Year, the fastest way to a quote is a six-line reply to this email:
+If a diocesan-scale Guadalupe canvas program is on the @diocesename's radar at any point in the next 12 months of the Jubilee Year, the fastest way to a quote is a six-line reply to this email:
 
 1. Approximate quantity
 2. SKU mix (24"×36" framed, 24"×36" rolled, 36"×54" rolled, 12"×18" gallery wrap)

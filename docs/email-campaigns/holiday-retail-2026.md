@@ -14,16 +14,16 @@ Same base as the parish campaigns, minus the parish-specific fields:
 
 | Variable | Example |
 |----------|---------|
-| `{{FirstName}}` | Elena |
-| `{{City}}` | San Antonio |
-| `{{State}}` | TX |
+| `@firstname` | Elena |
+| `@city` | San Antonio |
+| `@state` | TX |
 
 Optional, if you have prior-buyer data:
 
 | Variable | Example |
 |----------|---------|
-| `{{LastOrderYear}}` | 2024 |
-| `{{LastOrderSKU}}` | 24"×36" Gold Frame |
+| `@lastorderyear` | 2024 |
+| `@lastordersku` | 24"×36" Gold Frame |
 
 ---
 
@@ -47,7 +47,7 @@ Emails below use these tags already.
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 Two devotional dates are coming up faster than you'd think.
 
@@ -81,7 +81,7 @@ Tinton Falls, NJ
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 No discount code. No "Cyber Monday" panic.
 
@@ -114,7 +114,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 Tomorrow — Wednesday, December 3 — the traditional Novena to Our Lady of Guadalupe begins. Nine days of prayer, one for each of the four apparitions to Juan Diego and the one to Juan Bernardino, leading into the feast day on December 12.
 
@@ -141,7 +141,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 Short one.
 

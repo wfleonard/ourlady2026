@@ -6,7 +6,7 @@ Nine short daily emails, one per day of the Novena, plus a launch email on Dec 2
 
 **Tone:** devotional, not sales. Every email is a short daily meditation. The store link at the bottom is soft and identical each day — never the point of the email.
 
-**Personalization:** `{{FirstName}}` only. This drip is the same content for everyone.
+**Personalization:** `@firstname` only. This drip is the same content for everyone.
 
 **UTM tag:** `utm_campaign=novena-2026`
 
@@ -20,7 +20,7 @@ Nine short daily emails, one per day of the Novena, plus a launch email on Dec 2
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 The traditional Novena to Our Lady of Guadalupe begins tomorrow, Wednesday, December 3. It runs nine days into the feast on December 12 — one day of prayer for each of Our Lady's four apparitions to Saint Juan Diego and the fifth to his uncle Juan Bernardino.
 
@@ -42,7 +42,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 1 · December 3, 1531 at Tepeyac**
 
@@ -68,7 +68,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 2 · The fourth apparition**
 
@@ -94,7 +94,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 3 · The apparition to Juan Bernardino**
 
@@ -120,7 +120,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 4 · The image as picture writing**
 
@@ -144,7 +144,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 5 · The rays of the sun**
 
@@ -168,7 +168,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 6 · The stars on the mantle**
 
@@ -192,7 +192,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 7 · The cross of our redemption**
 
@@ -216,7 +216,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 8 · The roses**
 
@@ -244,7 +244,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 **Day 9 · The conversion of a nation**
 
@@ -270,7 +270,7 @@ Peace Bill
 
 **Body:**
 
-Dear {{FirstName}},
+Dear @firstname,
 
 Today is December 12 — the feast of Our Lady of Guadalupe.
 
