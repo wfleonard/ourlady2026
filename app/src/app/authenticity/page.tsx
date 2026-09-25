@@ -23,6 +23,10 @@ const faq = [
     a: "Most prints on the market descend from photographs of photographs, and each generation loses detail and shifts color, which is why the face, the gold edging, and the stars on the mantle vary so much between sellers. Ask any seller which digital source their file came from: a print made from a high-resolution archive keeps detail a re-photographed copy has already lost. Ours descends from the digital archive of the Sacred Original that Cardinal Rivera certified in 1998 as a faithful reproduction.",
   },
   {
+    q: "What resolution is the Primos Maternos Our Lady of Guadalupe canvas printed at?",
+    a: "The file is 6,900 by 10,350 pixels, which works out to 287 pixels per inch on the 24 by 36 inch canvas and 192 on the 36 by 54. Nothing is upscaled to fill the canvas, and the proportions match the canvas exactly, so nothing is cropped away. Full-size crops of the face, the stars on the mantle, the gold edging and the weave of the cloth are published on our authenticity page so they can be compared against any other print.",
+  },
+  {
     q: "What documents come with a Primos Maternos canvas?",
     a: "Two Mexican certifications. The first, dated December 12, 1998 and signed by Cardinal Norberto Rivera Carrera, Archbishop Primate of Mexico, certifies a print as a faithful reproduction of the digital archive of the Sacred Original. The second records that the image known as the Virgen Peregrina was blessed by Pope John Paul II on January 25, 1999 and traveled throughout Mexico until April 2000 for the Great Jubilee.",
   },
@@ -157,6 +161,89 @@ export default function AuthenticityPage() {
             not pretend otherwise. So rather than ask you to take the difference on faith, look
             at the image itself at full size and judge the detail with your own eyes.
           </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl md:text-3xl font-bold">The file we print from, at full size</h2>
+          <p className="mt-4">
+            This part is not history, and you do not have to take our word for any of it. The
+            file we print from is <strong>6,900 by 10,350 pixels</strong>. On a 24&quot; ×
+            36&quot; canvas that is <strong>287 pixels per inch</strong>, and on the 36&quot; ×
+            54&quot; it is 192. Nothing is enlarged to fill the canvas, and the proportions match
+            exactly, so nothing is cropped away either.
+          </p>
+          <p className="mt-4">
+            The four details below are cut straight out of that file at one pixel per pixel, with
+            no sharpening and no enlargement. Each covers three to four inches of the finished
+            24&quot; × 36&quot; canvas. Open any of them, then hold it up against the same part of
+            any other Guadalupe print you are considering.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <figure>
+              <a href="/about/detail-face.webp" target="_blank" rel="noopener">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/about/detail-face.webp"
+                  width={1140}
+                  height={1420}
+                  loading="lazy"
+                  alt="The face, cut at full size from the file we print from"
+                  className="rounded-lg shadow-md w-full h-auto"
+                />
+              </a>
+              <figcaption className="mt-2 text-sm text-stone-500">
+                <strong className="text-stone-700">The face.</strong> The modeling around the eye and mouth, and the flecking in the gold of the hood. About four inches of the finished canvas.
+              </figcaption>
+            </figure>
+            <figure>
+              <a href="/about/detail-stars.webp" target="_blank" rel="noopener">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/about/detail-stars.webp"
+                  width={1300}
+                  height={1300}
+                  loading="lazy"
+                  alt="Stars on the mantle, cut at full size from the file we print from"
+                  className="rounded-lg shadow-md w-full h-auto"
+                />
+              </a>
+              <figcaption className="mt-2 text-sm text-stone-500">
+                <strong className="text-stone-700">Stars on the mantle.</strong> Each eight-pointed star separately shaped, lying over the thread texture of the cloth. About four and a half inches.
+              </figcaption>
+            </figure>
+            <figure>
+              <a href="/about/detail-gold.webp" target="_blank" rel="noopener">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/about/detail-gold.webp"
+                  width={900}
+                  height={1200}
+                  loading="lazy"
+                  alt="Gold edging and the flowered tunic, cut at full size from the file we print from"
+                  className="rounded-lg shadow-md w-full h-auto"
+                />
+              </a>
+              <figcaption className="mt-2 text-sm text-stone-500">
+                <strong className="text-stone-700">Gold edging and the flowered tunic.</strong> The fine line work stays separate instead of running together. About three inches.
+              </figcaption>
+            </figure>
+            <figure>
+              <a href="/about/detail-weave.webp" target="_blank" rel="noopener">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/about/detail-weave.webp"
+                  width={1200}
+                  height={1200}
+                  loading="lazy"
+                  alt="The weave, cut at full size from the file we print from"
+                  className="rounded-lg shadow-md w-full h-auto"
+                />
+              </a>
+              <figcaption className="mt-2 text-sm text-stone-500">
+                <strong className="text-stone-700">The weave.</strong> Plain cloth, where the individual threads of the ayate and the staining on it are resolved. About four inches.
+              </figcaption>
+            </figure>
+          </div>
         </section>
 
         <section>
