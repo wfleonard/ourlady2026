@@ -187,7 +187,7 @@ export default function AuthenticityPage() {
           </p>
           <blockquote className="mt-5 border-l-4 border-[var(--accent)] pl-5 italic text-stone-700">
             &ldquo;Certifico que la presente impresión es una reproducción fiel del archivo
-            digital del Sagrado Original de la Imagen de Nuestra Señora de Guadalupe.&rdquo;
+            digital del Sagrado Original de la imagen de Nuestra Señora de Guadalupe.&rdquo;
             <span className="block mt-3 not-italic text-stone-600">
               &ldquo;I certify that this print is a faithful reproduction of the digital archive
               of the Sacred Original of the Image of Our Lady of Guadalupe.&rdquo;
@@ -205,20 +205,21 @@ export default function AuthenticityPage() {
             reproduction; and the Archbishop Primate of Mexico certified the print as faithful to
             that archive. It does not mean Cardinal Rivera examined any canvas printed since.
           </p>
-          {/* certification.jpg is the scan we hold. Replace with the highest-resolution
-              version available, and add crops for the fidelity section above. */}
+          {/* The fidelity section above still needs its own crops: face, stars, gold
+              edging, weave. */}
           <figure className="mt-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <a href="/about/certification.jpg" target="_blank" rel="noopener">
+            <a href="/about/certification.webp" target="_blank" rel="noopener">
               <img
-                src="/about/certification.jpg"
+                src="/about/certification.webp"
                 alt="Mexican certification dated December 12, 1998, signed by Cardinal Norberto Rivera Carrera, certifying the print as a faithful reproduction of the digital archive of the Sacred Original"
                 className="rounded-lg shadow-lg max-w-full h-auto"
               />
             </a>
             <figcaption className="mt-3 text-sm text-stone-500">
-              Certificate of faithful reproduction, December 12, 1998. Open the image to enlarge it
-              and read the Spanish for yourself.
+              Certificate of faithful reproduction. Cardinal Rivera&apos;s signature and title
+              appear at the right, dated 12-XII-1998, with the Digital Color attribution beneath.
+              Open the image to enlarge it and read the Spanish for yourself.
             </figcaption>
           </figure>
         </section>
@@ -247,9 +248,9 @@ export default function AuthenticityPage() {
           </p>
           <figure className="mt-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <a href="/about/jubileo.jpg" target="_blank" rel="noopener">
+            <a href="/about/jubileo.webp" target="_blank" rel="noopener">
               <img
-                src="/about/jubileo.jpg"
+                src="/about/jubileo.webp"
                 alt="Mexican certification recording that the Virgen Peregrina was blessed by Pope John Paul II on January 25, 1999 and traveled through Mexico until April 2000 for the Great Jubilee"
                 className="rounded-lg shadow-lg max-w-full h-auto"
               />

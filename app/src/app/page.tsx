@@ -115,7 +115,7 @@ export default async function HomePage() {
             <figure className="bg-white p-4 rounded-lg shadow-md">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/about/certification.jpg"
+                src="/about/certification.webp"
                 alt="Mexican Catholic Church certification of authenticity"
                 className="w-full h-auto object-contain"
               />
@@ -126,7 +126,7 @@ export default async function HomePage() {
             <figure className="bg-white p-4 rounded-lg shadow-md">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/about/jubileo.jpg"
+                src="/about/jubileo.webp"
                 alt="Mexico 2000 Jubileo seal of authenticity"
                 className="w-full h-auto object-contain"
               />
