@@ -46,7 +46,7 @@ Distinct campaign ID so diocesan traffic is separable in GA from parish and scho
 
 **Subject:** A Jubilee-year Guadalupe canvas for every parish in the @diocesename
 
-**Preview text:** Church-authorized 24×36 tilma reproduction, bulk pricing, PO invoicing. Written quote in one business day.
+**Preview text:** Documented 24×36 tilma reproduction, bulk pricing, PO invoicing. Written quote in one business day.
 
 **Body:**
 
@@ -54,7 +54,7 @@ Dear @firstname,
 
 I'm writing to the @contactrole at the @diocesename because the Guadalupe Jubilee Year Pope Leo XIV opened on October 12 offers a natural occasion for a diocesan-wide initiative.
 
-Primos Maternos produces a Church-authorized 24" × 36" canvas reproduction of the tilma of Saint Juan Diego. The original digital image was created in Mexico from a high-resolution scan made directly from the tilma at the Basilica in Mexico City. The canvas is printed in the USA on archival stock. Two certificates from Mexico verifying the authenticity of the image are included with every canvas.
+Primos Maternos produces a 24" × 36" canvas reproduction of the tilma of Saint Juan Diego. The image comes from a digital archive of the Sacred Original, which Cardinal Norberto Rivera Carrera, Archbishop Primate of Mexico, certified on December 12, 1998 as a faithful reproduction. The canvas is printed in the USA on archival stock at 287.5 pixels per inch, with nothing enlarged to fill it. Both Mexican certifications come with every order, and both are published in full at [primosmaternos.com/authenticity](https://primosmaternos.com/authenticity) so you can read them before you decide.
 
 At the diocesan scale — for example, one canvas per parish across the @diocesename's @parishcount parishes — the pricing works out to a per-piece cost well below retail, on a single PO, with either single-address delivery to the chancery or split-shipping to each parish.
 
