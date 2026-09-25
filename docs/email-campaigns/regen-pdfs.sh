@@ -41,9 +41,9 @@ cat > "$CSS_FILE" <<'HTML'
 HTML
 
 echo "Regenerating PDFs..."
-for md in README.md segment-a-guadalupe-parishes.md segment-b-guadalupe-ministries.md \
-          segment-c-catholic-schools.md segment-d-diocesan-offices.md \
-          holiday-retail-2026.md novena-drip-2026.md; do
+# Every markdown file in this directory, rather than a list that has to be
+# remembered: a campaign added without touching this script still gets a PDF.
+for md in *.md; do
   name="${md%.md}"
   html="/tmp/primos-email-${name}.html"
   pdf="pdf/${name}.pdf"
