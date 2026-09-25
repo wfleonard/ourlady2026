@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   title: "Primos Maternos — Our Lady of Guadalupe Canvas",
   description:
     "Our Lady of Guadalupe canvases printed from a digital archive of the Sacred Original, certified in Mexico in 1998 as a faithful reproduction. Framed and rolled, shipped from Tinton Falls, NJ.",
-  alternates: { canonical: "/" },
 };
 
 /** Who this business is, in the form a machine reads. */

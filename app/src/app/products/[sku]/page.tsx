@@ -1,3 +1,5 @@
+import { cache } from "react";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getProduct, formatPrice } from "@/lib/db";
@@ -7,13 +9,45 @@ import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
+/** One query per request, shared by generateMetadata and the page itself. */
+const loadProduct = cache(getProduct);
+
+/**
+ * Without this, all eight product pages inherited the layout's title and
+ * description, so every one of them described the shop rather than the thing
+ * on the page. The catalog already holds better copy than any template.
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ sku: string }>;
+}): Promise<Metadata> {
+  const { sku } = await params;
+  const product = await loadProduct(sku);
+  if (!product) return { title: "Canvas not found — Primos Maternos" };
+
+  const url = `/products/${product.sku}`;
+  return {
+    title: `${product.name} — Primos Maternos`,
+    description: product.description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      url: absoluteUrl(url),
+      title: product.name,
+      description: product.description,
+      images: [{ url: absoluteUrl(product.image_path), alt: product.name }],
+    },
+  };
+}
+
 export default async function ProductPage({
   params,
 }: {
   params: Promise<{ sku: string }>;
 }) {
   const { sku } = await params;
-  const product = await getProduct(sku);
+  const product = await loadProduct(sku);
   if (!product) notFound();
 
   // The price, the size, and "in stock" are what an assistant quotes when a

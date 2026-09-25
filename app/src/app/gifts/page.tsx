@@ -5,6 +5,7 @@ import { ProductCard } from "@/components/ProductCard";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
+  alternates: { canonical: "/gifts" },
   title: "Advent + December 12 Gift Guide — Primos Maternos",
   description:
     "Our Lady of Guadalupe canvas gifts for Advent, December 12, and Christmas, printed from a digital archive of the Sacred Original certified in Mexico in 1998. Framed and rolled, from $57. Free shipping to the 50 U.S. states and Puerto Rico.",

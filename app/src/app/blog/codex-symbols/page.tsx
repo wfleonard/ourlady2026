@@ -5,6 +5,7 @@ import { getPost } from "@/lib/blog";
 const post = getPost("codex-symbols");
 
 export const metadata = {
+  alternates: { canonical: "/blog/codex-symbols" },
   title: `${post?.title} — Primos Maternos`,
   description: post?.excerpt,
 };

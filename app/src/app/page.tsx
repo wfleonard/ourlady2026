@@ -1,6 +1,11 @@
 import { listProducts, type Product } from "@/lib/db";
 import { ProductCard } from "@/components/ProductCard";
 
+/** Title and description come from the layout; this page owns the canonical. */
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {

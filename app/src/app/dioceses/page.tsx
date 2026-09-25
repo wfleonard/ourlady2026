@@ -2,6 +2,7 @@ import Link from "next/link";
 import { formatPrice } from "@/lib/db";
 
 export const metadata = {
+  alternates: { canonical: "/dioceses" },
   title: "For Dioceses — Bulk Our Lady of Guadalupe Canvas Program",
   description:
     "Diocesan bulk orders of the authentic 24\" × 36\" tilma canvas — for the Jubilee Year of Guadalupe, parish distribution, Catholic school rollouts, and bishop's-office gift programs. PO invoicing accepted.",

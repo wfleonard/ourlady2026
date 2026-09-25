@@ -3,6 +3,7 @@ import { BuyButton } from "@/components/BuyButton";
 import { formatPrice } from "@/lib/db";
 
 export const metadata = {
+  alternates: { canonical: "/schools" },
   title: "For Your Catholic School — Our Lady of Guadalupe Canvas",
   description:
     "24\" × 36\" rolled canvas of the tilma, printed from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction; the canvas is printed in the USA. Two Mexican certifications included. $114 per canvas, free U.S. shipping — for religious ed classrooms, school chapels, and December 12 celebrations.",

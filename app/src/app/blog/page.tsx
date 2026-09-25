@@ -2,6 +2,7 @@ import Link from "next/link";
 import { posts } from "@/lib/blog";
 
 export const metadata = {
+  alternates: { canonical: "/blog" },
   title: "Reflections — Primos Maternos",
   description:
     "Reflections, science, and symbolism of Our Lady of Guadalupe and the tilma of Saint Juan Diego.",

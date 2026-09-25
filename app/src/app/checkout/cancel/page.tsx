@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+/** A step in a purchase, not a page anyone should reach from search. */
+export const metadata = {
+  robots: { index: false, follow: false },
+};
+
 export default function CancelPage() {
   return (
     <div className="max-w-2xl mx-auto px-6 py-20 text-center">

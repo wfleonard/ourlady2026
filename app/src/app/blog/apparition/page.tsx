@@ -5,6 +5,7 @@ import { getPost } from "@/lib/blog";
 const post = getPost("apparition");
 
 export const metadata = {
+  alternates: { canonical: "/blog/apparition" },
   title: `${post?.title} — Primos Maternos`,
   description: post?.excerpt,
 };

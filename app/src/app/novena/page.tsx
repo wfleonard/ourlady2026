@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/novena" },
   title: "Novena to Our Lady of Guadalupe — Primos Maternos",
   description:
     "The traditional nine-day Novena to Our Lady of Guadalupe, prayed December 3–11 leading into the December 12 feast. Full prayers, daily meditations on the four apparitions, printable.",

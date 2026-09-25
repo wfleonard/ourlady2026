@@ -3,6 +3,7 @@ import { BuyButton } from "@/components/BuyButton";
 import { formatPrice } from "@/lib/db";
 
 export const metadata = {
+  alternates: { canonical: "/parishes" },
   title: "For Your Parish — Our Lady of Guadalupe Canvas",
   description:
     "24\" × 36\" rolled canvas reproduction of the tilma of Saint Juan Diego, printed from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction; the canvas is printed in the USA. Two Mexican certifications included. $114 with free U.S. shipping.",

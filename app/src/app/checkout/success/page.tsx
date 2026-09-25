@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+/** A step in a purchase, not a page anyone should reach from search. */
+export const metadata = {
+  robots: { index: false, follow: false },
+};
+
 export default async function SuccessPage({
   searchParams,
 }: {
