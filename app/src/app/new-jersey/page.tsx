@@ -57,6 +57,10 @@ const faq = [
     a: "Yes, to every county in the state, and shipping is free. That covers all five New Jersey dioceses: Trenton, the Archdiocese of Newark, Metuchen, Paterson and Camden.",
   },
   {
+    q: "Can I pick up a canvas in person in New Jersey?",
+    a: "No. Primos Maternos does not offer in-person pickup. Every order ships, and shipping is free to every county in New Jersey, so an address in Monmouth County and one in Sussex County cost the same: nothing.",
+  },
+  {
     q: "Can a New Jersey parish or Catholic school order in quantity?",
     a: "Yes. Parishes, schools and diocesan offices order the 24 by 36 inch rolled canvas most often, because it ships flat in a tube and can be framed to match the building. Diocesan orders can be invoiced against a purchase order.",
   },
@@ -154,11 +158,13 @@ export default async function NewJerseyPage() {
             so you can read them before you buy anything.
           </p>
           <p className="mt-4">
-            If you need to arrange something locally rather than ship, write to{" "}
+            Everything ships. There is no in-person pickup, so being nearby saves you nothing but
+            costs you nothing either: shipping is free across the state either way. For a parish
+            or school order, or anything a checkout page does not cover, write to{" "}
             <a href={`mailto:${ORG.email}`} className="text-[var(--accent)] underline">
               {ORG.email}
-            </a>{" "}
-            and say what you need.
+            </a>
+            .
           </p>
         </section>
 
