@@ -72,6 +72,9 @@ export default function RootLayout({
               <Link href="/blog" className="hover:text-[var(--accent)]">
                 Reflections
               </Link>
+              <Link href="/canvas-sizes" className="hover:text-[var(--accent)]">
+                Sizes
+              </Link>
               <Link href="/authenticity" className="hover:text-[var(--accent)]">
                 Authenticity
               </Link>
