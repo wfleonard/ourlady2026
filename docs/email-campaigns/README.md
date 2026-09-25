@@ -1,6 +1,6 @@
 # Parish Outreach Email Campaigns
 
-Three-email sequence, sent over ~10–12 days, to a 100-contact list of U.S. Catholic parishes and Guadalupe/Hispanic ministries. Every link points at **primosmaternos.com/parishes** (the parish-focused landing page) or the codex-symbols blog post.
+Three-email sequence, sent over ~10–12 days, to a 100-contact list of U.S. Catholic parishes and Guadalupe/Hispanic ministries. Segment A runs four emails over 14 days, since it carries the provenance email as well. Links point at **primosmaternos.com/parishes** (the parish-focused landing page), **primosmaternos.com/authenticity** (the certifications in full) or the codex-symbols blog post.
 
 ## Segments
 
