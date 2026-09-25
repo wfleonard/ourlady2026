@@ -70,7 +70,7 @@ const faq = [
   },
   {
     q: "When should a New Jersey parish order for the December 12 feast?",
-    a: "Order by late November. The feast of Our Lady of Guadalupe falls on December 12, the novena runs December 3 through 11, and a rolled canvas usually needs framing or stretching after it arrives, which is the step people forget to leave time for.",
+    a: "By mid-November for a rolled canvas, which still needs stretching or framing after it arrives, and by the third week of November for a framed or gallery wrap piece. The feast is December 12 and the novena runs December 3 through 11, but orders take five to ten business days to leave us before carrier transit, which is the step people forget to count.",
   },
 ];
 
@@ -229,7 +229,7 @@ export default async function NewJerseyPage() {
           <p className="mt-4">
             The feast of Our Lady of Guadalupe is <strong>December 12</strong>, and the novena
             runs December 3 through 11. Parishes that order a rolled canvas need it in hand with
-            time to stretch or frame it, so late November is the point to decide rather than the
+            time to stretch or frame it, so mid-November is the point to decide rather than the
             first week of December. The{" "}
             <Link href="/novena" className="text-[var(--accent)] underline">
               full novena

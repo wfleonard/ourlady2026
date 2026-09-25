@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getProduct, formatPrice } from "@/lib/db";
 import { BuyButton } from "@/components/BuyButton";
 import { JsonLd } from "@/components/JsonLd";
-import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
+import { ORG, SITE_URL, absoluteUrl, RETURN_POLICY, HANDLING_DAYS } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -70,8 +70,18 @@ export default async function ProductPage({
       price: (product.price_cents / 100).toFixed(2),
       availability: "https://schema.org/InStock",
       seller: { "@id": `${SITE_URL}/#organization` },
+      hasMerchantReturnPolicy: RETURN_POLICY,
       shippingDetails: {
         "@type": "OfferShippingDetails",
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: HANDLING_DAYS.min,
+            maxValue: HANDLING_DAYS.max,
+            unitCode: "DAY",
+          },
+        },
         shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
         shippingDestination: {
           "@type": "DefinedRegion",

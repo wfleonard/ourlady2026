@@ -19,6 +19,7 @@ const STATIC_ROUTES: { path: string; priority: number }[] = [
   { path: "/dioceses", priority: 0.9 },
   { path: "/gifts", priority: 0.8 },
   { path: "/novena", priority: 0.7 },
+  { path: "/shipping-and-returns", priority: 0.7 },
   { path: "/blog", priority: 0.7 },
 ];
 

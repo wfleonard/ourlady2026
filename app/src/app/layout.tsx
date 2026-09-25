@@ -111,6 +111,10 @@ export default function RootLayout({
               <Link href="/new-jersey" className="hover:text-[var(--accent)]">
                 New Jersey
               </Link>
+              <span>·</span>
+              <Link href="/shipping-and-returns" className="hover:text-[var(--accent)]">
+                Shipping &amp; Returns
+              </Link>
             </p>
             <p className="mt-2">© {new Date().getFullYear()} Saxon Enterprises, Inc.</p>
           </div>
