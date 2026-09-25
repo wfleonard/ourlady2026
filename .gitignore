@@ -5,3 +5,15 @@ node_modules/
 *.log
 .DS_Store
 ._*
+
+# High-resolution source PNGs in /images/ are working files, not for shipping.
+# The webp/jpg variants copied into app/public/ are what the site serves.
+# One 153MB PNG in the folder can crash `git push`, so keep source material out.
+/images/*.png
+/images/*.tif
+/images/*.tiff
+/images/*.psd
+
+# Provenance research notes belong in docs/, not at the repo root.
+# Explicit ignore so a stray `git add -A` doesn't grab them from the wrong place.
+/primos-maternos-provenance-*.md
