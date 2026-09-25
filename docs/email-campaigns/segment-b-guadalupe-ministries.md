@@ -31,7 +31,7 @@ Peace Bill
 
 William F. Leonard
 Saxon Enterprises, Inc. — dba Primos Maternos
-Tinton Falls, NJ
+15 Shea Ln, Tinton Falls, NJ 07724
 wfleonard@primosmaternos.com · 732-673-4260
 
 ---
@@ -67,6 +67,8 @@ Peace Bill
 
 William F. Leonard
 Saxon Enterprises, Inc. — dba Primos Maternos
+15 Shea Ln, Tinton Falls, NJ 07724
+wfleonard@primosmaternos.com · 732-673-4260
 
 ---
 
@@ -106,5 +108,5 @@ Peace Bill
 
 William F. Leonard
 Saxon Enterprises, Inc. — dba Primos Maternos
-Tinton Falls, NJ
+15 Shea Ln, Tinton Falls, NJ 07724
 wfleonard@primosmaternos.com · 732-673-4260

@@ -78,7 +78,7 @@ The email files below already include the UTM-tagged URLs.
 
 Every commercial email needs these in the footer — Gmail multi-send doesn't add them automatically, so include them in the email template you save in Gmail:
 
-- Physical mailing address (Saxon Enterprises, Inc. · Tinton Falls, NJ)
+- Physical mailing address: **Saxon Enterprises Inc, 15 Shea Ln, Tinton Falls, NJ 07724**
 - Clear opt-out — e.g., "Reply UNSUBSCRIBE and I'll take you off the list."
 - Honest subject line and from-address (already covered)
 

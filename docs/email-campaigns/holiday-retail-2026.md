@@ -73,7 +73,7 @@ Peace Bill
 
 William F. Leonard
 Saxon Enterprises, Inc. — dba Primos Maternos
-Tinton Falls, NJ
+15 Shea Ln, Tinton Falls, NJ 07724
 
 ---
 
@@ -110,6 +110,11 @@ Order by Nov 20 for December 12 delivery.
 Thanks,
 Peace Bill
 
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+15 Shea Ln, Tinton Falls, NJ 07724
+wfleonard@primosmaternos.com · 732-673-4260
+
 ---
 
 ## Email 3 — Novena reminder
@@ -136,6 +141,11 @@ A canvas ordered now will not reach you before the feast, but it will arrive wel
 
 Thanks,
 Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+15 Shea Ln, Tinton Falls, NJ 07724
+wfleonard@primosmaternos.com · 732-673-4260
 
 ---
 
@@ -169,6 +179,8 @@ Peace Bill
 
 William F. Leonard
 Saxon Enterprises, Inc. — dba Primos Maternos
+15 Shea Ln, Tinton Falls, NJ 07724
+wfleonard@primosmaternos.com · 732-673-4260
 
 ---
 
