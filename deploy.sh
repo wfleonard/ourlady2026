@@ -107,31 +107,12 @@ sudo -u "$APP_USER" docker compose build
 sudo -u "$APP_USER" docker compose up -d
 
 # ── 9. pm-update helper ───────────────────────────────────────
+# Thin wrapper only: the real steps live in the repo at scripts/pm-update.sh
+# so they travel with a git pull instead of freezing at provisioning time.
 cat > /usr/local/bin/pm-update <<'SCRIPT'
 #!/bin/bash
 set -euo pipefail
-cd /opt/primos-store
-
-echo "▶ Pulling latest from git..."
-git pull origin main
-
-echo "▶ Building app image..."
-docker compose build
-
-echo "▶ Restarting containers..."
-docker compose up -d
-
-echo "▶ Re-applying catalog seed (idempotent: upserts products, soft-deletes removed)..."
-# Wait for postgres to be ready before applying seed
-for i in {1..15}; do
-  if docker compose exec -T postgres pg_isready -U primos -d primos_store >/dev/null 2>&1; then
-    break
-  fi
-  sleep 1
-done
-docker compose exec -T postgres psql -U primos -d primos_store < db/init.sql >/dev/null
-
-echo "✓ Updated, restarted, catalog synced"
+exec /opt/primos-store/scripts/pm-update.sh "$@"
 SCRIPT
 chmod +x /usr/local/bin/pm-update
 

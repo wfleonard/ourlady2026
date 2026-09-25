@@ -24,7 +24,7 @@ const faq = [
   },
   {
     q: "What resolution is the Primos Maternos Our Lady of Guadalupe canvas printed at?",
-    a: "The file is 6,900 by 10,350 pixels, which works out to 287 pixels per inch on the 24 by 36 inch canvas and 192 on the 36 by 54. Nothing is upscaled to fill the canvas, and the proportions match the canvas exactly, so nothing is cropped away. Full-size crops of the face, the stars on the mantle, the gold edging and the weave of the cloth are published on our authenticity page so they can be compared against any other print.",
+    a: "The file is 6,900 by 10,350 pixels, which works out to 287.5 pixels per inch on the 24 by 36 inch canvas and 191.7 on the 36 by 54. Nothing is upscaled to fill the canvas, and the proportions match the canvas exactly, so nothing is cropped away. Full-size crops of the face, the stars on the mantle, the gold edging and the weave of the cloth are published on our authenticity page so they can be compared against any other print.",
   },
   {
     q: "What documents come with a Primos Maternos canvas?",
@@ -168,8 +168,8 @@ export default function AuthenticityPage() {
           <p className="mt-4">
             This part is not history, and you do not have to take our word for any of it. The
             file we print from is <strong>6,900 by 10,350 pixels</strong>. On a 24&quot; ×
-            36&quot; canvas that is <strong>287 pixels per inch</strong>, and on the 36&quot; ×
-            54&quot; it is 192. Nothing is enlarged to fill the canvas, and the proportions match
+            36&quot; canvas that is <strong>287.5 pixels per inch</strong>, and on the 36&quot; ×
+            54&quot; it is 191.7. Nothing is enlarged to fill the canvas, and the proportions match
             exactly, so nothing is cropped away either.
           </p>
           <p className="mt-4">

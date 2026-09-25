@@ -54,8 +54,13 @@ const SIZES: SizeRow[] = [
   },
 ];
 
+/**
+ * Exact, not rounded: 6900 / 24 is 287.5, and rounding it to 288 would put the
+ * table a half pixel above what the rest of the site says.
+ */
 function ppi(widthInches: number) {
-  return Math.round(FILE_WIDTH_PX / widthInches);
+  const exact = FILE_WIDTH_PX / widthInches;
+  return Number.isInteger(exact) ? String(exact) : exact.toFixed(1);
 }
 
 function diagonal([w, h]: [number, number]) {
@@ -73,7 +78,7 @@ const faq = [
   },
   {
     q: "How sharp is the print at each size?",
-    a: "The 12 by 18 prints at 575 pixels per inch, the 24 by 36 at 287, and the 36 by 54 at 192. Nothing is enlarged to fill the canvas at any size. Around 300 pixels per inch is the point past which a normal eye stops resolving detail at reading distance, so the 12 by 18 and the 24 by 36 hold up under close inspection, while the 36 by 54 is made for a wall you view from across a room.",
+    a: "The 12 by 18 prints at 575 pixels per inch, the 24 by 36 at 287.5, and the 36 by 54 at 191.7. Nothing is enlarged to fill the canvas at any size. Around 300 pixels per inch is the point past which a normal eye stops resolving detail at reading distance, so the 12 by 18 and the 24 by 36 hold up under close inspection, while the 36 by 54 is made for a wall you view from across a room.",
   },
   {
     q: "What is the difference between framed, gallery wrap, and rolled canvas?",
@@ -182,7 +187,7 @@ export default async function CanvasSizesPage() {
             Around 300 pixels per inch is where a normal eye stops picking out more detail at
             reading distance. The 12&quot; × 18&quot; is comfortably past that and the 24&quot; ×
             36&quot; sits right at it, so both hold up when someone steps close, which is what
-            people do with this image. The 36&quot; × 54&quot; prints at 192, which is normal for
+            people do with this image. The 36&quot; × 54&quot; prints at 191.7, which is normal for
             a canvas of that size and is made for a wall you take in from across a room rather
             than at arm&apos;s length.
           </p>

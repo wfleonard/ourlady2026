@@ -82,11 +82,11 @@ INSERT INTO products (sku, name, description, size, variant, price_cents, image_
  '12x18', 'gallery-wrap-0.75', 5700, '/products/olg-12x18-gallery-wrap.jpg', 20),
 ('olg-24x36-rolled',
  'Our Lady of Guadalupe — 24"x36" Rolled Canvas',
- 'The tilma image printed on archival canvas at 24"x36" and shipped rolled in a protective tube, ready for your own framing. Printed in the USA at 287 pixels per inch from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction. Both Mexican certifications included.',
+ 'The tilma image printed on archival canvas at 24"x36" and shipped rolled in a protective tube, ready for your own framing. Printed in the USA at 287.5 pixels per inch from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction. Both Mexican certifications included.',
  '24x36', 'rolled', 11400, '/products/olg-24x36-rolled.jpg', 21),
 ('olg-36x54-rolled',
  'Our Lady of Guadalupe — 36"x54" Rolled Canvas',
- 'The large-format tilma image on archival canvas at 36"x54", shipped rolled. Printed in the USA at 192 pixels per inch from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction. A devotional centerpiece for chapels, parish halls, and large home altars. Both Mexican certifications included.',
+ 'The large-format tilma image on archival canvas at 36"x54", shipped rolled. Printed in the USA at 191.7 pixels per inch from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction. A devotional centerpiece for chapels, parish halls, and large home altars. Both Mexican certifications included.',
  '36x54', 'rolled', 32400, '/products/olg-36x54-rolled.jpg', 22)
 ON CONFLICT (sku) DO UPDATE SET
     name = EXCLUDED.name,
