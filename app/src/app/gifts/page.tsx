@@ -35,12 +35,15 @@ export default async function GiftsPage() {
             The Guadalupe canvas gift guide
           </h1>
           <p className="mt-5 text-lg text-stone-700 leading-relaxed max-w-2xl mx-auto">
-            The tilma image on archival canvas, printed from a digital archive
-            of the Sacred Original certified in Mexico in 1998 as a faithful
-            reproduction; the canvas is printed in the USA. Two Mexican
-            certifications included. From{" "}
+            The tilma image on archival canvas, printed from a digital
+            archive of the Sacred Original that Cardinal Norberto Rivera
+            Carrera, Archbishop Primate of Mexico, certified on December
+            12, 1998 as a faithful reproduction. The image, known as the
+            Virgen Peregrina, was blessed by Pope John Paul II on January
+            25, 1999. The canvas is printed in the USA. Two Mexican
+            certifications ship with every order. From{" "}
             <strong>$57</strong>. Free shipping to the 50 U.S. states and
-            Puerto Rico. Two certificates from Mexico with every canvas.
+            Puerto Rico.
           </p>
         </div>
       </section>
@@ -235,6 +238,51 @@ export default async function GiftsPage() {
             to unwrap on the first day of the Novena and pray with for the
             full nine days.
           </p>
+        </div>
+      </section>
+
+      {/* Certificates — trust chain right before the final ask */}
+      <section className="bg-stone-50 border-y border-stone-200">
+        <div className="max-w-5xl mx-auto px-6 py-14">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold">
+              What ships with every canvas
+            </h2>
+            <p className="mt-3 text-stone-700 max-w-2xl mx-auto">
+              Two Mexican certifications — the primary signed by Cardinal
+              Norberto Rivera Carrera on December 12, 1998, and the
+              secondary recording the Virgen Peregrina blessing by Pope
+              John Paul II in 1999. Full text on our{" "}
+              <Link href="/authenticity" className="text-[var(--accent)] underline">
+                Authenticity page
+              </Link>
+              .
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <figure className="bg-white p-4 rounded-lg shadow-md">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/about/certification.webp"
+                alt="Mexican certification dated December 12, 1998, signed by Cardinal Norberto Rivera Carrera, certifying the print as a faithful reproduction of the digital archive of the Sacred Original"
+                className="w-full h-auto object-contain"
+              />
+              <figcaption className="mt-2 text-sm text-stone-600 text-center">
+                1998 certification — Cardinal Rivera Carrera
+              </figcaption>
+            </figure>
+            <figure className="bg-white p-4 rounded-lg shadow-md">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/about/jubileo.webp"
+                alt="Mexican certification recording that the Virgen Peregrina was blessed by Pope John Paul II on January 25, 1999 and traveled through Mexico until April 2000 for the Great Jubilee"
+                className="w-full h-auto object-contain"
+              />
+              <figcaption className="mt-2 text-sm text-stone-600 text-center">
+                Virgen Peregrina blessing — Pope John Paul II, 1999
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 

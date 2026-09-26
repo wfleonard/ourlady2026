@@ -28,10 +28,14 @@ export default function SchoolsPage() {
             <p className="mt-5 text-lg text-stone-700 leading-relaxed">
               A 24" × 36" rolled canvas reproduction of the tilma of Saint
               Juan Diego, printed from a digital archive of the Sacred
-              Original created in Mexico and certified in 1998 by the
-              Archbishop Primate of Mexico as a faithful reproduction. The
-              canvas is printed in the USA. Two Mexican certifications are
-              included with every canvas.
+              Original that <strong>Cardinal Norberto Rivera Carrera,
+              Archbishop Primate of Mexico</strong>, certified on{" "}
+              <strong>December 12, 1998</strong> as a faithful
+              reproduction. The image, known as the{" "}
+              <strong>Virgen Peregrina</strong>, was blessed by{" "}
+              <strong>Pope John Paul II on January 25, 1999</strong>. The
+              canvas is printed in the USA on archival stock. Two Mexican
+              certifications are included with every canvas.
             </p>
             <div className="mt-6 flex items-baseline gap-4">
               <span className="text-4xl font-bold text-[var(--accent)]">
@@ -161,6 +165,47 @@ export default function SchoolsPage() {
               </span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Certificates — trust chain for a religion-department review */}
+      <section className="max-w-5xl mx-auto px-6 py-16 border-t border-stone-200">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold">Two Mexican certifications</h2>
+          <p className="mt-3 text-stone-700 max-w-2xl mx-auto">
+            Both documents ship with every canvas. Religion teachers,
+            campus ministers, and department chairs can read them
+            alongside the image and cross-check the language. Full text
+            in Spanish and English is on our{" "}
+            <Link href="/authenticity" className="text-[var(--accent)] underline">
+              Authenticity page
+            </Link>
+            .
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <figure className="bg-white p-4 rounded-lg shadow-md">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/about/certification.webp"
+              alt="Mexican certification dated December 12, 1998, signed by Cardinal Norberto Rivera Carrera, certifying the print as a faithful reproduction of the digital archive of the Sacred Original"
+              className="w-full h-auto object-contain"
+            />
+            <figcaption className="mt-2 text-sm text-stone-600 text-center">
+              1998 certification — Cardinal Rivera Carrera
+            </figcaption>
+          </figure>
+          <figure className="bg-white p-4 rounded-lg shadow-md">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/about/jubileo.webp"
+              alt="Mexican certification recording that the Virgen Peregrina was blessed by Pope John Paul II on January 25, 1999 and traveled through Mexico until April 2000 for the Great Jubilee"
+              className="w-full h-auto object-contain"
+            />
+            <figcaption className="mt-2 text-sm text-stone-600 text-center">
+              Virgen Peregrina blessing — Pope John Paul II, 1999
+            </figcaption>
+          </figure>
         </div>
       </section>
 
