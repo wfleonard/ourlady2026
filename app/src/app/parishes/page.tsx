@@ -216,8 +216,8 @@ export default function ParishesPage() {
         <div className="max-w-4xl mx-auto px-6 py-12 text-center">
           <h2 className="text-3xl font-bold mb-3">Order for your parish</h2>
           <p className="text-white/90 mb-6">
-            {formatPrice(PRICE_CENTS)} · free shipping · certificate of
-            authenticity · secure checkout by Stripe
+            {formatPrice(PRICE_CENTS)} · free shipping · two certificates from
+            Mexico · secure checkout by Stripe
           </p>
           <div className="inline-block bg-white text-stone-900 rounded-md p-2">
             <BuyButton sku={SKU} />
