@@ -125,13 +125,15 @@ export default async function ProductPage({
           </p>
           <ul className="mt-6 space-y-2 text-sm text-stone-600 list-disc list-inside">
             <li>
-              Printed from a digital archive of the Sacred Original, certified in
-              1998 by the Archbishop Primate of Mexico as a faithful reproduction
+              Printed from a digital archive of the Sacred Original, certified
+              on December 12, 1998 by Cardinal Norberto Rivera Carrera,
+              Archbishop Primate of Mexico, as a faithful reproduction
             </li>
             <li>
-              The image, known as the Virgen Peregrina, was blessed by Pope John
-              Paul II on January 25, 1999
+              The image, known as the Virgen Peregrina, was blessed by Pope
+              John Paul II on January 25, 1999
             </li>
+            <li>Printed on archival canvas in the USA</li>
             <li>Two Mexican certifications included with every canvas</li>
             <li>Free shipping to all 50 U.S. states and Puerto Rico</li>
           </ul>

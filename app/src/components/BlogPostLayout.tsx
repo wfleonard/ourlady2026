@@ -73,6 +73,11 @@ export function BlogPostLayout({
         >
           Browse the collection →
         </Link>
+        <p className="mt-4 text-xs text-stone-500">
+          Printed from the 1998 Rivera Carrera–certified digital archive ·
+          canvas printed in the USA · two Mexican certifications with every
+          order · free U.S. shipping
+        </p>
       </div>
     </article>
   );
