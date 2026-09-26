@@ -33,7 +33,7 @@ Bulk B2B campaign targeting U.S. diocesan chanceries and their departmental offi
 ## UTM tracking
 
 ```
-?utm_source=openmoves&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=<email-number>
+?utm_source=gmail&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=<email-number>
 ```
 
 Distinct campaign ID so diocesan traffic is separable in GA from parish and school traffic.
@@ -67,7 +67,7 @@ Common diocesan uses:
 
 Written quote within one business day of your reply. Purchase orders accepted from established diocesan offices — Net 30 standard.
 
-[**See the diocesan program page →**](https://primosmaternos.com/dioceses?utm_source=openmoves&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-1)
+[**See the diocesan program page →**](https://primosmaternos.com/dioceses?utm_source=gmail&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-1)
 
 Or reply to this email with an approximate quantity and target delivery date and I'll return a quote directly.
 
@@ -99,17 +99,17 @@ The 1936 pigment analysis by Nobel chemist Richard Kuhn: not animal, not mineral
 
 Full write-up, with sources, about eight minutes of reading:
 
-[**Read: What Science Cannot Explain About the Tilma →**](https://primosmaternos.com/blog/tilma-science?utm_source=openmoves&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-2a)
+[**Read: What Science Cannot Explain About the Tilma →**](https://primosmaternos.com/blog/tilma-science?utm_source=gmail&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-2a)
 
 There is also a companion piece on the Aztec symbolism of the image — the mestiza face, the Nahui Ollin, the winter-solstice constellations on the mantle — which fits the Guadalupe-year theological formation cycle:
 
-[**Read: A Codex in the Image →**](https://primosmaternos.com/blog/codex-symbols?utm_source=openmoves&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-2b)
+[**Read: A Codex in the Image →**](https://primosmaternos.com/blog/codex-symbols?utm_source=gmail&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-2b)
 
 Both are free to link in a diocesan newsletter or the Faith Formation LMS.
 
 Diocesan bulk-order details remain here whenever they become relevant:
 
-[Diocesan program →](https://primosmaternos.com/dioceses?utm_source=openmoves&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-2c)
+[Diocesan program →](https://primosmaternos.com/dioceses?utm_source=gmail&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-2c)
 
 Thanks,
 Peace Bill
@@ -148,7 +148,7 @@ We return written quotes within one business day. Standard fulfillment window fo
 
 The Jubilee Year opened October 12, 2026 and runs through October 12, 2027. Dioceses that want the canvases in parish hands by the December 12 feast should aim for a PO by early November.
 
-[**Diocesan program page →**](https://primosmaternos.com/dioceses?utm_source=openmoves&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-3)
+[**Diocesan program page →**](https://primosmaternos.com/dioceses?utm_source=gmail&utm_medium=email&utm_campaign=diocesan-outreach-2026&utm_content=d-3)
 
 Thanks,
 Peace Bill

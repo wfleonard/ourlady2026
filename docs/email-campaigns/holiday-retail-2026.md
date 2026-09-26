@@ -32,7 +32,7 @@ Optional, if you have prior-buyer data:
 ## UTM tracking
 
 ```
-?utm_source=openmoves&utm_medium=email&utm_campaign=holiday-2026&utm_content=<email-number>
+?utm_source=gmail&utm_medium=email&utm_campaign=holiday-2026&utm_content=<email-number>
 ```
 
 Emails below use these tags already.
@@ -64,7 +64,7 @@ If you're planning to give the tilma canvas as a gift for the feast, or to have 
 
 The full gift guide is up:
 
-[**See the gift guide →**](https://primosmaternos.com/gifts?utm_source=openmoves&utm_medium=email&utm_campaign=holiday-2026&utm_content=1)
+[**See the gift guide →**](https://primosmaternos.com/gifts?utm_source=gmail&utm_medium=email&utm_campaign=holiday-2026&utm_content=1)
 
 Eight SKUs, from a $57 gallery wrap to a $324 large rolled canvas, with five framed 24"×36" options in the middle at $214. The image comes from a digital archive of the Sacred Original, certified in Mexico in 1998 as a faithful reproduction, and both certifications ship with every order. You don't have to take that on trust: [we publish both certificates in full](https://primosmaternos.com/authenticity), alongside crops of the face, the stars and the weave cut from the actual print file at full size. Canvases are printed in the USA on archival stock. Free U.S. shipping, 30 days to return.
 
@@ -103,7 +103,7 @@ Some ideas for who to give it to:
 - A pastor's rectory or a religious sister's cell
 - The family member who hosts the Dec 12 celebration every year
 
-[**Pick a canvas →**](https://primosmaternos.com/gifts?utm_source=openmoves&utm_medium=email&utm_campaign=holiday-2026&utm_content=2)
+[**Pick a canvas →**](https://primosmaternos.com/gifts?utm_source=gmail&utm_medium=email&utm_campaign=holiday-2026&utm_content=2)
 
 Order by Nov 20 for December 12 delivery.
 
@@ -133,11 +133,11 @@ Tomorrow — Thursday, December 3 — the traditional Novena to Our Lady of Guad
 
 If you'd like a short read on the apparition itself — what actually happened at Tepeyac in 1531, what the roses on the frozen hilltop meant — we published a piece on the site:
 
-[**Read: The Sign on the Tilma →**](https://primosmaternos.com/blog/apparition?utm_source=openmoves&utm_medium=email&utm_campaign=holiday-2026&utm_content=3a)
+[**Read: The Sign on the Tilma →**](https://primosmaternos.com/blog/apparition?utm_source=gmail&utm_medium=email&utm_campaign=holiday-2026&utm_content=3a)
 
 A canvas ordered now will not reach you before the feast, but it will arrive well inside the Jubilee year, and there is still time for Christmas if you order by Friday, December 4:
 
-[**See the gift guide →**](https://primosmaternos.com/gifts?utm_source=openmoves&utm_medium=email&utm_campaign=holiday-2026&utm_content=3b)
+[**See the gift guide →**](https://primosmaternos.com/gifts?utm_source=gmail&utm_medium=email&utm_campaign=holiday-2026&utm_content=3b)
 
 Thanks,
 Peace Bill
@@ -169,7 +169,7 @@ December 12 has passed as an order date: a canvas ordered now cannot be printed,
 
 The Jubilee Year for Our Lady of Guadalupe that opened in Mexico City on October 12 runs a full year — through October 12, 2027. If the canvas doesn't get to you before December 12, it still lands in the middle of a Jubilee year of grace.
 
-[**Order for Christmas →**](https://primosmaternos.com/gifts?utm_source=openmoves&utm_medium=email&utm_campaign=holiday-2026&utm_content=4)
+[**Order for Christmas →**](https://primosmaternos.com/gifts?utm_source=gmail&utm_medium=email&utm_campaign=holiday-2026&utm_content=4)
 
 Christmas order deadline is December 4. For Three Kings Day on January 6, order by December 16.
 

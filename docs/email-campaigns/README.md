@@ -61,15 +61,15 @@ If any field is missing for a row, either fill a sensible default in the CSV or 
 Append UTM parameters to every link so Google Analytics on primosmaternos.com attributes the traffic to the campaign:
 
 ```
-?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=<segment>-<email-number>
+?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=<segment>-<email-number>
 ```
 
 Segments A and B use `utm_campaign=parish-outreach-2026`. Segment C uses `utm_campaign=school-outreach-2026` (separate campaign so schools traffic doesn't co-mingle with parish traffic in GA).
 
 Examples:
 ```
-https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-1
-https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-1
+https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-1
+https://primosmaternos.com/schools?utm_source=gmail&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-1
 ```
 
 The email files below already include the UTM-tagged URLs.

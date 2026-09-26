@@ -28,7 +28,7 @@ If you would like to pray it with us, we will send one short email each morning 
 
 If you prefer to pray at your own pace, the full text of the Novena is on the site — free to read, print, or share:
 
-[**The full Novena, all nine days →**](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=launch)
+[**The full Novena, all nine days →**](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=launch)
 
 Peace Bill
 
@@ -54,7 +54,7 @@ Your words, heavenly Mother, fill my heart with love and gratitude. I turn to yo
 
 Pray four Hail Marys — one for each apparition — and the Memorare.
 
-[Full text of today's meditation and the Memorare →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-1#day-1)
+[Full text of today's meditation and the Memorare →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-1#day-1)
 
 Peace Bill
 
@@ -80,7 +80,7 @@ Turn then, most gracious Mother, your eyes of mercy towards me today. Make it po
 
 Four Hail Marys. The Memorare.
 
-[Today's meditation →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-2#day-2)
+[Today's meditation →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-2#day-2)
 
 Peace Bill
 
@@ -106,7 +106,7 @@ Hail Holy Queen, merciful Mother. Hail our life, our sweetness and our hope. Pra
 
 Four Hail Marys. The Memorare.
 
-[Today's meditation →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-3#day-3)
+[Today's meditation →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-3#day-3)
 
 Peace Bill
 
@@ -130,7 +130,7 @@ O Holy Mary, let the same image teach me never to forget the immortality of my s
 
 Four Hail Marys. The Memorare.
 
-[Today's meditation →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-4#day-4)
+[Today's meditation →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-4#day-4)
 
 Peace Bill
 
@@ -154,7 +154,7 @@ O Holy Mary, through the mystery of the Incarnation of your Son, obtain for us t
 
 Four Hail Marys. The Memorare.
 
-[Today's meditation →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-5#day-5)
+[Today's meditation →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-5#day-5)
 
 Peace Bill
 
@@ -178,7 +178,7 @@ Most Holy Mary, through the image stamped by God on the Indian's garment, you ha
 
 Four Hail Marys. The Memorare.
 
-[Today's meditation →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-6#day-6)
+[Today's meditation →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-6#day-6)
 
 Peace Bill
 
@@ -202,7 +202,7 @@ Holy Virgin, Mary of Guadalupe, my Queen and Mother, inspire us to see in this m
 
 Four Hail Marys. The Memorare.
 
-[Today's meditation →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-7#day-7)
+[Today's meditation →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-7#day-7)
 
 Peace Bill
 
@@ -230,7 +230,7 @@ Humbly, my Queen and Mother, let me be your ambassador like Juan Diego today —
 
 Four Hail Marys. The Memorare.
 
-[Today's meditation →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-8#day-8)
+[Today's meditation →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-8#day-8)
 
 Peace Bill
 
@@ -254,7 +254,7 @@ As Juan Diego spent the remaining seventeen years of his life giving your spoken
 
 Four Hail Marys. The Memorare.
 
-[Today's meditation →](https://primosmaternos.com/novena?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=day-9#day-9)
+[Today's meditation →](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=day-9#day-9)
 
 Tomorrow is the feast. A blessed vigil to you.
 
@@ -280,7 +280,7 @@ Wherever you are, a blessed feast day to you and to your family. The Novena has 
 
 If you would like a short piece on the events of December 12, 1531 that this feast commemorates:
 
-[The Sign on the Tilma — Juan Diego's story →](https://primosmaternos.com/blog/apparition?utm_source=openmoves&utm_medium=email&utm_campaign=novena-2026&utm_content=feast)
+[The Sign on the Tilma — Juan Diego's story →](https://primosmaternos.com/blog/apparition?utm_source=gmail&utm_medium=email&utm_campaign=novena-2026&utm_content=feast)
 
 Peace Bill
 

@@ -52,7 +52,7 @@ Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of S
 
 The year is well-timed: Pope Leo XIV has opened a Jubilee Year for Our Lady of Guadalupe (October 12, 2026 through October 12, 2027) marking 50 years since the tilma was transferred into the current New Basilica in Mexico City. It runs through the entire school year and into next.
 
-[**See it for your school →**](https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-1)
+[**See it for your school →**](https://primosmaternos.com/schools?utm_source=gmail&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-1)
 
 Thanks,
 Peace Bill
@@ -79,16 +79,16 @@ Dear @firstname,
 Not a sales email — two short reads your religion, history, or Spanish teachers may find useful for the Dec 12 unit or Advent programming.
 
 **A Codex in the Image** — what an Aztec saw in the tilma at a glance in 1531. The mestiza face anticipating a race that didn't yet exist. Hair parted and untied (the Aztec sign for a pregnant virgin). The black sash (maternity belt). The four-petaled Nahui Ollin over the womb (the Aztec glyph for the presence of God). The stars on her mantle matching the actual sky over Mexico City on the morning of December 12, 1531. Nine million baptisms in ten years.
-[Read →](https://primosmaternos.com/blog/codex-symbols?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-2a)
+[Read →](https://primosmaternos.com/blog/codex-symbols?utm_source=gmail&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-2a)
 
 **What Science Cannot Explain About the Tilma** — a cactus-fiber cloak that should have decayed in 20 years, still intact after 495. Nobel chemist Richard Kuhn on the pigments. Callahan and Smith's infrared analysis at NASA. Thirteen human figures found in the pupils of the eyes by a Cornell-trained IBM engineer. Faith-and-science material for high school religion or philosophy.
-[Read →](https://primosmaternos.com/blog/tilma-science?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-2b)
+[Read →](https://primosmaternos.com/blog/tilma-science?utm_source=gmail&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-2b)
 
 Both are free to link in your LMS or share in a bulletin.
 
 For schools that would like the image itself in the classroom, we make a 24" × 36" rolled canvas — printed in the USA from the same 1998-certified digital archive of the Sacred Original — for $114 with free U.S. shipping and both Mexican certifications. Bulk pricing for multiple classrooms.
 
-[See it for your school →](https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-2c)
+[See it for your school →](https://primosmaternos.com/schools?utm_source=gmail&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-2c)
 
 Thanks,
 Peace Bill
@@ -130,7 +130,7 @@ The 24" × 36" rolled canvas we make has been ordered by Catholic schools for:
 
 If @schoolname is thinking about outfitting more than one classroom — a typical order is 5 to 15 for a religion department — reply to this email or text me at 732-673-4260 for a bulk quote. Purchase orders accepted.
 
-[**Order for @schoolname →**](https://primosmaternos.com/schools?utm_source=openmoves&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-3)
+[**Order for @schoolname →**](https://primosmaternos.com/schools?utm_source=gmail&utm_medium=email&utm_campaign=school-outreach-2026&utm_content=c-3)
 
 Thanks,
 Peace Bill

@@ -24,7 +24,7 @@ Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of S
 
 The timing is worth noting — Pope Leo XIV has opened a Jubilee Year for Our Lady of Guadalupe, running October 12, 2026 through October 12, 2027, marking 50 years since the tilma was carried into the current New Basilica. A good year to have the image on the ministry wall or in the parish's Guadalupe shrine.
 
-[**See the canvas →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-1)
+[**See the canvas →**](https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-1)
 
 Thanks,
 Peace Bill
@@ -56,11 +56,11 @@ The mestiza face anticipating a race that didn't yet exist. Hair parted in the m
 
 Full breakdown with sources, about seven minutes of reading:
 
-[**Read: A Codex in the Image →**](https://primosmaternos.com/blog/codex-symbols?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-2)
+[**Read: A Codex in the Image →**](https://primosmaternos.com/blog/codex-symbols?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-2)
 
 For ministries that would like the image itself, we make a 24" × 36" rolled canvas — printed in the USA from the same 1998-certified digital archive of the Sacred Original — available for $114, with free U.S. shipping and both Mexican certifications.
 
-[See the image →](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-2b)
+[See the image →](https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-2b)
 
 Thanks,
 Peace Bill
@@ -99,7 +99,7 @@ With the Jubilee Year opening October 12 and the feast day on December 12, this 
 
 **$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Printed in the USA. Both Mexican certifications included. Ships rolled, ready for local framing.**
 
-[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-3)
+[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=b-3)
 
 Ordering more than one? Reply to this email or text me at 732-673-4260 for a bulk quote.
 

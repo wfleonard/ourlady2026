@@ -26,7 +26,7 @@ Primos Maternos offers a 24" × 36" rolled canvas reproduction of the tilma of S
 
 The timing may also matter to you — Pope Leo XIV has opened a Jubilee Year for Our Lady of Guadalupe, running October 12, 2026 through October 12, 2027, marking 50 years since the tilma was carried into the current New Basilica.
 
-[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-1)
+[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-1)
 
 Thanks,
 Peace Bill
@@ -60,7 +60,7 @@ The second records that the image known as the **Virgen Peregrina** was **blesse
 
 Both are published in full, with the Spanish transcribed and translated:
 
-[**Read the certifications →**](https://primosmaternos.com/authenticity?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-2)
+[**Read the certifications →**](https://primosmaternos.com/authenticity?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-2)
 
 The same page says what the documents do *not* establish, which I think matters as much. They do not mean that Cardinal Rivera examined any canvas printed since, that any canvas sold today was individually blessed, or that the Church endorses our business. Primos Maternos came under its current ownership in 2005, years after these events, and we present what survives rather than filling the gaps.
 
@@ -96,11 +96,11 @@ The mestiza face anticipating a race that didn't yet exist. Hair parted in the m
 
 Full breakdown with sources, in about seven minutes of reading:
 
-[**Read: A Codex in the Image →**](https://primosmaternos.com/blog/codex-symbols?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-3)
+[**Read: A Codex in the Image →**](https://primosmaternos.com/blog/codex-symbols?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-3)
 
 For parishes and ministries that would like the image itself, we make a 24" × 36" rolled canvas — printed in the USA from the same 1998-certified digital archive of the Sacred Original — available for $114, with free U.S. shipping and both Mexican certifications.
 
-[See the image →](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-3b)
+[See the image →](https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-3b)
 
 Thanks,
 Peace Bill
@@ -144,11 +144,11 @@ For a parish weighing an image for a church, chapel, school or ministry space, t
 - The **January 25, 1999** blessing by Pope John Paul II of the image known as the Virgen Peregrina
 - Its pilgrimage through Mexico for the Great Jubilee, January 1999 to April 2000
 
-[Read the certifications and the English translations →](https://primosmaternos.com/authenticity?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-4b)
+[Read the certifications and the English translations →](https://primosmaternos.com/authenticity?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-4b)
 
 **$114 per canvas. Free shipping to the 50 U.S. states and Puerto Rico. Printed in the USA. Both Mexican certifications included. Ships rolled, ready for local framing.**
 
-[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=openmoves&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-4)
+[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-4)
 
 Ordering more than one for a diocesan or school initiative? Reply to this email or text me at 732-673-4260 for a bulk quote.
 
