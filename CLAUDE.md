@@ -119,6 +119,9 @@ included.*
 5. Stripe fires `checkout.session.completed` → `/api/webhooks/stripe` →
    inserts into `orders` + `order_items`, logs raw event to
    `stripe_events`
+6. On a newly inserted order, `lib/mailer.ts` emails an order alert to
+   `ORDER_NOTIFY_TO` via the Workspace SMTP relay (IP-allowlisted). Skipped if
+   `SMTP_HOST` is unset; a mail failure never fails the webhook.
 
 ## Known gotchas
 - The webhook route is `runtime = "nodejs"` because it needs

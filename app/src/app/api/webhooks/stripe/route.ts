@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
 import { pool } from "@/lib/db";
+import { sendOrderAlert, type OrderAlert } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 
@@ -54,10 +55,11 @@ export async function POST(req: NextRequest) {
       };
     }).shipping_details;
 
+    let alert: OrderAlert | null = null;
     const client = await pool.connect();
     try {
       await client.query("BEGIN");
-      const { rows } = await client.query<{ id: number }>(
+      const { rows } = await client.query<{ id: number; inserted: boolean }>(
         `INSERT INTO orders (
             stripe_session_id, stripe_payment_intent, customer_email, customer_name,
             amount_total_cents, currency, payment_status,
@@ -65,7 +67,7 @@ export async function POST(req: NextRequest) {
             shipping_state, shipping_postal_code, shipping_country
          ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
          ON CONFLICT (stripe_session_id) DO UPDATE SET payment_status = EXCLUDED.payment_status
-         RETURNING id`,
+         RETURNING id, (xmax = 0) AS inserted`,
         [
           fullSession.id,
           typeof fullSession.payment_intent === "string"
@@ -85,9 +87,11 @@ export async function POST(req: NextRequest) {
           shipping?.address?.country ?? null,
         ]
       );
-      const orderId = rows[0].id;
+      const { id: orderId, inserted } = rows[0];
 
-      for (const item of lineItems) {
+      // Stripe retries deliveries; only the first one writes items and alerts.
+      const newItems = inserted ? lineItems : [];
+      for (const item of newItems) {
         const sku =
           (item.price?.product as Stripe.Product | null)?.metadata?.sku ??
           (fullSession.metadata?.sku ?? null);
@@ -104,12 +108,47 @@ export async function POST(req: NextRequest) {
         );
       }
       await client.query("COMMIT");
+
+      if (inserted) {
+        alert = {
+          orderId,
+          customerName: fullSession.customer_details?.name ?? null,
+          customerEmail: fullSession.customer_details?.email ?? null,
+          amountTotalCents: fullSession.amount_total ?? 0,
+          items: lineItems.map((i) => ({
+            name: i.description ?? "Item",
+            quantity: i.quantity ?? 1,
+            unitPriceCents: i.price?.unit_amount ?? 0,
+          })),
+          shipping: [
+            shipping?.name,
+            shipping?.address?.line1,
+            shipping?.address?.line2,
+            [shipping?.address?.city, shipping?.address?.state, shipping?.address?.postal_code]
+              .filter(Boolean)
+              .join(", "),
+            shipping?.address?.country,
+          ].filter((l): l is string => !!l),
+          paymentIntent:
+            typeof fullSession.payment_intent === "string"
+              ? fullSession.payment_intent
+              : fullSession.payment_intent?.id ?? null,
+          livemode: event.livemode,
+        };
+      }
     } catch (err) {
       await client.query("ROLLBACK");
       console.error("Failed to persist order", err);
       return NextResponse.json({ error: "DB write failed" }, { status: 500 });
     } finally {
       client.release();
+    }
+
+    // The order is saved; a mail failure must not 500 and trigger a Stripe retry.
+    if (alert) {
+      await sendOrderAlert(alert).catch((err) =>
+        console.error("Order alert email failed for order", alert?.orderId, err)
+      );
     }
   }
 
