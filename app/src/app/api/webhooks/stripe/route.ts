@@ -3,6 +3,7 @@ import type Stripe from "stripe";
 import { stripe } from "@/lib/stripe";
 import { pool } from "@/lib/db";
 import { sendOrderAlert, type OrderAlert } from "@/lib/mailer";
+import { notifySaxonAdmin } from "@/lib/saxonAdmin";
 
 export const runtime = "nodejs";
 
@@ -149,6 +150,14 @@ export async function POST(req: NextRequest) {
       await sendOrderAlert(alert).catch((err) =>
         console.error("Order alert email failed for order", alert?.orderId, err)
       );
+      await notifySaxonAdmin({
+        id: fullSession.id,
+        type: "order",
+        title: `Order #${alert.orderId}: ${alert.items.map((i) => `${i.quantity} × ${i.name}`).join(", ")}`,
+        amountCents: alert.amountTotalCents,
+        name: alert.customerName ?? undefined,
+        email: alert.customerEmail ?? undefined,
+      });
     }
   }
 
