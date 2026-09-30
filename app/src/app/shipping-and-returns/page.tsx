@@ -37,7 +37,7 @@ const faq = [
   },
   {
     q: "Do you ship outside the United States?",
-    a: "Not at present. Shipping covers the 50 states and Puerto Rico.",
+    a: "Yes, through eBay. Checkout on this site ships to the 50 states and Puerto Rico only, but the same canvases are listed on eBay, whose international shipping delivers abroad and handles customs. Each product page links to its eBay listing.",
   },
 ];
 
@@ -108,8 +108,16 @@ export default function ShippingAndReturnsPage() {
           <p className="mt-4">
             Shipping is free to all 50 United States and Puerto Rico. That applies at every size
             and every finish, with no minimum order, and the 36&quot; × 54&quot; carries no
-            surcharge even though it is the most awkward piece to send. We do not ship outside
-            the United States at present.
+            surcharge even though it is the most awkward piece to send.
+          </p>
+          <p className="mt-4">
+            <strong>Outside the United States?</strong> Checkout here cannot ship abroad, but the
+            same canvases are listed on eBay, whose international shipping delivers to you and
+            handles customs. Each{" "}
+            <Link href="/#products" className="text-[var(--accent)] underline">
+              product page
+            </Link>{" "}
+            has a link to its eBay listing.
           </p>
           <p className="mt-4">
             Orders leave us <strong>five to ten business days</strong> after they are placed.

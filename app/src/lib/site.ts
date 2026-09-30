@@ -42,6 +42,22 @@ export const AI_CRAWLERS = [
 ] as const;
 
 /** Nothing a buyer or a crawler should land on: checkout flow and API routes. */
+/**
+ * The eBay listing for each SKU. Checkout here ships to the 50 states and
+ * Puerto Rico only; eBay's international shipping covers buyers elsewhere and
+ * handles customs, so product pages link there for them. A SKU without a
+ * listing (the 12x18 gallery wrap, for now) simply shows no eBay link.
+ */
+export const EBAY_LISTINGS: Partial<Record<string, string>> = {
+  "olg-24x36-gold": "https://www.ebay.com/itm/184779375228",
+  "olg-24x36-cherry": "https://www.ebay.com/itm/184779364948",
+  "olg-24x36-beaded-mahogany": "https://www.ebay.com/itm/184779363392",
+  "olg-24x36-black-red-oak": "https://www.ebay.com/itm/184779367663",
+  "olg-24x36-silver-ornate": "https://www.ebay.com/itm/184779359135",
+  "olg-24x36-rolled": "https://www.ebay.com/itm/184136879559",
+  "olg-36x54-rolled": "https://www.ebay.com/itm/184670577846",
+};
+
 export const PRIVATE_PATHS = ["/api/", "/checkout/", "/admin/"] as const;
 
 /**

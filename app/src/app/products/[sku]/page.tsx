@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getProduct, formatPrice } from "@/lib/db";
 import { BuyButton } from "@/components/BuyButton";
+import { EbayLink } from "@/components/EbayLink";
 import { JsonLd } from "@/components/JsonLd";
-import { ORG, SITE_URL, absoluteUrl, RETURN_POLICY, HANDLING_DAYS } from "@/lib/site";
+import { ORG, SITE_URL, absoluteUrl, RETURN_POLICY, HANDLING_DAYS, EBAY_LISTINGS } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -142,6 +143,9 @@ export default async function ProductPage({
             <p className="mt-3 text-xs text-stone-500">
               Secure checkout by Stripe. Apple Pay and Google Pay supported.
             </p>
+            {EBAY_LISTINGS[product.sku] && (
+              <EbayLink sku={product.sku} href={EBAY_LISTINGS[product.sku]!} />
+            )}
           </div>
         </div>
       </div>
