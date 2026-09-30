@@ -12,8 +12,15 @@
 set -euo pipefail
 cd /opt/primos-store
 
-echo "▶ Pulling latest from git..."
-git pull origin main
+# git pull replaces this file, but bash keeps running the copy it already
+# opened, so a step added in the same push would be skipped until the next
+# deploy (that's how the mailer templates were missed on 2026-09-30). After
+# pulling, re-run the fresh copy; the flag stops it from pulling again.
+if [ -z "${PM_UPDATE_PULLED:-}" ]; then
+  echo "▶ Pulling latest from git..."
+  git pull origin main
+  PM_UPDATE_PULLED=1 exec /opt/primos-store/scripts/pm-update.sh "$@"
+fi
 
 echo "▶ Building app image..."
 docker compose build
