@@ -42,7 +42,7 @@ export const AI_CRAWLERS = [
 ] as const;
 
 /** Nothing a buyer or a crawler should land on: checkout flow and API routes. */
-export const PRIVATE_PATHS = ["/api/", "/checkout/"] as const;
+export const PRIVATE_PATHS = ["/api/", "/checkout/", "/admin/"] as const;
 
 /**
  * The returns policy in the form Google and assistants read, kept here so the

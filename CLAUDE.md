@@ -123,6 +123,24 @@ included.*
    `ORDER_NOTIFY_TO` via the Workspace SMTP relay (IP-allowlisted). Skipped if
    `SMTP_HOST` is unset; a mail failure never fails the webhook.
 
+## Outreach mailer (`/admin/mailer`)
+One-at-a-time sends of the prewritten campaign emails, not bulk. Sign in
+at `/admin/login` with `ADMIN_PASSWORD` from `.env` (12+ chars; blank
+keeps /admin locked). Every page and server action calls `requireAdmin()`.
+
+- Tables `mail_contacts` / `mail_templates` / `mail_sends` live in
+  `db/init.sql`. Contact columns other than email are stored in `fields`
+  (JSONB) keyed by the lowercased CSV header, and each one is a `@field`
+  in templates, the same syntax as `docs/email-campaigns/*.md`.
+- Templates are seeded from those .md files: `node scripts/build-mailer-seed.mjs`
+  regenerates `db/mailer-seed.sql`, which `pm-update` applies with
+  `ON CONFLICT DO NOTHING`. New emails are added; ones edited in the UI are
+  never overwritten.
+- A send is refused if any `@field` has no value for that contact.
+- Sends use the same Workspace relay as order alerts (`lib/mailer.ts`
+  `transport`). Relay mail doesn't appear in Gmail's Sent folder, so
+  `OUTREACH_BCC` keeps a copy; `mail_sends` stores the exact text sent.
+
 ## Known gotchas
 - The webhook route is `runtime = "nodejs"` because it needs
   `req.text()` for signature verification — do NOT switch to edge.

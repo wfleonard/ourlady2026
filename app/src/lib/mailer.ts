@@ -15,7 +15,7 @@ const user = process.env.SMTP_USER;
 const pass = process.env.SMTP_PASS;
 const port = Number(process.env.SMTP_PORT || 587);
 
-const transport = host
+export const transport = host
   ? nodemailer.createTransport({
       host,
       port,

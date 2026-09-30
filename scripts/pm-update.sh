@@ -40,4 +40,9 @@ docker compose exec -T postgres psql -v ON_ERROR_STOP=1 -U primos -d primos_stor
 docker compose exec -T postgres psql -U primos -d primos_store -tAc \
   "SELECT count(*) || ' active products' FROM products WHERE active;"
 
+echo "▶ Adding any new mailer templates (never overwrites ones edited in /admin/mailer)..."
+docker compose exec -T postgres psql -v ON_ERROR_STOP=1 -q -U primos -d primos_store < db/mailer-seed.sql
+docker compose exec -T postgres psql -U primos -d primos_store -tAc \
+  "SELECT count(*) || ' mailer templates' FROM mail_templates;"
+
 echo "✓ Updated, restarted, catalog synced"

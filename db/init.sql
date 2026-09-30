@@ -53,6 +53,52 @@ CREATE TABLE IF NOT EXISTS stripe_events (
 CREATE INDEX IF NOT EXISTS idx_orders_created ON orders(created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_order_items_order ON order_items(order_id);
 
+-- ─── Outreach mailer (/admin/mailer) ─────────────────────────
+-- One row per person. Every spreadsheet column except email lands in
+-- `fields`, keyed by its lowercased header, and each key is usable in a
+-- template as @key (e.g. @firstname, @parishname, @city).
+CREATE TABLE IF NOT EXISTS mail_contacts (
+    id              SERIAL PRIMARY KEY,
+    email           TEXT UNIQUE NOT NULL,          -- stored lowercased
+    fields          JSONB NOT NULL DEFAULT '{}',
+    unsubscribed    BOOLEAN NOT NULL DEFAULT FALSE,
+    notes           TEXT,
+    created_at      TIMESTAMP DEFAULT NOW(),
+    updated_at      TIMESTAMP DEFAULT NOW()
+);
+
+-- Prewritten emails. Body is light Markdown with @merge fields.
+-- Seeded from docs/email-campaigns via db/mailer-seed.sql, then edited in the UI.
+CREATE TABLE IF NOT EXISTS mail_templates (
+    id              SERIAL PRIMARY KEY,
+    slug            TEXT UNIQUE NOT NULL,
+    name            TEXT NOT NULL,
+    segment         TEXT NOT NULL DEFAULT '',      -- matches a contact's @segment
+    position        INTEGER NOT NULL DEFAULT 0,    -- order within the segment's sequence
+    subject         TEXT NOT NULL,
+    preview         TEXT NOT NULL DEFAULT '',
+    body            TEXT NOT NULL,
+    active          BOOLEAN NOT NULL DEFAULT TRUE,
+    updated_at      TIMESTAMP DEFAULT NOW()
+);
+
+-- Every send attempt, with the exact text that went out.
+CREATE TABLE IF NOT EXISTS mail_sends (
+    id              SERIAL PRIMARY KEY,
+    contact_id      INTEGER REFERENCES mail_contacts(id) ON DELETE CASCADE,
+    template_id     INTEGER REFERENCES mail_templates(id) ON DELETE SET NULL,
+    to_email        TEXT NOT NULL,
+    subject         TEXT NOT NULL,
+    body            TEXT NOT NULL,
+    status          VARCHAR(10) NOT NULL,          -- 'sent' | 'failed'
+    error           TEXT,
+    message_id      TEXT,
+    sent_at         TIMESTAMP DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_mail_sends_contact ON mail_sends(contact_id, sent_at DESC);
+CREATE INDEX IF NOT EXISTS idx_mail_sends_sent ON mail_sends(sent_at DESC);
+
 -- ─── Seed catalog ────────────────────────────────────────────
 -- Framed first (premium), then rolled, ordered small to large.
 INSERT INTO products (sku, name, description, size, variant, price_cents, image_path, sort_order) VALUES
