@@ -100,40 +100,41 @@ CREATE INDEX IF NOT EXISTS idx_mail_sends_contact ON mail_sends(contact_id, sent
 CREATE INDEX IF NOT EXISTS idx_mail_sends_sent ON mail_sends(sent_at DESC);
 
 -- ─── Seed catalog ────────────────────────────────────────────
--- Framed first (premium), then rolled, ordered small to large.
+-- Display order (sort_order): the two rolled canvases lead as the best sellers,
+-- then the gold frame, the other frames, and the 12x18 gallery wrap last.
 INSERT INTO products (sku, name, description, size, variant, price_cents, image_path, sort_order) VALUES
 ('olg-24x36-gold',
  'Our Lady of Guadalupe — 24"x36" Gold Frame',
  'Our Lady of Guadalupe on 24"x36" stretched canvas in a classic gold frame, ready to hang. Printed in the USA at 287.5 pixels per inch from the digital archive of the Sacred Original certified in Mexico in 1998. Both Mexican certifications included.',
- '24x36', 'gold-frame', 21400, '/products/olg-24x36-gold.jpg', 10),
+ '24x36', 'gold-frame', 21400, '/products/olg-24x36-gold.jpg', 3),
 ('olg-24x36-cherry',
  'Our Lady of Guadalupe — 24"x36" Cherry Frame',
  'Our Lady of Guadalupe on 24"x36" stretched canvas in a warm cherry frame, ready to hang. Printed in the USA at 287.5 pixels per inch from the digital archive of the Sacred Original certified in Mexico in 1998. Both Mexican certifications included.',
- '24x36', 'cherry-frame', 21400, '/products/olg-24x36-cherry.jpg', 11),
+ '24x36', 'cherry-frame', 21400, '/products/olg-24x36-cherry.jpg', 4),
 ('olg-24x36-beaded-mahogany',
  'Our Lady of Guadalupe — 24"x36" Beaded Mahogany Frame',
  'Our Lady of Guadalupe on 24"x36" stretched canvas in a beaded mahogany frame, ready to hang. Printed in the USA at 287.5 pixels per inch from the digital archive of the Sacred Original certified in Mexico in 1998. Both Mexican certifications included.',
- '24x36', 'beaded-mahogany-frame', 21400, '/products/olg-24x36-beaded-mahogany.jpg', 12),
+ '24x36', 'beaded-mahogany-frame', 21400, '/products/olg-24x36-beaded-mahogany.jpg', 5),
 ('olg-24x36-black-red-oak',
  'Our Lady of Guadalupe — 24"x36" Black Red Oak Frame',
  'Our Lady of Guadalupe on 24"x36" stretched canvas in a black red oak frame, ready to hang. Printed in the USA at 287.5 pixels per inch from the digital archive of the Sacred Original certified in Mexico in 1998. Both Mexican certifications included.',
- '24x36', 'black-red-oak-frame', 21400, '/products/olg-24x36-black-red-oak.jpg', 13),
+ '24x36', 'black-red-oak-frame', 21400, '/products/olg-24x36-black-red-oak.jpg', 6),
 ('olg-24x36-silver-ornate',
  'Our Lady of Guadalupe — 24"x36" Silver Ornate Frame',
  'Our Lady of Guadalupe on 24"x36" stretched canvas in an ornate silver frame, ready to hang. Printed in the USA at 287.5 pixels per inch from the digital archive of the Sacred Original certified in Mexico in 1998. Both Mexican certifications included.',
- '24x36', 'silver-ornate-frame', 21400, '/products/olg-24x36-silver-ornate.jpg', 14),
+ '24x36', 'silver-ornate-frame', 21400, '/products/olg-24x36-silver-ornate.jpg', 7),
 ('olg-12x18-gallery-wrap',
  'Our Lady of Guadalupe — 12"x18" Thin Gallery Wrap (0.75")',
  'Our Lady of Guadalupe on a 12"x18" gallery wrap canvas: 0.75" bars, no frame needed, hangs straight from the box. Printed in the USA at 575 pixels per inch from the digital archive of the Sacred Original certified in Mexico in 1998. Both Mexican certifications included.',
- '12x18', 'gallery-wrap-0.75', 5700, '/products/olg-12x18-gallery-wrap.jpg', 20),
+ '12x18', 'gallery-wrap-0.75', 5700, '/products/olg-12x18-gallery-wrap.jpg', 8),
 ('olg-24x36-rolled',
  'Our Lady of Guadalupe — 24"x36" Rolled Canvas',
  'Our Lady of Guadalupe on 24"x36" archival canvas, shipped rolled in a protective tube for your own framing. Printed in the USA at 287.5 pixels per inch from the digital archive of the Sacred Original certified in Mexico in 1998. Both Mexican certifications included.',
- '24x36', 'rolled', 11400, '/products/olg-24x36-rolled.jpg', 21),
+ '24x36', 'rolled', 11400, '/products/olg-24x36-rolled.jpg', 1),
 ('olg-36x54-rolled',
  'Our Lady of Guadalupe — 36"x54" Rolled Canvas',
  'Our Lady of Guadalupe on 36"x54" archival canvas, shipped rolled: a centerpiece for chapels, parish halls and large home altars. Printed in the USA at 191.7 pixels per inch from the digital archive of the Sacred Original certified in Mexico in 1998. Both Mexican certifications included.',
- '36x54', 'rolled', 32400, '/products/olg-36x54-rolled.jpg', 22)
+ '36x54', 'rolled', 32400, '/products/olg-36x54-rolled.jpg', 2)
 ON CONFLICT (sku) DO UPDATE SET
     name = EXCLUDED.name,
     description = EXCLUDED.description,
