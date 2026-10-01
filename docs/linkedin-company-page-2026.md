@@ -1,6 +1,6 @@
 # LinkedIn Company Page — Primos Maternos
 
-The company page setup, plus 12 posts from October 6 through the December 12 feast. Post from the company page, not your personal profile; share Post 2 (Jubilee) and Post 12 (feast day) from your personal account if you want the extra reach.
+The company page setup, plus 12 posts from October 6 through the December 12 feast and one extra photo post (at the end) that can go out any time. Post from the company page, not your personal profile; share Post 2 (Jubilee) and Post 12 (feast day) from your personal account if you want the extra reach.
 
 Every claim traces to `docs/primos-maternos-image-fidelity.md` or a page on the site. Links carry `utm_campaign=linkedin-page-2026` so page traffic is counted apart from the personal-profile posts in `linkedin-olg-2026.md`. Prices match the catalog as of October 1, 2026.
 
@@ -287,4 +287,28 @@ The full story:
 👉 primosmaternos.com/blog/apparition?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-page-2026&utm_content=page-12
 
 #OurLadyOfGuadalupe #VirgenDeGuadalupe #December12 #CatholicChurch
+```
+
+---
+
+## Extra: Gold frame, rolled canvas, and the two certificates (photo post)
+
+**Post on:** any time; written October 1 · 92 words · **Attach four images in this order:** the 24" x 36" gold frame, the 24" x 36" rolled canvas, the 1998 certification, the 1999 Virgen Peregrina document
+
+```
+Two ways to hang the same image.
+
+Rolled 24" x 36" canvas, $114. Ships in a tube, ready for local framing.
+Framed 24" x 36" in gold, $214. Arrives ready to hang.
+
+Both come with the two documents in photos 3 and 4:
+
+· December 12, 1998. Cardinal Norberto Rivera Carrera, Archbishop Primate of Mexico, certified the print as a faithful reproduction of the digital archive of the Sacred Original.
+· January 25, 1999. Pope John Paul II blessed the image known as the Virgen Peregrina.
+
+Image created in Mexico from a scan of the original tilma. Canvas printed in the USA. Free shipping to the 50 states and Puerto Rico.
+
+👉 primosmaternos.com/authenticity?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-page-2026&utm_content=page-gold-rolled
+
+#OurLadyOfGuadalupe #CatholicArt #Jubilee2026
 ```
