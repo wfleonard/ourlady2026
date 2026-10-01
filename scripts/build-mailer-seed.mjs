@@ -24,6 +24,7 @@ const FILES = {
   "segment-d-diocesan-offices.md": ["D", "d"],
   "holiday-retail-2026.md": ["Retail", "holiday"],
   "novena-drip-2026.md": ["Novena", "novena"],
+  "international-inquiry.md": ["International", "intl"],
 };
 
 const field = (lines, label) => {

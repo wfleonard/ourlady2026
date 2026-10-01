@@ -13,6 +13,7 @@ Split the list into per-segment tabs (or per-segment Google Sheets) before sendi
 | **C** | Catholic schools (K–12) with Hispanic enrollment or a Marian devotional culture | [segment-c-catholic-schools.md](segment-c-catholic-schools.md) | `/schools` |
 | **D** | Diocesan offices — chanceries, Hispanic ministry, school superintendents | [segment-d-diocesan-offices.md](segment-d-diocesan-offices.md) | `/dioceses` |
 | **Retail — Holiday** | Individual customers + newsletter subscribers, Nov–Dec 2026 | [holiday-retail-2026.md](holiday-retail-2026.md) | `/gifts` |
+| **International** | Anyone outside the US asking to buy (reply, sent on request) | [international-inquiry.md](international-inquiry.md) | eBay listings |
 
 Same 3-email cadence, different opening framing per segment. Segment C uses the schools-specific landing page and emphasizes bulk pricing for outfitting multiple classrooms.
 
