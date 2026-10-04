@@ -6,6 +6,8 @@ export type Post = {
   imageAlt: string;
   date: string;
   readTime: string;
+  /** Last real edit (YYYY-MM-DD); feeds the sitemap's lastmod. Bump it when the post changes. */
+  updated: string;
 };
 
 export const posts: Post[] = [
@@ -18,6 +20,7 @@ export const posts: Post[] = [
     imageAlt: "Pope Leo XIV with an image of Our Lady of Guadalupe",
     date: "November 6 – 17, 2026",
     readTime: "5 min read",
+    updated: "2026-09-25",
   },
   {
     slug: "jubilee-2026",
@@ -28,6 +31,7 @@ export const posts: Post[] = [
     imageAlt: "The tilma of Saint Juan Diego in its ornate silver-and-gold frame at the Basilica of Guadalupe, Mexico City",
     date: "October 12, 2026 – October 12, 2027",
     readTime: "4 min read",
+    updated: "2026-09-25",
   },
   {
     slug: "apparition",
@@ -38,6 +42,7 @@ export const posts: Post[] = [
     imageAlt: "Our Lady of Guadalupe appearing to Saint Juan Diego",
     date: "December 12, 1531",
     readTime: "5 min read",
+    updated: "2026-09-25",
   },
   {
     slug: "tilma-science",
@@ -48,6 +53,7 @@ export const posts: Post[] = [
     imageAlt: "Our Lady of Guadalupe tilma displayed at the Basilica",
     date: "Research summary",
     readTime: "8 min read",
+    updated: "2026-09-25",
   },
   {
     slug: "codex-symbols",
@@ -58,6 +64,7 @@ export const posts: Post[] = [
     imageAlt: "Our Lady of Guadalupe tilma close-up showing symbolic details",
     date: "Image symbolism",
     readTime: "7 min read",
+    updated: "2026-09-25",
   },
 ];
 
