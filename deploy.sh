@@ -93,9 +93,14 @@ fi
 
 # ── 7. Caddyfile ──────────────────────────────────────────────
 cat > /etc/caddy/Caddyfile <<CADDYEOF
-$DOMAIN, www.$DOMAIN {
+$DOMAIN {
     encode zstd gzip
     reverse_proxy 127.0.0.1:3001
+}
+
+# One canonical host: www redirects instead of serving a duplicate site.
+www.$DOMAIN {
+    redir https://$DOMAIN{uri} permanent
 }
 CADDYEOF
 systemctl reload caddy || systemctl restart caddy
