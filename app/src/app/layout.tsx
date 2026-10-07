@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { JsonLd } from "@/components/JsonLd";
+import { MetaPixelNoScript, MetaPixelScript } from "@/components/MetaPixel";
 import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -51,7 +52,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <MetaPixelScript />
+      </head>
       <body className="min-h-screen flex flex-col">
+        <MetaPixelNoScript />
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={webSiteJsonLd} />
         <header className="border-b border-stone-200 bg-white/80 backdrop-blur sticky top-0 z-10">
