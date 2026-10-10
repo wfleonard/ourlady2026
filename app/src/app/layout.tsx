@@ -117,6 +117,10 @@ export default function RootLayout({
                 New Jersey
               </Link>
               <span>·</span>
+              <Link href="/reviews" className="hover:text-[var(--accent)]">
+                Reviews
+              </Link>
+              <span>·</span>
               <Link href="/shipping-and-returns" className="hover:text-[var(--accent)]">
                 Shipping &amp; Returns
               </Link>

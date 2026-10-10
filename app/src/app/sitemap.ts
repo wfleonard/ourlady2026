@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { listProducts } from "@/lib/db";
 import { posts } from "@/lib/blog";
+import { reviews } from "@/lib/reviews";
 import { SITE_URL } from "@/lib/site";
 
 /**
@@ -19,13 +20,14 @@ const STATIC_ROUTES: { path: string; priority: number; updated: string }[] = [
   { path: "/authenticity", priority: 0.9, updated: "2026-09-25" },
   { path: "/canvas-sizes", priority: 0.9, updated: "2026-09-25" },
   { path: "/new-jersey", priority: 0.9, updated: "2026-09-25" },
-  { path: "/parishes", priority: 0.9, updated: "2026-09-26" },
-  { path: "/schools", priority: 0.9, updated: "2026-09-26" },
+  { path: "/parishes", priority: 0.9, updated: "2026-10-10" },
+  { path: "/schools", priority: 0.9, updated: "2026-10-10" },
   { path: "/dioceses", priority: 0.9, updated: "2026-09-26" },
-  { path: "/gifts", priority: 0.8, updated: "2026-09-26" },
+  { path: "/gifts", priority: 0.8, updated: "2026-10-10" },
   { path: "/novena", priority: 0.7, updated: "2026-09-25" },
   { path: "/shipping-and-returns", priority: 0.7, updated: "2026-09-30" },
   { path: "/blog", priority: 0.7, updated: "2026-10-10" },
+  { path: "/reviews", priority: 0.7, updated: "2026-10-10" },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -58,6 +60,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: post.updated,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...reviews.map((r) => ({
+      url: `${SITE_URL}/reviews/${r.slug}`,
+      lastModified: r.updated,
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
     })),
   ];
 }
