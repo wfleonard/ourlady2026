@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { signOutAction } from "./actions";
 
-export function MailerNav({ active }: { active: "contacts" | "templates" | "import" }) {
+export function MailerNav({ active }: { active: "contacts" | "add" | "templates" | "import" }) {
   const tab = (key: typeof active, href: string, label: string) => (
     <Link
       href={href}
@@ -19,8 +19,9 @@ export function MailerNav({ active }: { active: "contacts" | "templates" | "impo
       <div className="flex items-center gap-2 text-sm">
         <span className="font-semibold text-lg mr-3">Mailer</span>
         {tab("contacts", "/admin/mailer", "Contacts")}
+        {tab("add", "/admin/mailer/add", "+ Add contact")}
         {tab("templates", "/admin/mailer/templates", "Templates")}
-        {tab("import", "/admin/mailer/import", "Import / add")}
+        {tab("import", "/admin/mailer/import", "Import CSV")}
       </div>
       <form action={signOutAction}>
         <button className="text-sm text-stone-500 hover:underline">Sign out</button>

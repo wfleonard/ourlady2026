@@ -93,17 +93,19 @@ export async function removeContact(fd: FormData) {
   redirect("/admin/mailer?deleted=1");
 }
 
-/** Add one contact by hand from the import page. */
+/** Add one contact by hand, then open it so it can be emailed right away. */
 export async function addContact(fd: FormData) {
   await requireAdmin();
   const email = str(fd, "email");
-  if (!isEmail(email)) redirect("/admin/mailer/import?err=bademail");
+  if (!isEmail(email)) redirect(`/admin/mailer/add?err=bademail&segment=${encodeURIComponent(str(fd, "segment"))}`);
   const fields: Record<string, string> = {};
   for (const key of ["firstname", "lastname", "business", "city", "state", "segment"]) {
     fields[key] = str(fd, key);
   }
-  await upsertContact(email, fields);
-  redirect("/admin/mailer/import?added=1");
+  if (str(fd, "newSegment")) fields.segment = str(fd, "newSegment");
+  const { id } = await upsertContact(email, fields, str(fd, "notes"));
+  revalidatePath("/admin/mailer");
+  redirect(`/admin/mailer/contacts/${id}?saved=1`);
 }
 
 /** Upload a CSV exported from the spreadsheet. Matches on email: new rows are added, existing ones updated. */
@@ -121,8 +123,8 @@ export async function importCsv(fd: FormData) {
       skipped++;
       continue;
     }
-    const result = await upsertContact(row.email, row);
-    if (result === "inserted") inserted++;
+    const { inserted: isNew } = await upsertContact(row.email, row);
+    if (isNew) inserted++;
     else updated++;
   }
   revalidatePath("/admin/mailer");

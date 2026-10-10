@@ -111,20 +111,28 @@ export async function listFieldKeys(): Promise<string[]> {
 /**
  * Insert or update by email. Non-blank values in `fields` overwrite what's
  * stored; blank ones leave the stored value alone, so re-importing a sheet with
- * a column missing doesn't wipe it.
+ * a column missing doesn't wipe it. Notes, when given, are appended to any
+ * already on the contact.
  */
-export async function upsertContact(email: string, fields: Fields): Promise<"inserted" | "updated"> {
+export async function upsertContact(
+  email: string,
+  fields: Fields,
+  notes = ""
+): Promise<{ id: number; inserted: boolean }> {
   const clean = Object.fromEntries(
     Object.entries(fields).filter(([k, v]) => k && k !== "email" && v.trim())
   );
-  const { rows } = await pool.query<{ inserted: boolean }>(
-    `INSERT INTO mail_contacts (email, fields) VALUES ($1, $2)
+  const { rows } = await pool.query<{ id: number; inserted: boolean }>(
+    `INSERT INTO mail_contacts (email, fields, notes) VALUES ($1, $2, NULLIF($3, ''))
      ON CONFLICT (email) DO UPDATE
-        SET fields = mail_contacts.fields || EXCLUDED.fields, updated_at = NOW()
-     RETURNING (xmax = 0) AS inserted`,
-    [email.trim().toLowerCase(), clean]
+        SET fields = mail_contacts.fields || EXCLUDED.fields,
+            notes = CASE WHEN EXCLUDED.notes IS NULL THEN mail_contacts.notes
+                         ELSE concat_ws(E'\n', mail_contacts.notes, EXCLUDED.notes) END,
+            updated_at = NOW()
+     RETURNING id, (xmax = 0) AS inserted`,
+    [email.trim().toLowerCase(), clean, notes.trim()]
   );
-  return rows[0].inserted ? "inserted" : "updated";
+  return rows[0];
 }
 
 export async function updateContact(

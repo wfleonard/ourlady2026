@@ -136,6 +136,9 @@ keeps /admin locked). Every page and server action calls `requireAdmin()`.
   regenerates `db/mailer-seed.sql`, which `pm-update` applies with
   `ON CONFLICT DO NOTHING`. New emails are added; ones edited in the UI are
   never overwritten.
+- Contacts come in two ways: CSV import (`/admin/mailer/import`) or one at a
+  time at `/admin/mailer/add`, which always offers the `Buyer` segment (for
+  buyers added after an order) and opens the new contact ready to send.
 - A send is refused if any `@field` has no value for that contact.
 - Sends use the same Workspace relay as order alerts (`lib/mailer.ts`
   `transport`). Relay mail doesn't appear in Gmail's Sent folder, so

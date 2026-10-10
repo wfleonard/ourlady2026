@@ -39,7 +39,7 @@ export default async function MailerHome({
 
           {contacts.length === 0 ? (
             <p className="text-sm text-stone-500 py-8">
-              No contacts yet. <Link href="/admin/mailer/import" className="underline">Import your spreadsheet</Link>.
+              No contacts yet. <Link href="/admin/mailer/add" className="underline">Add one</Link> or <Link href="/admin/mailer/import" className="underline">import your spreadsheet</Link>.
             </p>
           ) : (
             <div className="overflow-x-auto border border-stone-200 rounded">

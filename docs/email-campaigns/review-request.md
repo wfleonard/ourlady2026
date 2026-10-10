@@ -2,7 +2,7 @@
 
 One email to each buyer about 2–3 weeks after delivery. Asks for a short reply and a photo of the canvas hanging, which Bill can post on the site with permission. Also gives an unhappy buyer a private way to raise a problem before posting one publicly.
 
-**Segment target:** retail buyers with a delivered order. One send per buyer; don't repeat.
+**Segment target:** contacts in the `Buyer` segment with a delivered order. One send per buyer; don't repeat.
 
 **Personalization:** `@firstname` only.
 
