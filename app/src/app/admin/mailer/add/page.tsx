@@ -1,10 +1,7 @@
 import { requireAdmin } from "@/lib/adminAuth";
-import { listSegments } from "@/lib/outreach";
-import { addContact } from "../actions";
-import { Flash, MailerNav, button, input } from "../ui";
-
-/** Buyers are added by hand after an order, so Buyer is always offered even before any contact carries it. */
-const BUYER = "Buyer";
+import { BUYER_SEGMENT as BUYER, countMissingBuyers, listSegments } from "@/lib/outreach";
+import { addContact, addPastBuyersAction } from "../actions";
+import { Flash, MailerNav, button, buttonGhost, input } from "../ui";
 
 const ERRORS: Record<string, string> = {
   bademail: "That isn’t a valid email address.",
@@ -13,16 +10,23 @@ const ERRORS: Record<string, string> = {
 export default async function AddContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ err?: string; segment?: string }>;
+  searchParams: Promise<{ err?: string; segment?: string; buyers?: string }>;
 }) {
   await requireAdmin();
-  const { err, segment = BUYER } = await searchParams;
-  const segments = [...new Set([BUYER, ...(await listSegments())])].sort();
+  const { err, segment = BUYER, buyers } = await searchParams;
+  const [existing, missingBuyers] = await Promise.all([listSegments(), countMissingBuyers()]);
+  // Buyer is always offered, even before any contact carries it.
+  const segments = [...new Set([BUYER, ...existing])].sort();
 
   return (
     <>
       <MailerNav active="add" />
       {err && ERRORS[err] && <Flash tone="err">{ERRORS[err]}</Flash>}
+      {buyers !== undefined && (
+        <Flash tone="ok">
+          {buyers === "0" ? "No new buyers to add." : `Added ${buyers} buyer${buyers === "1" ? "" : "s"} from past orders.`}
+        </Flash>
+      )}
 
       <section className="max-w-xl">
         <h2 className="font-semibold mb-1">Add a contact</h2>
@@ -74,6 +78,23 @@ export default async function AddContactPage({
           </div>
         </form>
         <p className="text-xs text-stone-500 mt-3">Add any other columns from the contact’s page after saving.</p>
+      </section>
+
+      <section className="max-w-xl mt-10 pt-6 border-t border-stone-200">
+        <h2 className="font-semibold mb-1">Buyers from Stripe</h2>
+        <p className="text-sm text-stone-600 mb-3">
+          Every new live order adds its buyer here automatically, in the Buyer segment, with the
+          order in their notes. A buyer already on the list keeps their own segment.
+        </p>
+        {missingBuyers > 0 ? (
+          <form action={addPastBuyersAction}>
+            <button className={buttonGhost}>
+              Add {missingBuyers} past buyer{missingBuyers === 1 ? "" : "s"} from earlier orders
+            </button>
+          </form>
+        ) : (
+          <p className="text-sm text-stone-500">Every past buyer is already on the list.</p>
+        )}
       </section>
     </>
   );

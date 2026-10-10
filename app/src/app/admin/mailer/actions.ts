@@ -7,7 +7,7 @@ import { parseCsv, normalizeKey } from "@/lib/csv";
 import { merge } from "@/lib/emailFormat";
 import {
   deleteContact, deliver, getContact, isEmail, recordSend,
-  saveTemplate, updateContact, upsertContact,
+  addPastBuyers, saveTemplate, updateContact, upsertContact,
 } from "@/lib/outreach";
 import { ORG } from "@/lib/site";
 
@@ -106,6 +106,14 @@ export async function addContact(fd: FormData) {
   const { id } = await upsertContact(email, fields, str(fd, "notes"));
   revalidatePath("/admin/mailer");
   redirect(`/admin/mailer/contacts/${id}?saved=1`);
+}
+
+/** Adds buyers from live orders placed before the webhook started doing it. */
+export async function addPastBuyersAction() {
+  await requireAdmin();
+  const added = await addPastBuyers();
+  revalidatePath("/admin/mailer");
+  redirect(`/admin/mailer/add?buyers=${added}`);
 }
 
 /** Upload a CSV exported from the spreadsheet. Matches on email: new rows are added, existing ones updated. */

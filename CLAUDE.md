@@ -139,6 +139,12 @@ keeps /admin locked). Every page and server action calls `requireAdmin()`.
 - Contacts come in two ways: CSV import (`/admin/mailer/import`) or one at a
   time at `/admin/mailer/add`, which always offers the `Buyer` segment (for
   buyers added after an order) and opens the new contact ready to send.
+- Buyers are added automatically: on a new **live** order the Stripe webhook
+  calls `addBuyer()` (`lib/outreach.ts`) — new contacts get segment `Buyer`;
+  existing ones keep their segment and values, gaining only blanks,
+  `@lastorder`, and an "Order #N" note. Test-mode orders are skipped. The Add
+  contact page has a button that backfills buyers from earlier live orders
+  (`cs_live_` sessions); it's idempotent.
 - A send is refused if any `@field` has no value for that contact.
 - Sends use the same Workspace relay as order alerts (`lib/mailer.ts`
   `transport`). Relay mail doesn't appear in Gmail's Sent folder, so

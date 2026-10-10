@@ -156,6 +156,89 @@ export async function deleteContact(id: number): Promise<void> {
 
 // ─── Templates ───────────────────────────────────────────────
 
+// ---- Buyers from Stripe orders ----
+
+/** The segment buyers get, so the review request is suggested for them. */
+export const BUYER_SEGMENT = "Buyer";
+
+export type Buyer = {
+  orderId: number;
+  email: string;
+  name: string | null;
+  city: string | null;
+  state: string | null;
+  /** e.g. "1 × Our Lady of Guadalupe 24×36 canvas" */
+  items: string;
+  amountCents: number;
+  orderedAt: Date;
+};
+
+const orderDate = (d: Date) =>
+  d.toLocaleDateString("en-US", {
+    month: "short", day: "numeric", year: "numeric", timeZone: "America/New_York",
+  });
+
+/**
+ * Puts an order's buyer on the mailer list. A new contact gets the Buyer
+ * segment; an existing one keeps its own segment and values and only gains
+ * blanks it was missing, `@lastorder`, and a note for the order. Recording the
+ * same order twice adds nothing. Returns true when a new contact was created.
+ */
+export async function addBuyer(b: Buyer): Promise<boolean> {
+  const [firstname = "", ...rest] = (b.name ?? "").trim().split(/\s+/);
+  const lastorder = orderDate(b.orderedAt);
+  const fields = Object.fromEntries(
+    Object.entries({
+      firstname,
+      lastname: rest.join(" "),
+      city: b.city ?? "",
+      state: b.state ?? "",
+      segment: BUYER_SEGMENT,
+    }).filter(([, v]) => v)
+  );
+  const tag = `Order #${b.orderId},`;
+  const note = `${tag} ${lastorder}: ${b.items} ($${(b.amountCents / 100).toFixed(2)})`;
+  const { rows } = await pool.query<{ inserted: boolean }>(
+    `INSERT INTO mail_contacts (email, fields, notes) VALUES ($1, $2, $3)
+     ON CONFLICT (email) DO UPDATE
+        SET fields = EXCLUDED.fields || mail_contacts.fields || jsonb_build_object('lastorder', $4::text),
+            notes = CASE WHEN position($5 in coalesce(mail_contacts.notes, '')) > 0 THEN mail_contacts.notes
+                         ELSE concat_ws(E'\n', mail_contacts.notes, EXCLUDED.notes) END,
+            updated_at = NOW()
+     RETURNING (xmax = 0) AS inserted`,
+    [b.email.trim().toLowerCase(), { ...fields, lastorder }, note, lastorder, tag]
+  );
+  return rows[0].inserted;
+}
+
+// Live orders only: test-mode Checkout sessions start cs_test_.
+const PAST_BUYERS = `
+  SELECT o.id AS "orderId", o.customer_email AS email,
+         coalesce(o.customer_name, o.shipping_name) AS name,
+         o.shipping_city AS city, o.shipping_state AS state,
+         o.amount_total_cents AS "amountCents", o.created_at AS "orderedAt",
+         coalesce(string_agg(i.quantity || ' × ' || i.name, ', ' ORDER BY i.id), 'Order') AS items
+    FROM orders o LEFT JOIN order_items i ON i.order_id = o.id
+   WHERE o.stripe_session_id LIKE 'cs_live_%' AND coalesce(o.customer_email, '') <> ''
+   GROUP BY o.id ORDER BY o.created_at`;
+
+/** How many past buyers' emails aren't on the mailer list yet. */
+export async function countMissingBuyers(): Promise<number> {
+  const { rows } = await pool.query<{ n: number }>(
+    `SELECT count(DISTINCT lower(b.email))::int AS n FROM (${PAST_BUYERS}) b
+      WHERE NOT EXISTS (SELECT 1 FROM mail_contacts c WHERE c.email = lower(b.email))`
+  );
+  return rows[0].n;
+}
+
+/** Runs every past live order through addBuyer, oldest first. Returns contacts created. */
+export async function addPastBuyers(): Promise<number> {
+  const { rows } = await pool.query<Buyer>(PAST_BUYERS);
+  let added = 0;
+  for (const b of rows) if (await addBuyer(b)) added++;
+  return added;
+}
+
 export async function listTemplates(includeInactive = false): Promise<Template[]> {
   const { rows } = await pool.query<Template>(
     `SELECT id, slug, name, segment, position, subject, preview, body, active
