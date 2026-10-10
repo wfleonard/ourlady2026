@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { BuyButton } from "@/components/BuyButton";
 import { formatPrice } from "@/lib/db";
+import { ReviewHighlight } from "@/components/ReviewHighlight";
+import { reviews } from "@/lib/reviews";
 
 export const metadata = {
   alternates: { canonical: "/parishes" },
@@ -11,6 +13,7 @@ export const metadata = {
 
 const PRICE_CENTS = 11400;
 const SKU = "olg-24x36-rolled";
+const matthew = reviews.find((r) => r.name === "Matthew");
 
 export default function ParishesPage() {
   return (
@@ -152,6 +155,9 @@ export default function ParishesPage() {
           </div>
         </div>
       </section>
+
+      {/* Customer review — the paragraph about parishes and homes */}
+      {matthew && <ReviewHighlight review={matthew} quote={2} />}
 
       {/* What you get / product detail */}
       <section className="max-w-4xl mx-auto px-6 py-16">
