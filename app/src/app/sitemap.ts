@@ -25,7 +25,7 @@ const STATIC_ROUTES: { path: string; priority: number; updated: string }[] = [
   { path: "/gifts", priority: 0.8, updated: "2026-09-26" },
   { path: "/novena", priority: 0.7, updated: "2026-09-25" },
   { path: "/shipping-and-returns", priority: 0.7, updated: "2026-09-30" },
-  { path: "/blog", priority: 0.7, updated: "2026-09-25" },
+  { path: "/blog", priority: 0.7, updated: "2026-10-10" },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

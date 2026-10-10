@@ -12,6 +12,17 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "500th-anniversary-2031",
+    title: "Counting Down to 500 Years: Mexico Names Its Guadalupe Centenary Leader",
+    excerpt:
+      "Father Eduardo Chávez, postulator of Saint Juan Diego's cause, will lead Mexico City's preparations for the 500th anniversary of the apparitions in 2031. Who he is, what he says the celebration is for, and how parishes can start preparing now.",
+    image: "/blog/tilma-basilica-framed.jpg",
+    imageAlt: "The tilma of Saint Juan Diego framed above the altar at the Basilica of Guadalupe, Mexico City",
+    date: "Fifth centenary · 1531–2031",
+    readTime: "4 min read",
+    updated: "2026-10-10",
+  },
+  {
     slug: "pope-latin-america-2026",
     title: "Every Stop a Marian Stop: Pope Leo XIV in Latin America",
     excerpt:
