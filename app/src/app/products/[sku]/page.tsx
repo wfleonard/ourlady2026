@@ -6,6 +6,7 @@ import { getProduct, formatPrice } from "@/lib/db";
 import { BuyButton } from "@/components/BuyButton";
 import { EbayLink } from "@/components/EbayLink";
 import { JsonLd } from "@/components/JsonLd";
+import { Reviews } from "@/components/Reviews";
 import { ORG, SITE_URL, absoluteUrl, RETURN_POLICY, HANDLING_DAYS, EBAY_LISTINGS } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
@@ -149,6 +150,8 @@ export default async function ProductPage({
           </div>
         </div>
       </div>
+
+      <Reviews />
     </div>
   );
 }
