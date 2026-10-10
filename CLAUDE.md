@@ -150,6 +150,17 @@ keeps /admin locked). Every page and server action calls `requireAdmin()`.
   `transport`). Relay mail doesn't appear in Gmail's Sent folder, so
   `OUTREACH_BCC` keeps a copy; `mail_sends` stores the exact text sent.
 
+## Customer reviews
+- All reviews live in `app/src/lib/reviews.ts` (photos in `public/reviews/`,
+  resized, EXIF stripped). Text is the customer's own; `pullQuotes` must be
+  word-for-word excerpts or the build fails. Shown on every product page,
+  `/reviews`, `/reviews/<slug>` (shared links preview as the review's card),
+  and as pull quotes on /parishes, /schools, /gifts.
+- Social cards: `/reviews/<slug>/card?format=feed|story|link&q=<n>&photo=<n>`
+  (`lib/reviewCard.tsx`, fonts in `app/assets/fonts`). Downloads for every
+  quote × size at `/admin/reviews`. No star ratings exist, so no
+  Review/AggregateRating schema — don't invent one.
+
 ## Known gotchas
 - The webhook route is `runtime = "nodejs"` because it needs
   `req.text()` for signature verification — do NOT switch to edge.
