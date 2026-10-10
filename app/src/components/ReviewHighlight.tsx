@@ -2,11 +2,17 @@ import Link from "next/link";
 import type { Review } from "@/lib/reviews";
 
 /**
- * One review, cut down for a landing page: a single photo, the paragraph that
- * speaks to that page's reader as the pull quote, and a link to the full review
- * on the product page.
+ * One review, cut down for a landing page: a single photo, the part that speaks
+ * to that page's reader as the pull quote, and a link to the full review on the
+ * product page. `quote` is a paragraph index, or an excerpt that must appear
+ * word for word in the review, so a pull quote can never drift from what the
+ * customer wrote.
  */
-export function ReviewHighlight({ review, quote, photo = 0 }: { review: Review; quote: number; photo?: number }) {
+export function ReviewHighlight({ review, quote, photo = 0 }: { review: Review; quote: number | string; photo?: number }) {
+  const text = typeof quote === "number" ? review.paragraphs[quote] : quote;
+  if (!review.paragraphs.some((para) => para.includes(text))) {
+    throw new Error(`Pull quote is not in ${review.name}'s review: ${text}`);
+  }
   const p = review.photos[photo];
   return (
     <figure className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-10 items-center">
@@ -17,7 +23,7 @@ export function ReviewHighlight({ review, quote, photo = 0 }: { review: Review; 
           From a customer’s home
         </p>
         <blockquote className="mt-4 text-2xl md:text-3xl font-semibold leading-snug text-stone-900">
-          “{review.paragraphs[quote]}”
+          “{text}”
         </blockquote>
         <figcaption className="mt-5 text-stone-600">
           <span className="font-semibold text-stone-900">— {review.name}</span>

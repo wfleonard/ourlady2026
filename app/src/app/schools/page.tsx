@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { BuyButton } from "@/components/BuyButton";
 import { formatPrice } from "@/lib/db";
+import { ReviewHighlight } from "@/components/ReviewHighlight";
+import { reviews } from "@/lib/reviews";
 
 export const metadata = {
   alternates: { canonical: "/schools" },
@@ -11,6 +13,7 @@ export const metadata = {
 
 const PRICE_CENTS = 11400;
 const SKU = "olg-24x36-rolled";
+const matthew = reviews.find((r) => r.name === "Matthew");
 
 export default function SchoolsPage() {
   return (
@@ -167,6 +170,15 @@ export default function SchoolsPage() {
           </div>
         </div>
       </section>
+
+      {/* Customer review — the line about teaching children */}
+      {matthew && (
+        <ReviewHighlight
+          review={matthew}
+          photo={1}
+          quote="We have since been able to learn more about the history of the tilma and spent time teaching our three young children about it."
+        />
+      )}
 
       {/* Certificates — trust chain for a religion-department review */}
       <section className="max-w-5xl mx-auto px-6 py-16 border-t border-stone-200">
