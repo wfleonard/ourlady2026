@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { listProducts, formatPrice, type Product } from "@/lib/db";
 import { ProductCard } from "@/components/ProductCard";
+import { ReviewHighlight } from "@/components/ReviewHighlight";
+import { reviews } from "@/lib/reviews";
+
+const matthew = reviews.find((r) => r.name === "Matthew");
 
 export const dynamic = "force-dynamic";
 
@@ -149,6 +153,14 @@ export default async function GiftsPage() {
           </div>
         </div>
       </section>
+
+      {/* Customer review — arrival and first look, what a gift giver worries about */}
+      {matthew && (
+        <ReviewHighlight
+          review={matthew}
+          quote="The heavy duty packaging ensured it arrived without any damage and when we took it out, we were overwhelmed with how beautiful it looked."
+        />
+      )}
 
       {/* Full catalog */}
       <section id="all" className="bg-stone-50 border-y border-stone-200">
