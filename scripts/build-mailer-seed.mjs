@@ -25,6 +25,7 @@ const FILES = {
   "holiday-retail-2026.md": ["Retail", "holiday"],
   "novena-drip-2026.md": ["Novena", "novena"],
   "international-inquiry.md": ["International", "intl"],
+  "review-request.md": ["Reviews", "review"],
 };
 
 const field = (lines, label) => {

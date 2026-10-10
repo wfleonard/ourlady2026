@@ -774,3 +774,25 @@ Saxon Enterprises, Inc. — dba Primos Maternos
 15 Shea Ln, Tinton Falls, NJ 07724
 wfleonard@primosmaternos.com · 732-673-4260$tpl$
 ) ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
+  $tpl$review-1$tpl$, $tpl$Reviews · Review request$tpl$, $tpl$Reviews$tpl$, 1,
+  $tpl$How is your tilma image?$tpl$,
+  $tpl$A few sentences and a photo would mean a lot.$tpl$,
+  $tpl$Dear @firstname,
+
+I hope you're well. Your tilma canvas should have arrived a few weeks ago, and I wanted to check that it got to you in good shape.
+
+If you have a minute, could you reply with a few sentences about it? Tell me where it's hanging, how the print looks in person, or what it means to your family or parish. A photo of it on the wall would be wonderful, if you're willing.
+
+With your permission, I'd like to share a few of these on primosmaternos.com so other families and parishes can see the image in real homes and chapels. I'll only use your first name and town.
+
+If anything isn't right with your order, please tell me that too, and I'll make it right.
+
+Thanks,
+Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+wfleonard@primosmaternos.com · 732-673-4260$tpl$
+) ON CONFLICT (slug) DO NOTHING;
