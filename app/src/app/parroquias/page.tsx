@@ -4,53 +4,57 @@ import { formatPrice } from "@/lib/db";
 import { ReviewHighlight } from "@/components/ReviewHighlight";
 import { reviews } from "@/lib/reviews";
 
+// Spanish counterpart of /parishes for parishes and Hispanic ministries. Keep
+// the two in step: same product, price, claims and sections. The root layout
+// is lang="en", so this page marks its own content lang="es".
+
 export const metadata = {
-  alternates: { canonical: "/parishes", languages: { en: "/parishes", es: "/parroquias" } },
-  title: "For Your Parish — Our Lady of Guadalupe Canvas",
+  alternates: { canonical: "/parroquias", languages: { en: "/parishes", es: "/parroquias" } },
+  title: "Para su parroquia — Lienzo de Nuestra Señora de Guadalupe",
   description:
-    "24\" × 36\" rolled canvas reproduction of the tilma of Saint Juan Diego, printed from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction; the canvas is printed in the USA. Two Mexican certifications included. $114 with free U.S. shipping.",
+    "Reproducción en lienzo enrollado de 24\" × 36\" de la tilma de San Juan Diego, impresa a partir del archivo digital del Sagrado Original certificado en México en 1998 como reproducción fiel; el lienzo se imprime en EE. UU. Incluye dos certificaciones mexicanas. $114 con envío gratis en EE. UU.",
+  openGraph: { locale: "es_US" },
 };
 
 const PRICE_CENTS = 11400;
 const SKU = "olg-24x36-rolled";
 const matthew = reviews.find((r) => r.name === "Matthew");
 
-export default function ParishesPage() {
+export default function ParroquiasPage() {
   return (
-    <>
+    <div lang="es">
       {/* Hero */}
       <section className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-[var(--background)]">
         <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <p className="text-sm uppercase tracking-widest text-[var(--gold)] font-semibold">
-              For Parishes and Guadalupe Ministries
-              <Link href="/parroquias" hrefLang="es" lang="es" className="ml-3 normal-case tracking-normal underline">
-                En español →
+              Para parroquias y ministerios guadalupanos
+              <Link href="/parishes" hrefLang="en" lang="en" className="ml-3 normal-case tracking-normal underline">
+                In English →
               </Link>
             </p>
             <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">
-              Bring the image of Our Lady of Guadalupe to your parish
+              Lleve la imagen de Nuestra Señora de Guadalupe a su parroquia
             </h1>
             <p className="mt-5 text-lg text-stone-700 leading-relaxed">
-              A 24" × 36" rolled canvas reproduction of the tilma of Saint
-              Juan Diego, printed from a digital archive of the Sacred
-              Original created in Mexico and certified in 1998 by the
-              Archbishop Primate of Mexico as a faithful reproduction. The
-              canvas is printed in the USA. Two Mexican certifications are
-              included with every canvas.
+              Una reproducción en lienzo enrollado de 24" × 36" de la tilma de
+              San Juan Diego, impresa a partir de un archivo digital del Sagrado
+              Original creado en México y certificado en 1998 por el Arzobispo
+              Primado de México como reproducción fiel. El lienzo se imprime en
+              EE. UU. Cada lienzo incluye dos certificaciones mexicanas.
             </p>
             <div className="mt-6 flex items-baseline gap-4">
               <span className="text-4xl font-bold text-[var(--accent)]">
                 {formatPrice(PRICE_CENTS)}
               </span>
               <span className="text-sm text-stone-600">
-                free shipping · 50 U.S. states + Puerto Rico
+                envío gratis · 50 estados de EE. UU. y Puerto Rico
               </span>
             </div>
             <div className="mt-6">
-              <BuyButton sku={SKU} />
+              <BuyButton sku={SKU} locale="es" />
               <p className="mt-2 text-xs text-stone-500">
-                Secure checkout by Stripe. Ships rolled in a protective tube.
+                Pago seguro con Stripe. Se envía enrollado en un tubo protector.
               </p>
             </div>
           </div>
@@ -58,7 +62,7 @@ export default function ParishesPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/products/olg-24x36-rolled.jpg"
-              alt="24 by 36 inch rolled canvas of Our Lady of Guadalupe"
+              alt="Lienzo enrollado de 24 por 36 pulgadas de Nuestra Señora de Guadalupe"
               className="rounded-lg shadow-xl drop-shadow-[0_12px_30px_rgba(0,0,0,0.3)] max-h-[480px] w-auto object-contain bg-white p-6"
             />
           </div>
@@ -69,22 +73,23 @@ export default function ParishesPage() {
       <section className="bg-[var(--accent)] text-white">
         <div className="max-w-4xl mx-auto px-6 py-10 text-center">
           <p className="text-sm uppercase tracking-widest opacity-80 mb-2">
-            October 12, 2026 — October 12, 2027
+            12 de octubre de 2026 — 12 de octubre de 2027
           </p>
           <h2 className="text-2xl md:text-3xl font-bold">
-            A Jubilee Year for Our Lady of Guadalupe
+            Un Año Jubilar para Nuestra Señora de Guadalupe
           </h2>
           <p className="mt-3 text-white/90 max-w-2xl mx-auto">
-            Pope Leo XIV has granted a Jubilee Year marking 50 years since the
-            tilma was carried into the current Basilica in Mexico City. A
-            fitting year to display her image in your parish, chapel, or
-            ministry space.
+            El papa León XIV ha concedido un Año Jubilar por los 50 años del
+            traslado de la tilma a la actual Basílica en la Ciudad de México.
+            Un año propicio para exhibir su imagen en su parroquia, capilla o
+            espacio de ministerio.
           </p>
           <Link
             href="/blog/jubilee-2026"
+            hrefLang="en"
             className="inline-block mt-5 px-5 py-2 border border-white/60 rounded-md text-sm font-semibold hover:bg-white hover:text-[var(--accent)] transition"
           >
-            Read about the Jubilee →
+            Leer sobre el Jubileo (en inglés) →
           </Link>
         </div>
       </section>
@@ -92,12 +97,12 @@ export default function ParishesPage() {
       {/* Certificates of authenticity */}
       <section className="max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold">Two certificates from Mexico</h2>
+          <h2 className="text-3xl font-bold">Dos certificados de México</h2>
           <p className="mt-3 text-stone-700 max-w-2xl mx-auto">
-            Every canvas ships with two certificates from Mexico verifying
-            that the image was printed from the authorized high-resolution
-            scan of the tilma. These are what distinguish the canvas from
-            generic prints available online.
+            Cada lienzo se envía con dos certificados de México que verifican
+            que la imagen se imprimió a partir del escaneo autorizado en alta
+            resolución de la tilma. Esto es lo que distingue al lienzo de las
+            impresiones genéricas que se venden en línea.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -105,22 +110,22 @@ export default function ParishesPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/about/certification.webp"
-              alt="Mexican Catholic Church certification of authenticity"
+              alt="Certificación de autenticidad de la Iglesia Católica de México"
               className="w-full h-auto object-contain"
             />
             <figcaption className="mt-2 text-sm text-stone-600 text-center">
-              Mexican Catholic Church Certification
+              Certificación de la Iglesia Católica de México
             </figcaption>
           </figure>
           <figure className="bg-white p-4 rounded-lg shadow-md">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/about/jubileo.webp"
-              alt="Mexico 2000 Jubileo seal of authenticity"
+              alt="Sello de autenticidad del Jubileo México 2000"
               className="w-full h-auto object-contain"
             />
             <figcaption className="mt-2 text-sm text-stone-600 text-center">
-              Mexico 2000 Jubileo Seal
+              Sello del Jubileo México 2000
             </figcaption>
           </figure>
         </div>
@@ -130,20 +135,19 @@ export default function ParishesPage() {
       <section className="bg-stone-50 border-y border-stone-200">
         <div className="max-w-5xl mx-auto px-6 py-16">
           <h2 className="text-3xl font-bold text-center mb-3">
-            One image, many uses
+            Una imagen, muchos usos
           </h2>
           <p className="text-center text-stone-600 mb-10 max-w-2xl mx-auto">
-            Parishes across the U.S. have used the 24" × 36" rolled canvas
-            for:
+            Parroquias de todo EE. UU. han usado el lienzo enrollado de 24" × 36" para:
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              ["Parish Guadalupe shrines", "A framed centerpiece for the shrine — you choose the frame locally to match the space."],
-              ["December 12 processions and vigil Masses", "Carried in procession or displayed at the vigil Mass on the feast day."],
-              ["Hispanic ministry meeting spaces", "A visible sign of identity and welcome for the ministry room."],
-              ["Religious education classrooms", "For catechists teaching the apparition and the image's symbolism."],
-              ["Parish office and rectory", "A quiet devotional presence in staff and administrative spaces."],
-              ["Fundraising raffles", "A high-value item for a parish raffle — the certificate makes it a real gift, not a promotional print."],
+              ["Santuarios guadalupanos parroquiales", "Una pieza central enmarcada para el santuario; usted elige el marco localmente para que armonice con el espacio."],
+              ["Procesiones y misas de vigilia del 12 de diciembre", "Para llevarla en procesión o exhibirla en la misa de vigilia el día de la fiesta."],
+              ["Salones del ministerio hispano", "Un signo visible de identidad y bienvenida para el salón del ministerio."],
+              ["Salones de catequesis", "Para catequistas que enseñan la aparición y el simbolismo de la imagen."],
+              ["Oficina parroquial y casa rectoral", "Una presencia devocional discreta en los espacios del personal y la administración."],
+              ["Rifas para recaudar fondos", "Un artículo de alto valor para una rifa parroquial; el certificado lo convierte en un verdadero regalo, no en una impresión promocional."],
             ].map(([title, desc]) => (
               <div
                 key={title}
@@ -159,63 +163,71 @@ export default function ParishesPage() {
         </div>
       </section>
 
-      {/* Customer review — the paragraph about parishes and homes */}
-      {matthew && <ReviewHighlight review={matthew} quote={2} />}
+      {/* Customer review — translated, original shown beneath */}
+      {matthew && (
+        <ReviewHighlight
+          review={matthew}
+          quote={2}
+          locale="es"
+          translation="Sería un honor que usaran la foto para animar a más personas a tener a Nuestra Señora de Guadalupe en sus parroquias y hogares."
+        />
+      )}
 
       {/* What you get / product detail */}
       <section className="max-w-4xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-6">What each canvas is</h2>
+        <h2 className="text-3xl font-bold mb-6">Qué es cada lienzo</h2>
         <ul className="space-y-3 text-stone-800 text-lg">
           <li className="flex gap-3">
             <span className="text-[var(--gold)] font-bold">·</span>
             <span>
-              <strong>24" × 36"</strong> — substantial size for a parish
-              space, small enough to ship rolled without a crate
+              <strong>24" × 36"</strong>: un tamaño considerable para un
+              espacio parroquial, y lo bastante pequeño para enviarse enrollado
+              sin caja de madera
             </span>
           </li>
           <li className="flex gap-3">
             <span className="text-[var(--gold)] font-bold">·</span>
             <span>
-              Printed on archival canvas in <strong>the USA</strong> from the
-              digital archive of the Sacred Original created in Mexico and
-              certified in 1998 as a faithful reproduction
+              Impreso en lienzo de archivo en <strong>EE. UU.</strong> a partir
+              del archivo digital del Sagrado Original creado en México y
+              certificado en 1998 como reproducción fiel
             </span>
           </li>
           <li className="flex gap-3">
             <span className="text-[var(--gold)] font-bold">·</span>
             <span>
-              <strong>Ships rolled</strong> in a protective tube — take it
-              to a local frame shop, or stretch it yourself
+              <strong>Se envía enrollado</strong> en un tubo protector: llévelo
+              a una tienda de marcos de su localidad o móntelo usted mismo
             </span>
           </li>
           <li className="flex gap-3">
             <span className="text-[var(--gold)] font-bold">·</span>
             <span>
-              <strong>Two certificates from Mexico</strong> verifying the
-              authenticity of the image, included with every canvas
+              <strong>Dos certificados de México</strong> que verifican la
+              autenticidad de la imagen, incluidos con cada lienzo
             </span>
           </li>
           <li className="flex gap-3">
             <span className="text-[var(--gold)] font-bold">·</span>
             <span>
-              <strong>$114</strong> — free shipping to the 50 U.S. states and
+              <strong>$114</strong>: envío gratis a los 50 estados de EE. UU. y
               Puerto Rico
             </span>
           </li>
         </ul>
 
         <div className="mt-10 p-6 bg-stone-50 border border-stone-200 rounded-lg">
-          <h3 className="font-semibold mb-2">Bulk orders</h3>
+          <h3 className="font-semibold mb-2">Pedidos al por mayor</h3>
           <p className="text-stone-700 text-sm leading-relaxed">
-            Ordering multiple canvases for a diocesan initiative, retreat,
-            or school? Email{" "}
+            ¿Necesita varios lienzos para una iniciativa diocesana, un retiro o
+            una escuela? Escriba a{" "}
             <a
-              href="mailto:wfleonard@primosmaternos.com?subject=Bulk%20order%20—%20Our%20Lady%20of%20Guadalupe%20canvas"
+              href="mailto:wfleonard@primosmaternos.com?subject=Pedido%20al%20por%20mayor%20—%20lienzo%20de%20Nuestra%20Se%C3%B1ora%20de%20Guadalupe"
               className="text-[var(--accent)] underline"
             >
               wfleonard@primosmaternos.com
             </a>{" "}
-            or text 732-673-4260 for a quote.
+            o envíe un mensaje de texto al 732-673-4260 para una cotización.
           </p>
         </div>
       </section>
@@ -223,16 +235,16 @@ export default function ParishesPage() {
       {/* Final CTA */}
       <section className="bg-[var(--accent)] text-white">
         <div className="max-w-4xl mx-auto px-6 py-12 text-center">
-          <h2 className="text-3xl font-bold mb-3">Order for your parish</h2>
+          <h2 className="text-3xl font-bold mb-3">Haga su pedido para la parroquia</h2>
           <p className="text-white/90 mb-6">
-            {formatPrice(PRICE_CENTS)} · free shipping · two certificates from
-            Mexico · secure checkout by Stripe
+            {formatPrice(PRICE_CENTS)} · envío gratis · dos certificados de
+            México · pago seguro con Stripe
           </p>
           <div className="inline-block bg-white text-stone-900 rounded-md p-2">
-            <BuyButton sku={SKU} />
+            <BuyButton sku={SKU} locale="es" />
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 
-export function BuyButton({ sku }: { sku: string }) {
+const LABELS = {
+  en: { buy: "Buy now", redirecting: "Redirecting to Stripe…", failed: "Something went wrong" },
+  es: { buy: "Comprar ahora", redirecting: "Redirigiendo a Stripe…", failed: "Algo salió mal. Inténtelo de nuevo." },
+};
+
+export function BuyButton({ sku, locale = "en" }: { sku: string; locale?: "en" | "es" }) {
+  const t = LABELS[locale];
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -13,7 +19,7 @@ export function BuyButton({ sku }: { sku: string }) {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sku, quantity: 1 }),
+        body: JSON.stringify({ sku, quantity: 1, locale }),
       });
       const data = await res.json();
       if (!res.ok || !data.url) {
@@ -21,7 +27,7 @@ export function BuyButton({ sku }: { sku: string }) {
       }
       window.location.href = data.url;
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Something went wrong");
+      setError(locale === "en" && e instanceof Error ? e.message : t.failed);
       setLoading(false);
     }
   }
@@ -33,7 +39,7 @@ export function BuyButton({ sku }: { sku: string }) {
         disabled={loading}
         className="w-full sm:w-auto px-8 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 disabled:opacity-50 transition"
       >
-        {loading ? "Redirecting to Stripe…" : "Buy now"}
+        {loading ? t.redirecting : t.buy}
       </button>
       {error && (
         <p className="mt-2 text-sm text-red-600">{error}</p>

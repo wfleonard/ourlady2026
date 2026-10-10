@@ -21,6 +21,7 @@ const STATIC_ROUTES: { path: string; priority: number; updated: string }[] = [
   { path: "/canvas-sizes", priority: 0.9, updated: "2026-09-25" },
   { path: "/new-jersey", priority: 0.9, updated: "2026-09-25" },
   { path: "/parishes", priority: 0.9, updated: "2026-10-10" },
+  { path: "/parroquias", priority: 0.9, updated: "2026-10-10" },
   { path: "/schools", priority: 0.9, updated: "2026-10-10" },
   { path: "/dioceses", priority: 0.9, updated: "2026-09-26" },
   { path: "/gifts", priority: 0.8, updated: "2026-10-10" },

@@ -105,6 +105,10 @@ export default function RootLayout({
                 For Parishes
               </Link>
               <span>·</span>
+              <Link href="/parroquias" hrefLang="es" lang="es" className="hover:text-[var(--accent)]">
+                Para Parroquias
+              </Link>
+              <span>·</span>
               <Link href="/schools" className="hover:text-[var(--accent)]">
                 For Schools
               </Link>

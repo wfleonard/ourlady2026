@@ -4,7 +4,7 @@ import { getProduct } from "@/lib/db";
 
 export async function POST(req: NextRequest) {
   try {
-    const { sku, quantity } = await req.json();
+    const { sku, quantity, locale } = await req.json();
     if (typeof sku !== "string") {
       return NextResponse.json({ error: "Missing sku" }, { status: 400 });
     }
@@ -22,6 +22,9 @@ export async function POST(req: NextRequest) {
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      // The Spanish pages ask for Stripe's Spanish checkout; otherwise Stripe
+      // follows the buyer's browser language.
+      ...(locale === "es" ? { locale: "es" as const } : {}),
       payment_method_types: ["card"],
       line_items: [
         {

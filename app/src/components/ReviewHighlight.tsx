@@ -8,7 +8,21 @@ import type { Review } from "@/lib/reviews";
  * word for word in the review, so a pull quote can never drift from what the
  * customer wrote.
  */
-export function ReviewHighlight({ review, quote, photo = 0 }: { review: Review; quote: number | string; photo?: number }) {
+export function ReviewHighlight({
+  review,
+  quote,
+  photo = 0,
+  locale = "en",
+  translation,
+}: {
+  review: Review;
+  quote: number | string;
+  photo?: number;
+  locale?: "en" | "es";
+  /** Shown instead of the original on a translated page, marked as a translation. */
+  translation?: string;
+}) {
+  const es = locale === "es";
   const text = typeof quote === "number" ? review.paragraphs[quote] : quote;
   if (!review.paragraphs.some((para) => para.includes(text))) {
     throw new Error(`Pull quote is not in ${review.name}'s review: ${text}`);
@@ -20,16 +34,17 @@ export function ReviewHighlight({ review, quote, photo = 0 }: { review: Review; 
       <img src={p.src} alt={p.alt} loading="lazy" className="w-full rounded-lg shadow-md aspect-[4/5] object-cover" />
       <div>
         <p className="text-sm uppercase tracking-widest text-[var(--gold)] font-semibold">
-          From a customer’s home
+          {es ? "Desde el hogar de un cliente" : "From a customer’s home"}
         </p>
         <blockquote className="mt-4 text-2xl md:text-3xl font-semibold leading-snug text-stone-900">
-          “{text}”
+          “{translation ?? text}”
         </blockquote>
         <figcaption className="mt-5 text-stone-600">
           <span className="font-semibold text-stone-900">— {review.name}</span>
-          {review.location && `, ${review.location}`} · verified buyer
+          {review.location && `, ${review.location}`} · {es ? "cliente verificado" : "verified buyer"}
+          {translation && <span className="block mt-1 text-sm">Traducción del original en inglés: “{text}”</span>}
           <Link href={`/products/${review.sku}#reviews-heading`} className="block mt-2 text-sm text-[var(--accent)] underline">
-            Read {review.name}’s full review →
+            {es ? `Leer la reseña completa de ${review.name} (en inglés) →` : `Read ${review.name}’s full review →`}
           </Link>
         </figcaption>
       </div>
