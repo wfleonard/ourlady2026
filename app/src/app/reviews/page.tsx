@@ -46,7 +46,7 @@ export default function ReviewsIndex() {
       <div className="mt-16 pt-8 border-t border-stone-200 text-center">
         <Link
           href="/#products"
-          className="inline-block px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 transition"
+          className="inline-block px-6 py-3 bg-[var(--accent)] text-[var(--gold)]! font-semibold rounded-md hover:opacity-90 transition"
         >
           Browse the collection →
         </Link>

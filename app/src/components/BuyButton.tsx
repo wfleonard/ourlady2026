@@ -37,7 +37,7 @@ export function BuyButton({ sku, locale = "en" }: { sku: string; locale?: "en" |
       <button
         onClick={checkout}
         disabled={loading}
-        className="w-full sm:w-auto px-8 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 disabled:opacity-50 transition"
+        className="w-full sm:w-auto px-8 py-3 bg-[var(--accent)] text-[var(--gold)]! font-semibold rounded-md hover:opacity-90 disabled:opacity-50 transition"
       >
         {loading ? t.redirecting : t.buy}
       </button>

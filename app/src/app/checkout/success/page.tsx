@@ -73,7 +73,7 @@ export default async function SuccessPage({
       <div className="mt-10 text-center">
         <Link
           href="/"
-          className="inline-block px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 transition"
+          className="inline-block px-6 py-3 bg-[var(--accent)] text-[var(--gold)]! font-semibold rounded-md hover:opacity-90 transition"
         >
           Back to the store
         </Link>

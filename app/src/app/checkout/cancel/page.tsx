@@ -14,7 +14,7 @@ export default function CancelPage() {
       </p>
       <Link
         href="/"
-        className="inline-block mt-8 px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-md"
+        className="inline-block mt-8 px-6 py-3 bg-[var(--accent)] text-[var(--gold)]! font-semibold rounded-md"
       >
         Back to the store
       </Link>

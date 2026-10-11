@@ -307,7 +307,7 @@ export default async function GiftsPage() {
         </p>
         <Link
           href="#all"
-          className="inline-block px-8 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 transition"
+          className="inline-block px-8 py-3 bg-[var(--accent)] text-[var(--gold)]! font-semibold rounded-md hover:opacity-90 transition"
         >
           Shop the full collection →
         </Link>

@@ -63,7 +63,7 @@ export default async function ReviewPage({ params }: { params: Promise<{ slug: s
         <p className="text-stone-600 mb-4">{review.name}’s canvas: the {review.productLabel}.</p>
         <Link
           href={`/products/${review.sku}`}
-          className="inline-block px-6 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 transition"
+          className="inline-block px-6 py-3 bg-[var(--accent)] text-[var(--gold)]! font-semibold rounded-md hover:opacity-90 transition"
         >
           See this canvas →
         </Link>

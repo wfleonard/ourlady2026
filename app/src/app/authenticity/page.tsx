@@ -441,7 +441,7 @@ export default function AuthenticityPage() {
           </p>
           <Link
             href="/#products"
-            className="inline-block mt-6 px-8 py-3 bg-[var(--accent)] text-white font-semibold rounded-md hover:opacity-90 transition"
+            className="inline-block mt-6 px-8 py-3 bg-[var(--accent)] text-[var(--gold)]! font-semibold rounded-md hover:opacity-90 transition"
           >
             See the canvases
           </Link>
