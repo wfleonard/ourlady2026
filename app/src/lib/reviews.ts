@@ -16,7 +16,10 @@ export type Review = {
   /** Last real edit (YYYY-MM-DD); feeds the sitemap's lastmod. */
   updated: string;
   paragraphs: string[];
-  /** `focus` is a CSS object-position that keeps the canvas in view when a card crops the photo. */
+  /**
+   * May be empty: a review without photos shows as text only, with text-only cards.
+   * `focus` is a CSS object-position that keeps the canvas in view when a card crops the photo.
+   */
   photos: { src: string; alt: string; focus?: string }[];
   /**
    * Sentences for social cards and landing-page pull quotes, each word for word
@@ -56,6 +59,23 @@ export const reviews: Review[] = [
       "We have since been able to learn more about the history of the tilma and spent time teaching our three young children about it.",
       "The heavy duty packaging ensured it arrived without any damage and when we took it out, we were overwhelmed with how beautiful it looked.",
       "It has already helped us to develop a deeper devotion to Our Lady and is a constant reminder that she is mother.",
+    ],
+  },
+  {
+    slug: "lynn",
+    name: "Lynn",
+    sku: "olg-24x36-rolled",
+    productLabel: '24"×36" Rolled Canvas',
+    received: "October 2026",
+    updated: "2026-10-14",
+    paragraphs: [
+      "The tilma is beautiful. It’s exactly what I was looking for. I am having it framed and it will be ready in November. I will email again with photos. Thank you for making this available to the world. Many blessings to you.",
+    ],
+    // Photos of the framed canvas are promised for November.
+    photos: [],
+    pullQuotes: [
+      "The tilma is beautiful. It’s exactly what I was looking for.",
+      "Thank you for making this available to the world.",
     ],
   },
 ];

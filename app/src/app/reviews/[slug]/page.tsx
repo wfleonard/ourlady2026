@@ -20,7 +20,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `Review from ${byline(review)} — Primos Maternos`,
     description: review.pullQuotes[0],
     alternates: { canonical: url },
-    openGraph: { type: "article", url: absoluteUrl(url), title, description: `A ${review.productLabel} Our Lady of Guadalupe canvas in a customer’s home.`, images: [card] },
+    openGraph: { type: "article", url: absoluteUrl(url), title, description: review.photos.length
+        ? `A ${review.productLabel} Our Lady of Guadalupe canvas in a customer’s home.`
+        : `A customer’s review of the ${review.productLabel} Our Lady of Guadalupe canvas.`, images: [card] },
     twitter: { card: "summary_large_image", title, images: [card.url] },
   };
 }

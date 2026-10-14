@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Review } from "@/lib/reviews";
 
 /**
- * One review, cut down for a landing page: a single photo, the part that speaks
+ * One review, cut down for a landing page: a single photo (if it has one), the part that speaks
  * to that page's reader as the pull quote, and a link to the full review on the
  * product page. `quote` is a paragraph index, or an excerpt that must appear
  * word for word in the review, so a pull quote can never drift from what the
@@ -29,12 +29,12 @@ export function ReviewHighlight({
   }
   const p = review.photos[photo];
   return (
-    <figure className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-10 items-center">
+    <figure className={p ? "max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-10 items-center" : "max-w-3xl mx-auto px-6 py-16"}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={p.src} alt={p.alt} loading="lazy" className="w-full rounded-lg shadow-md aspect-[4/5] object-cover" />
+      {p && <img src={p.src} alt={p.alt} loading="lazy" className="w-full rounded-lg shadow-md aspect-[4/5] object-cover" />}
       <div>
         <p className="text-sm uppercase tracking-widest text-[var(--gold)] font-semibold">
-          {es ? "Desde el hogar de un cliente" : "From a customer’s home"}
+          {p ? (es ? "Desde el hogar de un cliente" : "From a customer’s home") : es ? "De un cliente" : "From a customer"}
         </p>
         <blockquote className="mt-4 text-2xl md:text-3xl font-semibold leading-snug text-stone-900">
           “{translation ?? text}”

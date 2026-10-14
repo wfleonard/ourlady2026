@@ -1,18 +1,19 @@
 import Link from "next/link";
 import { reviews, type Review } from "@/lib/reviews";
 
-/** One full review: photos beside the customer's words. */
+/** One full review: photos (if any) beside the customer's words. */
 export function ReviewBlock({ review: r }: { review: Review }) {
+  const hasPhotos = r.photos.length > 0;
   return (
-    <figure className="grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-8 items-start">
-      <div className="grid grid-cols-2 gap-3">
+    <figure className={hasPhotos ? "grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-8 items-start" : "max-w-3xl"}>
+      {hasPhotos && <div className="grid grid-cols-2 gap-3">
         {r.photos.map((p) => (
           <a key={p.src} href={p.src} target="_blank" rel="noopener" className="block bg-stone-50 rounded-lg overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={p.src} alt={p.alt} loading="lazy" className="w-full h-full object-cover aspect-[3/4] hover:scale-[1.02] transition-transform" />
           </a>
         ))}
-      </div>
+      </div>}
       <div>
         <blockquote className="text-[17px] leading-[1.75] text-stone-800 space-y-4 border-l-4 border-[var(--accent)] pl-5">
           {r.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
@@ -32,7 +33,7 @@ export function ReviewBlock({ review: r }: { review: Review }) {
   );
 }
 
-/** "In their homes" — customer reviews with photos, shown on every product page. */
+/** "In their homes" — customer reviews, shown on every product page. */
 export function Reviews() {
   if (reviews.length === 0) return null;
   return (

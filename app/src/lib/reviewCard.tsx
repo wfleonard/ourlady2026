@@ -40,17 +40,19 @@ function quoteSize(text: string, format: CardFormat) {
   return base;
 }
 
-export async function renderReviewCard(review: Review, format: CardFormat, quote: string, photo: number) {
+/** `photo` is null for a review with no photos: the quote gets the whole card. */
+export async function renderReviewCard(review: Review, format: CardFormat, quote: string, photo: number | null) {
   const { width, height } = CARD_FORMATS[format];
-  const img = await photoDataUri(review.photos[photo].src);
-  const objectPosition = review.photos[photo].focus ?? "50% 50%";
+  const p = photo === null ? undefined : review.photos[photo];
+  const img = p && (await photoDataUri(p.src));
+  const objectPosition = p?.focus ?? "50% 50%";
   const wide = format === "link";
   const pad = wide ? 48 : 72;
 
   const text = (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, padding: pad, justifyContent: "center" }}>
       <div style={{ display: "flex", fontSize: wide ? 20 : 26, letterSpacing: 4, color: C.gold, fontWeight: 700 }}>
-        FROM A CUSTOMER’S HOME
+        {img ? "FROM A CUSTOMER’S HOME" : "FROM A CUSTOMER"}
       </div>
       <div
         style={{
@@ -98,7 +100,7 @@ export async function renderReviewCard(review: Review, format: CardFormat, quote
       <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%", background: C.bg, fontFamily: "Gelasio" }}>
         <div style={{ display: "flex", flex: 1 }}>
           {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-          <img src={img} width={430} height={height - 60} style={{ objectFit: "cover", objectPosition, width: 430, height: "100%" }} />
+          {img && <img src={img} width={430} height={height - 60} style={{ objectFit: "cover", objectPosition, width: 430, height: "100%" }} />}
           {text}
         </div>
         {brand}
@@ -106,7 +108,7 @@ export async function renderReviewCard(review: Review, format: CardFormat, quote
     ) : (
       <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%", background: C.bg, fontFamily: "Gelasio" }}>
         {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
-        <img src={img} width={width} height={Math.round(height * photoShare)} style={{ objectFit: "cover", objectPosition, width: "100%", height: Math.round(height * photoShare) }} />
+        {img && <img src={img} width={width} height={Math.round(height * photoShare)} style={{ objectFit: "cover", objectPosition, width: "100%", height: Math.round(height * photoShare) }} />}
         {text}
         {brand}
       </div>

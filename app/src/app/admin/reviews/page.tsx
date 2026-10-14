@@ -36,14 +36,14 @@ export default async function ReviewCardsPage() {
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {r.pullQuotes.map((q, i) => {
-                const photo = i % r.photos.length;
-                const card = (f: CardFormat) => `${page}/card?format=${f}&q=${i}&photo=${photo}`;
+                const photo = r.photos.length ? i % r.photos.length : null;
+                const card = (f: CardFormat) => `${page}/card?format=${f}&q=${i}${photo === null ? "" : `&photo=${photo}`}`;
                 return (
                   <div key={i} className="border border-stone-200 rounded-lg overflow-hidden bg-white">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={card("feed")} alt={`Card: ${q}`} loading="lazy" className="w-full aspect-[4/5] object-cover bg-stone-100" />
                     <div className="p-3 text-sm space-y-1">
-                      <p className="text-stone-500 text-xs">Quote {i + 1} · photo {photo + 1}</p>
+                      <p className="text-stone-500 text-xs">Quote {i + 1} · {photo === null ? "text only" : `photo ${photo + 1}`}</p>
                       {formats.map(([f, { label }]) => (
                         <a key={f} href={`${card(f)}&download=1`} className="block underline hover:text-[var(--accent)]">
                           ↓ {label}
