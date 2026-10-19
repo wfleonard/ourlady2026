@@ -2,12 +2,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { BlogPostLayout } from "@/components/BlogPostLayout";
 import { getPost } from "@/lib/blog";
+import { pageTitle } from "@/lib/site";
 
 const post = getPost("500th-anniversary-2031");
 
 export const metadata = {
   alternates: { canonical: "/blog/500th-anniversary-2031" },
-  title: `${post?.title} — Primos Maternos`,
+  title: pageTitle(post?.metaTitle ?? post?.title ?? ""),
   description: post?.excerpt,
 };
 

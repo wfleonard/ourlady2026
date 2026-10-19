@@ -27,6 +27,16 @@ export const ORG = {
 } as const;
 
 /**
+ * A page's <title>, with the brand appended only when it still fits. Bing flags
+ * titles over 70 characters and Google cuts them off near 60, so a long product
+ * name or headline goes out bare rather than truncated mid-word.
+ */
+export function pageTitle(title: string): string {
+  const branded = `${title} — ${ORG.name}`;
+  return branded.length <= 60 ? branded : title;
+}
+
+/**
  * Crawlers that fetch pages live when an assistant answers a question. They are
  * named rather than left to the catch-all rule so a later broad `Disallow`
  * can't shut them out by accident: a page they cannot fetch cannot be cited.

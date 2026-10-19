@@ -1,12 +1,13 @@
 import { notFound } from "next/navigation";
 import { BlogPostLayout } from "@/components/BlogPostLayout";
 import { getPost } from "@/lib/blog";
+import { pageTitle } from "@/lib/site";
 
 const post = getPost("tilma-science");
 
 export const metadata = {
   alternates: { canonical: "/blog/tilma-science" },
-  title: `${post?.title} — Primos Maternos`,
+  title: pageTitle(post?.metaTitle ?? post?.title ?? ""),
   description: post?.excerpt,
 };
 

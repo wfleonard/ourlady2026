@@ -1,12 +1,13 @@
 import { notFound } from "next/navigation";
 import { BlogPostLayout } from "@/components/BlogPostLayout";
 import { getPost } from "@/lib/blog";
+import { pageTitle } from "@/lib/site";
 
 const post = getPost("codex-symbols");
 
 export const metadata = {
   alternates: { canonical: "/blog/codex-symbols" },
-  title: `${post?.title} — Primos Maternos`,
+  title: pageTitle(post?.metaTitle ?? post?.title ?? ""),
   description: post?.excerpt,
 };
 

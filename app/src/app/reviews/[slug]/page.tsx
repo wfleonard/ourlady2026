@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getReview, byline, reviews } from "@/lib/reviews";
 import { ReviewBlock } from "@/components/Reviews";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, pageTitle } from "@/lib/site";
 
 export function generateStaticParams() {
   return reviews.map((r) => ({ slug: r.slug }));
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // The shared link previews as the review's own card, not a generic logo.
   const card = { url: absoluteUrl(`${url}/card?format=link`), width: 1200, height: 630, alt: `Review from ${byline(review)}` };
   return {
-    title: `Review from ${byline(review)} — Primos Maternos`,
+    title: pageTitle(`Review from ${byline(review)}`),
     description: review.pullQuotes[0],
     alternates: { canonical: url },
     openGraph: { type: "article", url: absoluteUrl(url), title, description: review.photos.length

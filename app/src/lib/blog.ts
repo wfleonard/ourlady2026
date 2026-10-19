@@ -1,6 +1,8 @@
 export type Post = {
   slug: string;
   title: string;
+  /** Shorter <title> for search results when the headline runs past 60 characters. */
+  metaTitle?: string;
   excerpt: string;
   image: string;
   imageAlt: string;
@@ -14,6 +16,7 @@ export const posts: Post[] = [
   {
     slug: "500th-anniversary-2031",
     title: "Counting Down to 500 Years: Mexico Names Its Guadalupe Centenary Leader",
+    metaTitle: "Mexico Names Its Guadalupe Centenary Leader",
     excerpt:
       "Father Eduardo Chávez, postulator of Saint Juan Diego's cause, will lead Mexico City's preparations for the 500th anniversary of the apparitions in 2031. Who he is, what he says the celebration is for, and how parishes can start preparing now.",
     image: "/blog/tilma-basilica-framed.jpg",

@@ -7,7 +7,7 @@ import { BuyButton } from "@/components/BuyButton";
 import { EbayLink } from "@/components/EbayLink";
 import { JsonLd } from "@/components/JsonLd";
 import { Reviews } from "@/components/Reviews";
-import { ORG, SITE_URL, absoluteUrl, RETURN_POLICY, HANDLING_DAYS, EBAY_LISTINGS } from "@/lib/site";
+import { ORG, SITE_URL, absoluteUrl, pageTitle, RETURN_POLICY, HANDLING_DAYS, EBAY_LISTINGS } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -30,7 +30,7 @@ export async function generateMetadata({
 
   const url = `/products/${product.sku}`;
   return {
-    title: `${product.name} — Primos Maternos`,
+    title: pageTitle(product.name),
     description: product.description,
     alternates: { canonical: url },
     openGraph: {
