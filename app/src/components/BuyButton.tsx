@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackPixel } from "@/components/MetaPixelEvent";
 
 const LABELS = {
   en: { buy: "Buy now", redirecting: "Redirecting to Stripe…", failed: "Something went wrong" },
@@ -15,6 +16,7 @@ export function BuyButton({ sku, locale = "en" }: { sku: string; locale?: "en" |
   async function checkout() {
     setLoading(true);
     setError(null);
+    trackPixel("InitiateCheckout", { content_ids: [sku], content_type: "product", num_items: 1 });
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",

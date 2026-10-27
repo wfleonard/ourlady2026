@@ -1,5 +1,33 @@
 import Link from "next/link";
 import { ORG, HANDLING_DAYS } from "@/lib/site";
+import { stripe } from "@/lib/stripe";
+import { MetaPixelEvent } from "@/components/MetaPixelEvent";
+
+/**
+ * Purchase event for the Meta Pixel, built from the Stripe session itself
+ * so the value is what was actually charged. Only paid, live sessions
+ * count: a test-mode order would teach the ads to find the wrong people.
+ * Any Stripe error just skips the event; the page still renders.
+ */
+async function purchaseEvent(sessionId: string | undefined) {
+  if (!sessionId?.startsWith("cs_live_")) return null;
+  try {
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+    if (session.payment_status !== "paid" || session.amount_total == null) return null;
+    return {
+      eventId: session.id,
+      params: {
+        value: session.amount_total / 100,
+        currency: (session.currency ?? "usd").toUpperCase(),
+        content_ids: session.metadata?.sku ? [session.metadata.sku] : [],
+        content_type: "product",
+        num_items: 1,
+      },
+    };
+  } catch {
+    return null;
+  }
+}
 
 /**
  * A step in a purchase, not a page anyone should reach from search.
@@ -19,8 +47,12 @@ export default async function SuccessPage({
   searchParams: Promise<{ session_id?: string }>;
 }) {
   const { session_id } = await searchParams;
+  const purchase = await purchaseEvent(session_id);
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
+      {purchase && (
+        <MetaPixelEvent event="Purchase" params={purchase.params} eventId={purchase.eventId} />
+      )}
       <div className="text-center">
         <h1 className="text-3xl font-bold">Thank you for your order</h1>
         <p className="mt-4 text-lg text-stone-700">

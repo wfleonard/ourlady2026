@@ -6,6 +6,7 @@ import { getProduct, formatPrice } from "@/lib/db";
 import { BuyButton } from "@/components/BuyButton";
 import { EbayLink } from "@/components/EbayLink";
 import { JsonLd } from "@/components/JsonLd";
+import { MetaPixelEvent } from "@/components/MetaPixelEvent";
 import { Reviews } from "@/components/Reviews";
 import { ORG, SITE_URL, absoluteUrl, pageTitle, RETURN_POLICY, HANDLING_DAYS, EBAY_LISTINGS } from "@/lib/site";
 
@@ -96,6 +97,16 @@ export default async function ProductPage({
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
       <JsonLd data={productJsonLd} />
+      <MetaPixelEvent
+        event="ViewContent"
+        params={{
+          content_ids: [product.sku],
+          content_type: "product",
+          content_name: product.name,
+          value: product.price_cents / 100,
+          currency: "USD",
+        }}
+      />
       <Link
         href="/#products"
         className="text-sm text-stone-500 hover:text-[var(--accent)]"
