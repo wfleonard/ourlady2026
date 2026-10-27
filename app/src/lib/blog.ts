@@ -14,6 +14,19 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "digital-archive-1998",
+    title: "The 1998 Digital Archive of the Tilma: What the Certificate Says",
+    metaTitle: "The 1998 Digital Archive of the Tilma",
+    excerpt:
+      "On December 12, 1998, Cardinal Norberto Rivera Carrera certified a print as a faithful reproduction of the digital archive of the Sacred Original. What that archive is, who captured it, how it differs from the Virgen Peregrina and the Missionary Images, and what the certificate does not say.",
+    image: "/about/certification.webp",
+    imageAlt:
+      "Mexican certificate dated December 12, 1998, signed by Cardinal Norberto Rivera Carrera, with the line naming Digital Color, S.A. de C.V. at the foot",
+    date: "December 12, 1998",
+    readTime: "5 min read",
+    updated: "2026-10-27",
+  },
+  {
     slug: "500th-anniversary-2031",
     title: "Counting Down to 500 Years: Mexico Names Its Guadalupe Centenary Leader",
     metaTitle: "Mexico Names Its Guadalupe Centenary Leader",
