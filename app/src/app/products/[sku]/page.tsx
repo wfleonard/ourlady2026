@@ -103,16 +103,14 @@ export default async function ProductPage({
         ← Back to all products
       </Link>
 
-      <div className="mt-6 grid md:grid-cols-2 gap-10">
-        <div className="bg-stone-50 rounded-lg p-10 flex items-center justify-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={product.image_path}
-            alt={product.name}
-            className="max-w-full h-auto object-contain drop-shadow-[0_12px_30px_rgba(0,0,0,0.3)]"
-          />
-        </div>
-        <div>
+      {/*
+        On phones the image filled the first screen and the price and Buy
+        button sat almost two screens down. Below md the title, price, and a
+        Buy button come first; from md up the grid places everything back in
+        the original two columns, image left.
+      */}
+      <div className="mt-6 grid md:grid-cols-2 gap-x-10 gap-y-6 md:gap-y-0">
+        <div className="md:col-start-2">
           <p className="text-sm uppercase tracking-widest text-[var(--gold)] font-semibold">
             {product.size}" · {product.variant.replace(/-/g, " ")}
           </p>
@@ -122,6 +120,22 @@ export default async function ProductPage({
           <div className="mt-4 text-3xl font-bold text-[var(--accent)]">
             {formatPrice(product.price_cents)}
           </div>
+          <div className="mt-4 md:hidden">
+            <BuyButton sku={product.sku} />
+            <p className="mt-2 text-xs text-stone-500">
+              Free US shipping · Secure checkout by Stripe
+            </p>
+          </div>
+        </div>
+        <div className="bg-stone-50 rounded-lg p-6 md:p-10 flex items-center justify-center md:col-start-1 md:row-start-1 md:row-span-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={product.image_path}
+            alt={product.name}
+            className="max-w-full h-auto object-contain drop-shadow-[0_12px_30px_rgba(0,0,0,0.3)]"
+          />
+        </div>
+        <div className="md:col-start-2">
           <p className="mt-6 text-stone-700 leading-relaxed">
             {product.description}
           </p>
