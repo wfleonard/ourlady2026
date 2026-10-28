@@ -21,12 +21,11 @@ export default function DigitalArchivePost() {
   return (
     <BlogPostLayout post={post}>
       <p>
-        Most prints of Our Lady of Guadalupe are copies of copies: a photograph
-        of a painting of a print, retouched along the way. A small number trace
-        back to a digital capture made directly from the tilma in the Basilica
-        of Guadalupe. One of those captures is documented by a certificate
-        signed in Mexico City on the Feast of Our Lady of Guadalupe, December
-        12, 1998.
+        Most prints of Our Lady of Guadalupe have no documented link to the
+        original: a photograph of a painting of a print, retouched along the
+        way. One digital capture made directly from the tilma is documented by
+        a certificate signed in Mexico City on the Feast of Our Lady of
+        Guadalupe, December 12, 1998.
       </p>
 
       <h2>What is the &ldquo;digital archive of the Sacred Original&rdquo;?</h2>
@@ -117,7 +116,7 @@ export default function DigitalArchivePost() {
 
       <p>
         A print is only as sharp as the file behind it. The file we print from
-        is 6,900 by 10,350 pixels, exactly the 2:3 proportion of the cloth, so
+        is 6,900 by 10,350 pixels, the same 2:3 proportion as our canvases, so
         nothing is cropped or stretched. That works out to 287.5 pixels per
         inch on a 24 by 36 inch canvas. The details are on our{" "}
         <Link href="/canvas-sizes">canvas sizes</Link> page, and full-size crops

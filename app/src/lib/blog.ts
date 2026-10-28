@@ -24,7 +24,7 @@ export const posts: Post[] = [
       "Mexican certificate dated December 12, 1998, signed by Cardinal Norberto Rivera Carrera, with the line naming Digital Color, S.A. de C.V. at the foot",
     date: "December 12, 1998",
     readTime: "5 min read",
-    updated: "2026-10-27",
+    updated: "2026-10-28",
   },
   {
     slug: "500th-anniversary-2031",
