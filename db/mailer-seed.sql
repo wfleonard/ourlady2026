@@ -3,6 +3,23 @@
 
 UPDATE mail_templates SET segment = $tpl$Buyer$tpl$ WHERE slug = $tpl$review-1$tpl$ AND segment = $tpl$Reviews$tpl$;
 
+UPDATE mail_templates SET subject = $tpl$Your tilma canvas has shipped$tpl$, preview = $tpl$@carrier tracking number @tracking$tpl$,
+  body = $tpl$Dear @firstname,
+
+Your Our Lady of Guadalupe canvas is on its way. It shipped by @carrier, and the tracking number is [@tracking](@trackingurl).
+
+If the tracking page doesn't show anything yet, give it a day. @carrier updates it once the package is scanned. Both Mexican certificates are packed in the box with the canvas.
+
+When it arrives, please open it and look the canvas over. If anything was damaged in shipping or isn't right, reply to this email and I'll make it right.
+
+Thanks,
+Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+wfleonard@primosmaternos.com · 732-673-4260$tpl$, updated_at = NOW()
+ WHERE slug = $tpl$shipped-1$tpl$ AND md5(body) = 'b410ebda2958fbad2471e42fd18dbdca';
+
 INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
   $tpl$a-1$tpl$, $tpl$A · Email 1 — Introduction / authenticity$tpl$, $tpl$A$tpl$, 1,
   $tpl$An authentic Our Lady of Guadalupe canvas for @parishname$tpl$,
@@ -800,14 +817,34 @@ wfleonard@primosmaternos.com · 732-673-4260$tpl$
 ) ON CONFLICT (slug) DO NOTHING;
 
 INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
-  $tpl$shipped-1$tpl$, $tpl$Buyer · Shipping confirmation$tpl$, $tpl$Buyer$tpl$, 0,
-  $tpl$Your tilma canvas has shipped$tpl$,
-  $tpl$FedEx tracking number @tracking$tpl$,
+  $tpl$review-2$tpl$, $tpl$Buyer · Review follow-up$tpl$, $tpl$Buyer$tpl$, 2,
+  $tpl$Following up on your tilma canvas$tpl$,
+  $tpl$Just a line or two, if you have a minute.$tpl$,
   $tpl$Dear @firstname,
 
-Your Our Lady of Guadalupe canvas is on its way. It shipped by FedEx, and the tracking number is [@tracking](https://www.fedex.com/fedextrack/?trknbr=@tracking).
+I wrote a couple of weeks ago to ask how your tilma canvas looks now that it's up. I know inboxes get busy, so I'm following up once.
 
-If the tracking page doesn't show anything yet, give it a day. FedEx updates it once the package is scanned. Both Mexican certificates are packed in the box with the canvas.
+Even a line or two would help. Where is it hanging, and how does it look in person? A photo is welcome but not needed.
+
+If you'd rather not, there's no need to reply, and I won't write about this again. And if anything isn't right with the canvas, please tell me so I can make it right.
+
+Thanks,
+Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+wfleonard@primosmaternos.com · 732-673-4260$tpl$
+) ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
+  $tpl$shipped-1$tpl$, $tpl$Buyer · Shipping confirmation$tpl$, $tpl$Buyer$tpl$, 0,
+  $tpl$Your tilma canvas has shipped$tpl$,
+  $tpl$@carrier tracking number @tracking$tpl$,
+  $tpl$Dear @firstname,
+
+Your Our Lady of Guadalupe canvas is on its way. It shipped by @carrier, and the tracking number is [@tracking](@trackingurl).
+
+If the tracking page doesn't show anything yet, give it a day. @carrier updates it once the package is scanned. Both Mexican certificates are packed in the box with the canvas.
 
 When it arrives, please open it and look the canvas over. If anything was damaged in shipping or isn't right, reply to this email and I'll make it right.
 

@@ -6,7 +6,7 @@ import { requireAdmin, signOut } from "@/lib/adminAuth";
 import { parseCsv, normalizeKey } from "@/lib/csv";
 import { merge } from "@/lib/emailFormat";
 import {
-  deleteContact, deliver, getContact, isEmail, recordSend,
+  CARRIERS, deleteContact, deliver, getContact, isEmail, mergeFields, recordSend,
   addPastBuyers, saveTemplate, setContactFields, updateContact, upsertContact,
 } from "@/lib/outreach";
 import { ORG } from "@/lib/site";
@@ -29,7 +29,7 @@ export async function sendEmail(fd: FormData) {
   if (!contact) redirect("/admin/mailer");
   if (contact.unsubscribed && !test) redirect(`${back}&err=unsubscribed`);
 
-  const fields = { ...contact.fields, email: contact.email };
+  const fields = mergeFields(contact);
   const subject = merge(str(fd, "subject"), fields);
   const preview = merge(str(fd, "preview"), fields);
   const body = merge(String(fd.get("body") ?? ""), fields);
@@ -90,8 +90,8 @@ export async function saveContact(fd: FormData) {
 }
 
 /**
- * Fills in the @fields a draft is missing (e.g. @tracking for the shipping
- * email) without touching the contact's other values, then reloads the same
+ * Fills in the @fields a draft is missing (e.g. @carrier and @tracking for the
+ * shipping email) without touching the contact's other values, then reloads the same
  * template so it can be sent.
  */
 export async function fillFields(fd: FormData) {
@@ -103,6 +103,7 @@ export async function fillFields(fd: FormData) {
   }
   // Tracking numbers are often copied with spaces; they'd break the link.
   if (fields.tracking) fields.tracking = fields.tracking.replace(/\s+/g, "");
+  if (fields.carrier) fields.carrier = CARRIERS[fields.carrier.toLowerCase()]?.name ?? fields.carrier;
   if (Object.keys(fields).length) await setContactFields(id, fields);
   redirect(`/admin/mailer/contacts/${id}?t=${str(fd, "t")}&saved=1`);
 }

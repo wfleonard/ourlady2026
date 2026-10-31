@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { requireAdmin } from "@/lib/adminAuth";
 import { toHtml } from "@/lib/emailFormat";
 import {
-  draftFor, getContact, listFieldKeys, listSendsForContact, listTemplates,
+  CARRIERS, DERIVED_FIELDS, draftFor, getContact, listFieldKeys, listSendsForContact, listTemplates,
   orgName, outreachFrom, personName,
 } from "@/lib/outreach";
 import { fillFields, removeContact, saveContact, sendEmail } from "../../actions";
@@ -51,6 +51,10 @@ export default async function ContactPage({
   const template = templates.find((t) => t.id === chosenId);
   const draft = template ? draftFor(template, contact) : null;
   const alreadySent = template ? sentAt.get(template.id) : undefined;
+  // Inputs for the missing @fields. A derived one is filled through its source:
+  // a missing @trackingurl means @carrier is blank or not one we can link to.
+  const toFill = (draft?.missing ?? []).filter((m) => !DERIVED_FIELDS.includes(m));
+  if (draft?.missing.includes("trackingurl") && !toFill.includes("carrier")) toFill.unshift("carrier");
 
   const sentRow = sp.sent ? sends.find((s) => s.id === Number(sp.sent)) : undefined;
   const failedRow = sp.failed ? sends.find((s) => s.id === Number(sp.failed)) : undefined;
@@ -121,15 +125,22 @@ export default async function ContactPage({
               <input type="hidden" name="id" value={contact.id} />
               <input type="hidden" name="t" value={template.id} />
               <p className="text-sm text-amber-900">Fill in for {contact.email}, then send:</p>
-              {draft.missing.map((m) => (
+              {toFill.map((m) => (
                 <label key={m} className="block text-xs text-stone-500">
                   @{m}
-                  <input
-                    name={`field:${m}`}
-                    required
-                    placeholder={m === "tracking" ? "FedEx tracking number" : ""}
-                    className={`${input} mt-1`}
-                  />
+                  {m === "carrier" ? (
+                    <select name="field:carrier" required defaultValue="" className={`${input} mt-1`}>
+                      <option value="" disabled>Pick the carrier</option>
+                      {Object.values(CARRIERS).map((c) => <option key={c.name}>{c.name}</option>)}
+                    </select>
+                  ) : (
+                    <input
+                      name={`field:${m}`}
+                      required
+                      placeholder={m === "tracking" ? "Tracking number" : ""}
+                      className={`${input} mt-1`}
+                    />
+                  )}
                 </label>
               ))}
               <button className={button}>Save and fill in the draft</button>
@@ -137,7 +148,13 @@ export default async function ContactPage({
           )}
 
           {template && draft && (
-            <form action={sendEmail} className="space-y-3 border border-stone-200 rounded p-4">
+            // Keyed on the draft so it re-renders with fresh text after fields are filled in;
+            // otherwise the inputs keep their stale defaultValue across the redirect.
+            <form
+              key={JSON.stringify(draft)}
+              action={sendEmail}
+              className="space-y-3 border border-stone-200 rounded p-4"
+            >
               <input type="hidden" name="contactId" value={contact.id} />
               <input type="hidden" name="templateId" value={template.id} />
               <div className="text-sm text-stone-600">

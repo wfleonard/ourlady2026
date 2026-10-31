@@ -313,11 +313,34 @@ export async function listRecentSends(limit = 15): Promise<Send[]> {
   return rows;
 }
 
+// ---- Shipping ----
+
+/** Carriers the shipping email can link to, keyed by lowercased @carrier value. */
+export const CARRIERS: Record<string, { name: string; url: (n: string) => string }> = {
+  fedex: { name: "FedEx", url: (n) => `https://www.fedex.com/fedextrack/?trknbr=${encodeURIComponent(n)}` },
+  usps: { name: "USPS", url: (n) => `https://tools.usps.com/go/TrackConfirmAction?tLabels=${encodeURIComponent(n)}` },
+};
+
+/** @fields worked out from others rather than typed in. */
+export const DERIVED_FIELDS = ["trackingurl"];
+
+/**
+ * A contact's values as templates see them: its own fields, its email, and
+ * @trackingurl built from @carrier and @tracking. An unknown carrier leaves
+ * @trackingurl blank, so a send that uses it is refused.
+ */
+export function mergeFields(contact: Contact): Fields {
+  const f: Fields = { ...contact.fields, email: contact.email };
+  const carrier = CARRIERS[(f.carrier ?? "").trim().toLowerCase()];
+  const tracking = (f.tracking ?? "").trim();
+  return { ...f, trackingurl: carrier && tracking ? carrier.url(tracking) : "" };
+}
+
 export type Draft = { to: string; subject: string; preview: string; body: string };
 
 /** Fills a template for one contact. `missing` lists @fields the contact has no value for. */
 export function draftFor(template: Template, contact: Contact): Draft & { missing: string[] } {
-  const fields = { ...contact.fields, email: contact.email };
+  const fields = mergeFields(contact);
   const subject = merge(template.subject, fields);
   const preview = merge(template.preview, fields);
   const body = merge(template.body, fields);

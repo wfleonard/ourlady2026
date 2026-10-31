@@ -145,7 +145,11 @@ keeps /admin locked). Every page and server action calls `requireAdmin()`.
   `@lastorder`, and an "Order #N" note. Test-mode orders are skipped. The Add
   contact page has a button that backfills buyers from earlier live orders
   (`cs_live_` sessions); it's idempotent.
-- A send is refused if any `@field` has no value for that contact.
+- A send is refused if any `@field` has no value for that contact. When a loaded draft is missing
+  some, the contact page shows inputs for just those above the draft.
+- `@trackingurl` (shipping email) isn't stored; `mergeFields()` builds it from
+  `@carrier` + `@tracking` using `CARRIERS` in `lib/outreach.ts` (FedEx, USPS).
+  Add a carrier there. An unknown carrier leaves it blank, so the send is refused.
 - Sends use the same Workspace relay as order alerts (`lib/mailer.ts`
   `transport`). Relay mail doesn't appear in Gmail's Sent folder, so
   `OUTREACH_BCC` keeps a copy; `mail_sends` stores the exact text sent.
