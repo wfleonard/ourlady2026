@@ -798,3 +798,23 @@ William F. Leonard
 Saxon Enterprises, Inc. — dba Primos Maternos
 wfleonard@primosmaternos.com · 732-673-4260$tpl$
 ) ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
+  $tpl$shipped-1$tpl$, $tpl$Buyer · Shipping confirmation$tpl$, $tpl$Buyer$tpl$, 0,
+  $tpl$Your tilma canvas has shipped$tpl$,
+  $tpl$FedEx tracking number @tracking$tpl$,
+  $tpl$Dear @firstname,
+
+Your Our Lady of Guadalupe canvas is on its way. It shipped by FedEx, and the tracking number is [@tracking](https://www.fedex.com/fedextrack/?trknbr=@tracking).
+
+If the tracking page doesn't show anything yet, give it a day. FedEx updates it once the package is scanned. Both Mexican certificates are packed in the box with the canvas.
+
+When it arrives, please open it and look the canvas over. If anything was damaged in shipping or isn't right, reply to this email and I'll make it right.
+
+Thanks,
+Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+wfleonard@primosmaternos.com · 732-673-4260$tpl$
+) ON CONFLICT (slug) DO NOTHING;

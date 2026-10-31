@@ -16,7 +16,8 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dir = join(root, "docs/email-campaigns");
 
-// file → [segment value a contact carries in its @segment column, slug prefix]
+// file → [segment value a contact carries in its @segment column, slug prefix,
+//         position of its first email (default 1)]
 const FILES = {
   "segment-a-guadalupe-parishes.md": ["A", "a"],
   "segment-b-guadalupe-ministries.md": ["B", "b"],
@@ -26,6 +27,8 @@ const FILES = {
   "novena-drip-2026.md": ["Novena", "novena"],
   "international-inquiry.md": ["International", "intl"],
   "review-request.md": ["Buyer", "review"],
+  // Position 0 so it's suggested before the review request.
+  "shipping-confirmation.md": ["Buyer", "shipped", 0],
 };
 
 const field = (lines, label) => {
@@ -40,7 +43,7 @@ const quote = (s) => {
 };
 
 const rows = [];
-for (const [file, [segment, prefix]] of Object.entries(FILES)) {
+for (const [file, [segment, prefix, first = 1]] of Object.entries(FILES)) {
   const lines = readFileSync(join(dir, file), "utf8").replace(/\r\n/g, "\n").split("\n");
   let n = 0;
   for (let i = 0; i < lines.length; i++) {
@@ -63,7 +66,7 @@ for (const [file, [segment, prefix]] of Object.entries(FILES)) {
       slug: `${prefix}-${n}`,
       name: `${segment} · ${lines[i].slice(3).trim()}`,
       segment,
-      position: n,
+      position: first + n - 1,
       subject,
       preview: field(section, "Preview text"),
       body: bodyLines.join("\n").trim(),

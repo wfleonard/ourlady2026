@@ -150,6 +150,14 @@ export async function updateContact(
   );
 }
 
+/** Sets the given fields on a contact, keeping every other value it has. */
+export async function setContactFields(id: number, fields: Fields): Promise<void> {
+  await pool.query(
+    `UPDATE mail_contacts SET fields = fields || $2, updated_at = NOW() WHERE id = $1`,
+    [id, fields]
+  );
+}
+
 export async function deleteContact(id: number): Promise<void> {
   await pool.query(`DELETE FROM mail_contacts WHERE id = $1`, [id]);
 }

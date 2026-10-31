@@ -6,7 +6,7 @@ import {
   draftFor, getContact, listFieldKeys, listSendsForContact, listTemplates,
   orgName, outreachFrom, personName,
 } from "@/lib/outreach";
-import { removeContact, saveContact, sendEmail } from "../../actions";
+import { fillFields, removeContact, saveContact, sendEmail } from "../../actions";
 import { Flash, MailerNav, button, buttonGhost, fmtDate, input } from "../../ui";
 
 const ERRORS: Record<string, string> = {
@@ -116,6 +116,26 @@ export default async function ContactPage({
             <p className="text-sm text-stone-500">Every email in segment {segment}’s sequence has been sent. Pick any template above.</p>
           )}
 
+          {template && draft && draft.missing.length > 0 && (
+            <form action={fillFields} className="mb-3 border border-amber-300 bg-amber-50 rounded p-4 space-y-2">
+              <input type="hidden" name="id" value={contact.id} />
+              <input type="hidden" name="t" value={template.id} />
+              <p className="text-sm text-amber-900">Fill in for {contact.email}, then send:</p>
+              {draft.missing.map((m) => (
+                <label key={m} className="block text-xs text-stone-500">
+                  @{m}
+                  <input
+                    name={`field:${m}`}
+                    required
+                    placeholder={m === "tracking" ? "FedEx tracking number" : ""}
+                    className={`${input} mt-1`}
+                  />
+                </label>
+              ))}
+              <button className={button}>Save and fill in the draft</button>
+            </form>
+          )}
+
           {template && draft && (
             <form action={sendEmail} className="space-y-3 border border-stone-200 rounded p-4">
               <input type="hidden" name="contactId" value={contact.id} />
@@ -144,7 +164,7 @@ export default async function ContactPage({
 
               {draft.missing.length > 0 && (
                 <p className="text-sm text-red-700">
-                  No value for {draft.missing.map((m) => `@${m}`).join(", ")}. Add it under Contact details →
+                  No value for {draft.missing.map((m) => `@${m}`).join(", ")}. Fill it in above.
                 </p>
               )}
               {alreadySent && (
@@ -204,6 +224,7 @@ export default async function ContactPage({
           <h2 className="font-semibold mb-2">Contact details</h2>
           <form action={saveContact} className="space-y-2">
             <input type="hidden" name="id" value={contact.id} />
+            <input type="hidden" name="t" value={template?.id ?? ""} />
             <label className="block text-xs text-stone-500">
               email
               <input name="email" defaultValue={contact.email} className={input} />

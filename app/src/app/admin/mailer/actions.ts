@@ -7,7 +7,7 @@ import { parseCsv, normalizeKey } from "@/lib/csv";
 import { merge } from "@/lib/emailFormat";
 import {
   deleteContact, deliver, getContact, isEmail, recordSend,
-  addPastBuyers, saveTemplate, updateContact, upsertContact,
+  addPastBuyers, saveTemplate, setContactFields, updateContact, upsertContact,
 } from "@/lib/outreach";
 import { ORG } from "@/lib/site";
 
@@ -84,7 +84,27 @@ export async function saveContact(fd: FormData) {
     if ((e as { code?: string }).code === "23505") redirect(`/admin/mailer/contacts/${id}?err=dupemail`);
     throw e;
   }
-  redirect(`/admin/mailer/contacts/${id}?saved=1`);
+  // Stay on the template that was loaded, so a filled-in @field can be sent right away.
+  const t = str(fd, "t");
+  redirect(`/admin/mailer/contacts/${id}?${t ? `t=${t}&` : ""}saved=1`);
+}
+
+/**
+ * Fills in the @fields a draft is missing (e.g. @tracking for the shipping
+ * email) without touching the contact's other values, then reloads the same
+ * template so it can be sent.
+ */
+export async function fillFields(fd: FormData) {
+  await requireAdmin();
+  const id = Number(str(fd, "id"));
+  const fields: Record<string, string> = {};
+  for (const [k, v] of fd.entries()) {
+    if (k.startsWith("field:") && String(v).trim()) fields[k.slice(6)] = String(v).trim();
+  }
+  // Tracking numbers are often copied with spaces; they'd break the link.
+  if (fields.tracking) fields.tracking = fields.tracking.replace(/\s+/g, "");
+  if (Object.keys(fields).length) await setContactFields(id, fields);
+  redirect(`/admin/mailer/contacts/${id}?t=${str(fd, "t")}&saved=1`);
 }
 
 export async function removeContact(fd: FormData) {
