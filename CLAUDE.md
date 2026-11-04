@@ -98,6 +98,10 @@ included.*
 
 - `sitemap.ts` and `robots.ts` are code, not static files (Next 16 App
   Router route handlers).
+- `/llms.txt` (`app/llms.txt/route.ts`) is also code: org facts, policy,
+  and handling time from `site.ts`, canvases from the DB, articles from
+  `lib/blog.ts`. Only its `PAGES` list is hand-kept — add a new page there
+  and in `sitemap.ts` together.
 - `JsonLd.tsx` renders structured data as inline `<script type="application/ld+json">`.
 - Layout carries Organization + WebSite schema.
 - Every page has an `alternates: { canonical }` in metadata.
