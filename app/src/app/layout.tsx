@@ -2,11 +2,26 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { JsonLd } from "@/components/JsonLd";
+import { MobileMenu } from "@/components/MobileMenu";
 import { MetaPixelNoScript, MetaPixelScript } from "@/components/MetaPixel";
 import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
+/**
+ * One list for both headers: the row of links on wide screens and the
+ * MobileMenu below `lg`, where the row no longer fits beside the name.
+ */
+const NAV_LINKS = [
+  { href: "/#products", label: "Shop" },
+  { href: "/our-lady-of-guadalupe-prints", label: "Prints" },
+  { href: "/blog", label: "Reflections" },
+  { href: "/canvas-sizes", label: "Sizes" },
+  { href: "/authenticity", label: "Authenticity" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
+];
 
 export const metadata: Metadata = {
   // Makes every relative URL in page metadata resolve to the real site.
@@ -69,29 +84,14 @@ export default function RootLayout({
                 Our Lady of Guadalupe
               </span>
             </Link>
-            <nav className="flex items-center gap-6 text-sm">
-              <Link href="/#products" className="hover:text-[var(--accent)]">
-                Shop
-              </Link>
-              <Link href="/our-lady-of-guadalupe-prints" className="hover:text-[var(--accent)]">
-                Prints
-              </Link>
-              <Link href="/blog" className="hover:text-[var(--accent)]">
-                Reflections
-              </Link>
-              <Link href="/canvas-sizes" className="hover:text-[var(--accent)]">
-                Sizes
-              </Link>
-              <Link href="/authenticity" className="hover:text-[var(--accent)]">
-                Authenticity
-              </Link>
-              <Link href="/#about" className="hover:text-[var(--accent)]">
-                About
-              </Link>
-              <Link href="/#contact" className="hover:text-[var(--accent)]">
-                Contact
-              </Link>
+            <nav aria-label="Site" className="hidden lg:flex items-center gap-6 text-sm">
+              {NAV_LINKS.map(({ href, label }) => (
+                <Link key={href} href={href} className="hover:text-[var(--accent)]">
+                  {label}
+                </Link>
+              ))}
             </nav>
+            <MobileMenu links={NAV_LINKS} />
           </div>
         </header>
 
