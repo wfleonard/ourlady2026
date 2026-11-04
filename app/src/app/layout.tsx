@@ -11,9 +11,9 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 export const metadata: Metadata = {
   // Makes every relative URL in page metadata resolve to the real site.
   metadataBase: new URL(SITE_URL),
-  title: "Primos Maternos — Our Lady of Guadalupe Canvas",
+  title: "Our Lady of Guadalupe Canvas Prints and Framed Pictures — Primos Maternos",
   description:
-    "Our Lady of Guadalupe canvases printed from a digital archive of the Sacred Original, certified in Mexico in 1998 as a faithful reproduction. Framed and rolled, shipped from Tinton Falls, NJ.",
+    "Our Lady of Guadalupe canvas prints and framed pictures, $57 to $324, printed from a digital archive of the Sacred Original certified in Mexico in 1998 as a faithful reproduction. Framed or unframed, free shipping, from Tinton Falls, NJ.",
 };
 
 /** Who this business is, in the form a machine reads. */
@@ -72,6 +72,9 @@ export default function RootLayout({
             <nav className="flex items-center gap-6 text-sm">
               <Link href="/#products" className="hover:text-[var(--accent)]">
                 Shop
+              </Link>
+              <Link href="/our-lady-of-guadalupe-prints" className="hover:text-[var(--accent)]">
+                Prints
               </Link>
               <Link href="/blog" className="hover:text-[var(--accent)]">
                 Reflections

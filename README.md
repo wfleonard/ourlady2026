@@ -66,9 +66,9 @@ every request.
 | olg-24x36-beaded-mahogany    | 24"x36" Beaded Mahogany frame        | $214  |
 | olg-24x36-black-red-oak      | 24"x36" Black Red Oak frame          | $214  |
 | olg-24x36-silver-ornate      | 24"x36" Silver Ornate frame          | $214  |
-| olg-12x18-gallery-wrap       | 12"x18" Thin Gallery Wrap (0.75")    | $57   |
-| olg-24x36-rolled             | 24"x36" Rolled canvas                | $114  |
-| olg-36x54-rolled             | 36"x54" Rolled canvas                | $324  |
+| olg-12x18-gallery-wrap       | 12"x18" Small, ready to hang         | $57   |
+| olg-24x36-rolled             | 24"x36" Unframed (ships rolled)      | $114  |
+| olg-36x54-rolled             | 36"x54" Large unframed (ships rolled)| $324  |
 
 ### Reseeding after a catalog change
 

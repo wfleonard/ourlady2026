@@ -16,7 +16,8 @@ export const dynamic = "force-dynamic";
  * "now", so these must stay honest.
  */
 const STATIC_ROUTES: { path: string; priority: number; updated: string }[] = [
-  { path: "/", priority: 1, updated: "2026-09-25" },
+  { path: "/", priority: 1, updated: "2026-11-04" },
+  { path: "/our-lady-of-guadalupe-prints", priority: 0.9, updated: "2026-11-04" },
   { path: "/authenticity", priority: 0.9, updated: "2026-09-25" },
   { path: "/canvas-sizes", priority: 0.9, updated: "2026-09-25" },
   { path: "/new-jersey", priority: 0.9, updated: "2026-09-25" },
@@ -24,7 +25,7 @@ const STATIC_ROUTES: { path: string; priority: number; updated: string }[] = [
   { path: "/parroquias", priority: 0.9, updated: "2026-10-10" },
   { path: "/schools", priority: 0.9, updated: "2026-10-10" },
   { path: "/dioceses", priority: 0.9, updated: "2026-09-26" },
-  { path: "/gifts", priority: 0.8, updated: "2026-10-10" },
+  { path: "/gifts", priority: 0.8, updated: "2026-11-04" },
   { path: "/novena", priority: 0.7, updated: "2026-09-25" },
   { path: "/shipping-and-returns", priority: 0.7, updated: "2026-09-30" },
   { path: "/blog", priority: 0.7, updated: "2026-10-10" },

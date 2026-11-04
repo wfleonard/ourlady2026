@@ -10,9 +10,13 @@ export const dynamic = "force-dynamic";
 
 export const metadata = {
   alternates: { canonical: "/gifts" },
-  title: "Advent + December 12 Gift Guide — Primos Maternos",
+  // Seasonal: after December 12, drop the December 4 date from the
+  // description and the opening below; after January 6, replace the dates
+  // with the year-round occasions (baptism, confirmation, wedding,
+  // housewarming, ordination).
+  title: "Our Lady of Guadalupe Gifts — Canvas Prints from $57, Free Shipping",
   description:
-    "Our Lady of Guadalupe canvas gifts for Advent, December 12, and Christmas, printed from a digital archive of the Sacred Original certified in Mexico in 1998. Framed and rolled, from $57. Free shipping to the 50 U.S. states and Puerto Rico.",
+    "Our Lady of Guadalupe gifts for December 12, Christmas and Three Kings Day: canvas prints from $57, framed and ready to hang at $214. Free shipping. Order by December 4 for the feast day.",
 };
 
 export default async function GiftsPage() {
@@ -36,18 +40,26 @@ export default async function GiftsPage() {
             Advent · December 12 · Christmas
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">
-            The Guadalupe canvas gift guide
+            Our Lady of Guadalupe gifts
           </h1>
           <p className="mt-5 text-lg text-stone-700 leading-relaxed max-w-2xl mx-auto">
+            An Our Lady of Guadalupe canvas print makes a gift that stays on
+            the wall: <strong>$57</strong> for a small ready-to-hang picture,{" "}
+            <strong>$114</strong> unframed, or <strong>$214</strong> framed
+            and ready to hang, all with free shipping. Order by{" "}
+            <strong>December 4</strong> for December 12, by{" "}
+            <strong>December 17</strong> for Christmas, and by{" "}
+            <strong>December 30</strong> for Three Kings Day.
+          </p>
+          <p className="mt-4 text-stone-600 leading-relaxed max-w-2xl mx-auto">
             The tilma image on archival canvas, printed from a digital
             archive of the Sacred Original that Cardinal Norberto Rivera
             Carrera, Archbishop Primate of Mexico, certified on December
             12, 1998 as a faithful reproduction. The image, known as the
             Virgen Peregrina, was blessed by Pope John Paul II on January
             25, 1999. The canvas is printed in the USA. Two Mexican
-            certifications ship with every order. From{" "}
-            <strong>$57</strong>. Free shipping to the 50 U.S. states and
-            Puerto Rico.
+            certifications ship with every order. Free shipping to the 50
+            U.S. states and Puerto Rico.
           </p>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { listProducts, type Product } from "@/lib/db";
 import { ProductCard } from "@/components/ProductCard";
 
@@ -67,9 +68,13 @@ export default async function HomePage() {
       <section id="products" className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-3xl font-bold mb-2">The Collection</h2>
         <p className="text-stone-600 mb-8">
-          Framed and rolled canvas, in four sizes. Every piece ships with
-          two certificates from Mexico verifying the authenticity of the
-          image.
+          Our Lady of Guadalupe canvas prints in three sizes, framed or
+          unframed, from $57. Every piece ships with two certificates from
+          Mexico verifying the authenticity of the image.{" "}
+          <Link href="/our-lady-of-guadalupe-prints" className="underline hover:text-[var(--accent)]">
+            Compare every option
+          </Link>
+          .
         </p>
         {products.length === 0 ? (
           <div className="p-8 bg-amber-50 border border-amber-200 rounded-lg text-amber-900">
