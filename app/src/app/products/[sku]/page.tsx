@@ -8,6 +8,7 @@ import { EbayLink } from "@/components/EbayLink";
 import { JsonLd } from "@/components/JsonLd";
 import { MetaPixelEvent } from "@/components/MetaPixelEvent";
 import { Reviews } from "@/components/Reviews";
+import { CATALOG_ES, esProductPath } from "@/lib/catalogEs";
 import { ORG, SITE_URL, absoluteUrl, pageTitle, RETURN_POLICY, HANDLING_DAYS, EBAY_LISTINGS } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +34,12 @@ export async function generateMetadata({
   return {
     title: pageTitle(product.name),
     description: product.description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      ...(CATALOG_ES[product.sku] && {
+        languages: { en: url, es: esProductPath(product.sku) },
+      }),
+    },
     openGraph: {
       type: "website",
       url: absoluteUrl(url),
@@ -107,12 +113,21 @@ export default async function ProductPage({
           currency: "USD",
         }}
       />
-      <Link
-        href="/#products"
-        className="text-sm text-stone-500 hover:text-[var(--accent)]"
-      >
-        ← Back to all products
-      </Link>
+      <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
+        <Link href="/#products" className="text-stone-500 hover:text-[var(--accent)]">
+          ← Back to all products
+        </Link>
+        {CATALOG_ES[product.sku] && (
+          <Link
+            href={esProductPath(product.sku)}
+            hrefLang="es"
+            lang="es"
+            className="text-stone-500 underline hover:text-[var(--accent)]"
+          >
+            En español →
+          </Link>
+        )}
+      </div>
 
       {/*
         On phones the image filled the first screen and the price and Buy

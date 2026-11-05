@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { JsonLd } from "@/components/JsonLd";
-import { MobileMenu } from "@/components/MobileMenu";
+import { MobileMenu, type NavLink } from "@/components/MobileMenu";
+import { ES_BASE } from "@/lib/catalogEs";
 import { MetaPixelNoScript, MetaPixelScript } from "@/components/MetaPixel";
 import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
 import "./globals.css";
@@ -13,7 +14,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
  * One list for both headers: the row of links on wide screens and the
  * MobileMenu below `lg`, where the row no longer fits beside the name.
  */
-const NAV_LINKS = [
+const NAV_LINKS: NavLink[] = [
   { href: "/#products", label: "Shop" },
   { href: "/our-lady-of-guadalupe-prints", label: "Prints" },
   { href: "/blog", label: "Reflections" },
@@ -21,6 +22,8 @@ const NAV_LINKS = [
   { href: "/authenticity", label: "Authenticity" },
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
+  // Marked lang="es" so screen readers and crawlers read it as Spanish.
+  { href: ES_BASE, label: "Español", lang: "es" },
 ];
 
 export const metadata: Metadata = {
@@ -85,8 +88,14 @@ export default function RootLayout({
               </span>
             </Link>
             <nav aria-label="Site" className="hidden lg:flex items-center gap-6 text-sm">
-              {NAV_LINKS.map(({ href, label }) => (
-                <Link key={href} href={href} className="hover:text-[var(--accent)]">
+              {NAV_LINKS.map(({ href, label, lang }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  lang={lang}
+                  hrefLang={lang}
+                  className="hover:text-[var(--accent)]"
+                >
                   {label}
                 </Link>
               ))}

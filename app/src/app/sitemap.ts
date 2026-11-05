@@ -3,6 +3,7 @@ import { listProducts } from "@/lib/db";
 import { posts } from "@/lib/blog";
 import { reviews } from "@/lib/reviews";
 import { SITE_URL } from "@/lib/site";
+import { CATALOG_ES, ES_BASE, esProductPath } from "@/lib/catalogEs";
 
 /**
  * Served at /sitemap.xml, which used to 404. Product pages come from the
@@ -10,19 +11,31 @@ import { SITE_URL } from "@/lib/site";
  */
 export const dynamic = "force-dynamic";
 
+type Route = {
+  path: string;
+  priority: number;
+  updated: string;
+  /** English and Spanish versions of the same page, listed on both entries. */
+  languages?: { en: string; es: string };
+};
+
+const PRINTS = { en: "/our-lady-of-guadalupe-prints", es: ES_BASE };
+const PARISHES = { en: "/parishes", es: "/parroquias" };
+
 /**
  * `updated` is the date the page's content last really changed. Bump it when
  * you edit a page: Google ignores lastmod on sites where it always reads
  * "now", so these must stay honest.
  */
-const STATIC_ROUTES: { path: string; priority: number; updated: string }[] = [
-  { path: "/", priority: 1, updated: "2026-11-04" },
-  { path: "/our-lady-of-guadalupe-prints", priority: 0.9, updated: "2026-11-04" },
+const STATIC_ROUTES: Route[] = [
+  { path: "/", priority: 1, updated: "2026-11-05" },
+  { path: PRINTS.en, priority: 0.9, updated: "2026-11-05", languages: PRINTS },
+  { path: PRINTS.es, priority: 0.9, updated: "2026-11-05", languages: PRINTS },
   { path: "/authenticity", priority: 0.9, updated: "2026-09-25" },
   { path: "/canvas-sizes", priority: 0.9, updated: "2026-09-25" },
   { path: "/new-jersey", priority: 0.9, updated: "2026-09-25" },
-  { path: "/parishes", priority: 0.9, updated: "2026-10-10" },
-  { path: "/parroquias", priority: 0.9, updated: "2026-10-10" },
+  { path: PARISHES.en, priority: 0.9, updated: "2026-10-10", languages: PARISHES },
+  { path: PARISHES.es, priority: 0.9, updated: "2026-10-10", languages: PARISHES },
   { path: "/schools", priority: 0.9, updated: "2026-10-10" },
   { path: "/dioceses", priority: 0.9, updated: "2026-09-26" },
   { path: "/gifts", priority: 0.8, updated: "2026-11-04" },
@@ -32,29 +45,46 @@ const STATIC_ROUTES: { path: string; priority: number; updated: string }[] = [
   { path: "/reviews", priority: 0.7, updated: "2026-10-10" },
 ];
 
+const abs = (path: string) => `${SITE_URL}${path === "/" ? "" : path}`;
+
+function alternates(languages?: { en: string; es: string }) {
+  return languages
+    ? { alternates: { languages: { en: abs(languages.en), es: abs(languages.es) } } }
+    : {};
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // A database that is down must not take the sitemap with it: the static
   // pages and the posts are still worth listing.
   let productUrls: MetadataRoute.Sitemap = [];
   try {
     const products = await listProducts();
-    productUrls = products.map((product) => ({
+    productUrls = products.flatMap((product) => {
       // No lastModified: the products table has no updated_at column, and a
       // made-up date is worse than none.
-      url: `${SITE_URL}/products/${product.sku}`,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    }));
+      const en = `/products/${product.sku}`;
+      if (!CATALOG_ES[product.sku]) {
+        return [{ url: abs(en), changeFrequency: "weekly" as const, priority: 0.8 }];
+      }
+      const pair = { en, es: esProductPath(product.sku) };
+      return [pair.en, pair.es].map((path) => ({
+        url: abs(path),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+        ...alternates(pair),
+      }));
+    });
   } catch {
     productUrls = [];
   }
 
   return [
-    ...STATIC_ROUTES.map(({ path, priority, updated }) => ({
-      url: `${SITE_URL}${path === "/" ? "" : path}`,
+    ...STATIC_ROUTES.map(({ path, priority, updated, languages }) => ({
+      url: abs(path),
       lastModified: updated,
       changeFrequency: "weekly" as const,
       priority,
+      ...alternates(languages),
     })),
     ...productUrls,
     ...posts.map((post) => ({

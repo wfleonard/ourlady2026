@@ -1,6 +1,7 @@
 import { listProducts } from "@/lib/db";
 import { posts } from "@/lib/blog";
 import { HANDLING_DAYS, ORG, RETURN_POLICY, SITE_URL } from "@/lib/site";
+import { ES_BASE } from "@/lib/catalogEs";
 
 /**
  * Served at /llms.txt (the llmstxt.org convention): a plain-Markdown map of
@@ -12,6 +13,8 @@ export const dynamic = "force-dynamic";
 
 /** Key pages, each with a one-line summary of what it answers. */
 const PAGES: { path: string; title: string; summary: string }[] = [
+  { path: "/our-lady-of-guadalupe-prints", title: "Pictures, prints and canvases", summary: "Every option and price side by side, framed vs unframed, and why the unframed print costs less." },
+  { path: ES_BASE, title: "Cuadro de la Virgen de Guadalupe", summary: `The catalog in Spanish: every option and price, framed vs unframed, gift dates, and a Spanish page for each canvas at ${ES_BASE}/{sku}.` },
   { path: "/authenticity", title: "Authenticity", summary: "What to ask any seller, why Guadalupe prints differ, and the two Mexican certifications behind this image." },
   { path: "/canvas-sizes", title: "Canvas sizes", summary: "12x18 gallery wrap, 24x36 framed or rolled, 36x54 rolled: resolution, viewing distance, and hanging height for each." },
   { path: "/shipping-and-returns", title: "Shipping and returns", summary: "Free shipping, handling time, 30-day returns, transit-damage replacement, international orders." },

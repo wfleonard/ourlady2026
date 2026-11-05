@@ -12,7 +12,9 @@ import type { MouseEvent } from "react";
  * navigation, so without this the menu would stay open over the next page,
  * and a same-page hash link (/#about) would never close it at all.
  */
-export function MobileMenu({ links }: { links: { href: string; label: string }[] }) {
+export type NavLink = { href: string; label: string; lang?: string };
+
+export function MobileMenu({ links }: { links: NavLink[] }) {
   const close = (event: MouseEvent<HTMLElement>) => {
     event.currentTarget.closest("details")?.removeAttribute("open");
   };
@@ -27,10 +29,12 @@ export function MobileMenu({ links }: { links: { href: string; label: string }[]
         aria-label="Site"
         className="absolute right-0 mt-2 w-56 rounded-lg border border-stone-200 bg-white py-2 shadow-lg"
       >
-        {links.map(({ href, label }) => (
+        {links.map(({ href, label, lang }) => (
           <Link
             key={href}
             href={href}
+            lang={lang}
+            hrefLang={lang}
             onClick={close}
             className="block px-4 py-2.5 text-sm hover:bg-stone-50 hover:text-[var(--accent)]"
           >

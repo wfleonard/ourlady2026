@@ -3,6 +3,7 @@ import { listProducts, formatPrice, type Product } from "@/lib/db";
 import { ProductCard } from "@/components/ProductCard";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { ES_BASE } from "@/lib/catalogEs";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +20,10 @@ export const metadata = {
   title: "Our Lady of Guadalupe Pictures, Prints and Canvases — from $57",
   description:
     "Our Lady of Guadalupe canvas prints and framed pictures from $57 to $324, framed or unframed, in three sizes. Printed in the USA from a digital archive of the tilma certified in Mexico in 1998. Free shipping to all 50 states and Puerto Rico.",
-  alternates: { canonical: "/our-lady-of-guadalupe-prints" },
+  alternates: {
+    canonical: "/our-lady-of-guadalupe-prints",
+    languages: { en: "/our-lady-of-guadalupe-prints", es: ES_BASE },
+  },
 };
 
 type Option = {
@@ -131,6 +135,16 @@ export default async function PrintsPage() {
             printed in the USA from a digital archive of the tilma certified in Mexico in 1998,
             ships free to all 50 states and Puerto Rico, and comes with both Mexican
             certifications.
+          </p>
+          <p className="mt-4 text-sm">
+            <Link
+              href={ES_BASE}
+              hrefLang="es"
+              lang="es"
+              className="underline text-stone-600 hover:text-[var(--accent)]"
+            >
+              Cuadros de la Virgen de Guadalupe en español →
+            </Link>
           </p>
         </div>
       </section>
