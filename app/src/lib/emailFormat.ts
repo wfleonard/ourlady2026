@@ -6,7 +6,10 @@
 // so wfleonard@primosmaternos.com in a signature is never treated as a field.
 //
 // Markdown supported: blank-line paragraphs, "- " and "1. " lists, "> "
-// quotes, **bold**, *italic*, [text](https://link).
+// quotes, **bold**, *italic*, [text](https://link), and an image on a line of
+// its own: ![alt](https://image) or, to make it a link, [![alt](https://image)](https://link).
+// Images need an absolute URL (mail clients can't resolve /paths) and JPEG or
+// PNG, since Outlook doesn't show WebP.
 
 export type Fields = Record<string, string>;
 
@@ -56,9 +59,19 @@ const blocks = (md: string) =>
 
 const P = 'style="margin:0 0 14px;"';
 
+// A block that is one image, optionally wrapped in a link.
+const IMAGE_RE = /^(?:\[)?!\[([^\]]*)\]\((https?:\/\/[^)\s]+)\)(?:\]\((https?:\/\/[^)\s]+)\))?$/;
+
+function imageHtml(alt: string, src: string, href?: string): string {
+  const img = `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" width="588" style="display:block;width:100%;max-width:588px;height:auto;border:0;">`;
+  return `<p ${P}>${href ? `<a href="${escapeHtml(href)}">${img}</a>` : img}</p>`;
+}
+
 export function toHtml(md: string, preview = ""): string {
   const body = blocks(md)
     .map((lines) => {
+      const image = lines.length === 1 ? IMAGE_RE.exec(lines[0].trim()) : null;
+      if (image) return imageHtml(image[1], image[2], image[3]);
       if (lines.every((l) => /^[-*] /.test(l))) {
         return `<ul ${P}>${lines.map((l) => `<li>${inlineHtml(l.slice(2))}</li>`).join("")}</ul>`;
       }
@@ -81,7 +94,9 @@ export function toHtml(md: string, preview = ""): string {
 }
 
 export function toText(md: string): string {
+  // The plain-text part has no pictures; drop image blocks rather than print URLs.
   return blocks(md)
+    .filter((lines) => !(lines.length === 1 && IMAGE_RE.test(lines[0].trim())))
     .map((lines) => lines.map((l) => inlineText(l.replace(/^>\s?/, ""))).join("\n"))
     .join("\n\n");
 }

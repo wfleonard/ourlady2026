@@ -149,6 +149,118 @@ wfleonard@primosmaternos.com · 732-673-4260$tpl$
 ) ON CONFLICT (slug) DO NOTHING;
 
 INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
+  $tpl$a-5$tpl$, $tpl$A · Email 5 — Sizes and frames$tpl$, $tpl$A$tpl$, 5,
+  $tpl$Framed, rolled, or small: which canvas fits @parishname$tpl$,
+  $tpl$Four sizes from $57 to $324, framed or rolled for local framing. Free shipping on all of them.$tpl$,
+  $tpl$Dear @firstname,
+
+Since I last wrote, a few pastors have asked whether the canvas comes in anything besides the 24" × 36" rolled size. It does, and the right one depends on where it will hang.
+
+[![Our Lady of Guadalupe canvas shown framed on a wall and rolled for shipping](https://primosmaternos.com/email/framed-and-rolled-canvas.jpg)](https://primosmaternos.com/canvas-sizes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-5-img)
+
+- **12" × 18" gallery wrap, $57.** Ready to hang, no frame needed. For parish offices, classrooms, or a gift for catechists and volunteers.
+- **24" × 36" rolled, $114.** The one I wrote to you about. Ships rolled for local framing.
+- **24" × 36" framed, $214.** Arrives ready to hang, in gold, cherry, beaded mahogany, black red oak, or ornate silver.
+- **36" × 54" rolled, $324.** The largest. A centerpiece for a chapel, shrine, or parish hall.
+
+Every size uses the same image: created in Mexico from a scan of the original tilma, printed on canvas in the USA, with two Mexican certificates included. Shipping is free to the 50 U.S. states and Puerto Rico.
+
+[**Compare the sizes →**](https://primosmaternos.com/canvas-sizes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-5)
+
+Thanks,
+Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+15 Shea Ln, Tinton Falls, NJ 07724
+wfleonard@primosmaternos.com · 732-673-4260$tpl$
+) ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
+  $tpl$a-6$tpl$, $tpl$A · Email 6 — The novena (value, not sales)$tpl$, $tpl$A$tpl$, 6,
+  $tpl$A printable Guadalupe novena for December 3–11$tpl$,
+  $tpl$Nine days of prayers and meditations on the apparitions, free to print for your bulletin or prayer group.$tpl$,
+  $tpl$Dear @firstname,
+
+Another one that isn't a sales email. The traditional Novena to Our Lady of Guadalupe begins December 3 and runs nine days into the feast, and many parishes look for a version to hand out.
+
+We have put one online, free to print: the full prayers, plus a short meditation for each day on the four apparitions, the healing of Juan Bernardino, the roses at Tepeyac, and the image itself.
+
+[![Our Lady of Guadalupe with Juan Diego, roses, a rosary, and pilgrims at the Basilica](https://primosmaternos.com/email/guadalupe-tilma-collage.jpg)](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-6-img)
+
+[**Open the novena →**](https://primosmaternos.com/novena?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-6)
+
+Please feel free to print it for your bulletin, your Guadalupanos, or a prayer group. If anyone would like the story behind the meditations, this short article tells it from the first apparition on December 9, 1531:
+
+[Read: The Sign on the Tilma →](https://primosmaternos.com/blog/apparition?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-6b)
+
+Thanks,
+Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+15 Shea Ln, Tinton Falls, NJ 07724
+wfleonard@primosmaternos.com · 732-673-4260$tpl$
+) ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
+  $tpl$a-7$tpl$, $tpl$A · Email 7 — In time for December 12$tpl$, $tpl$A$tpl$, 7,
+  $tpl$To have the canvas up by December 12$tpl$,
+  $tpl$Each canvas ships in 5–10 business days, plus a few days in transit. Here is what one family wrote when theirs arrived.$tpl$,
+  $tpl$Dear @firstname,
+
+A practical note. If @parishname would like the image in place for the December 12 feast, now is the time to order. Each canvas is made to order and ships within 5–10 business days, plus a few days in transit, so it is safest to order about three weeks ahead.
+
+One family in Glen Rock, New Jersey sent us this photo of their 24" × 36" gold-framed canvas, with a note I think a parish will appreciate:
+
+[![Gold-framed Our Lady of Guadalupe canvas hanging in a family's front entryway above a home altar with pink roses](https://primosmaternos.com/reviews/matthew-entryway.jpg)](https://primosmaternos.com/reviews/matthew-glen-rock-nj?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-7-img)
+
+> "We would be honored if you used the photo to help encourage people to display Our Lady of Guadalupe in their parishes and homes."
+> — Matthew, Glen Rock, NJ
+
+**From $57 to $324, framed or rolled, with free shipping to the 50 U.S. states and Puerto Rico.** Created in Mexico from a scan of the original tilma, printed on canvas in the USA, with two Mexican certificates included.
+
+[**Order for @parishname →**](https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-7)
+
+Thanks,
+Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+15 Shea Ln, Tinton Falls, NJ 07724
+wfleonard@primosmaternos.com · 732-673-4260$tpl$
+) ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
+  $tpl$a-8$tpl$, $tpl$A · Email 8 — Looking ahead to 2031 / final note$tpl$, $tpl$A$tpl$, 8,
+  $tpl$After December 12: the road to 2031$tpl$,
+  $tpl$The Jubilee Year runs to October 2027, and Mexico is already preparing for the 500th anniversary. My last note on this.$tpl$,
+  $tpl$Dear @firstname,
+
+This is my last note on the canvas. I'll leave it with something to look ahead to.
+
+The Jubilee Year for Our Lady of Guadalupe runs through October 12, 2027. After that comes the 500th anniversary of the apparitions in 2031, and Mexico City has already named Father Eduardo Chávez, postulator of Saint Juan Diego's cause, to lead its preparations. A parish dedicated to her has five years of reasons to keep her image in front of the people.
+
+[Read: Counting Down to 500 Years →](https://primosmaternos.com/blog/500th-anniversary-2031?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-8b)
+
+If @parishname would like the image for a shrine, a hall, a classroom, or a December procession next year, it will be here. The image was created in Mexico from a scan of the original tilma, the canvas is printed in the USA, and two Mexican certificates are included with every order.
+
+[**See the canvases for parishes →**](https://primosmaternos.com/parishes?utm_source=gmail&utm_medium=email&utm_campaign=parish-outreach-2026&utm_content=a-8)
+
+For several canvases at once, for a diocese, a school, or gifts for parish volunteers, reply to this email or text me at 732-673-4260 and I'll put together a bulk quote.
+
+Thank you for your time this season, and blessings on @parishname for the feast.
+
+Thanks,
+Peace Bill
+
+William F. Leonard
+Saxon Enterprises, Inc. — dba Primos Maternos
+15 Shea Ln, Tinton Falls, NJ 07724
+wfleonard@primosmaternos.com · 732-673-4260$tpl$
+) ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO mail_templates (slug, name, segment, position, subject, preview, body) VALUES (
   $tpl$b-1$tpl$, $tpl$B · Email 1 — Introduction / authenticity$tpl$, $tpl$B$tpl$, 1,
   $tpl$An authentic Our Lady of Guadalupe canvas for your ministry$tpl$,
   $tpl$24×36 rolled canvas, image from the 1998-certified digital archive of the Sacred Original, printed in the USA. Two Mexican certificates. $114 with free shipping.$tpl$,
