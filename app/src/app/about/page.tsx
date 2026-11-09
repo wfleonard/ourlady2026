@@ -8,7 +8,7 @@ import { HANDLING_DAYS, ORG, SITE_URL, absoluteUrl } from "@/lib/site";
  * both and says plainly how each point applies here.
  *
  * Fulfillment, as Bill confirmed it in November 2026: a US print partner prints
- * every canvas and ships the framed ones direct to the buyer; rolled canvases
+ * every canvas and ships the framed ones and the 12x18 direct to the buyer; rolled canvases
  * come to Tinton Falls and ship from us. Ownership since 2005 is from
  * docs/primos-maternos-image-fidelity.md.
  */
@@ -26,7 +26,7 @@ const faq = [
   },
   {
     q: "What are the signs that a religious art website is a dropshipper?",
-    a: "No business name or address, a catalog of thousands of unrelated items, product photos that appear on other sites too, handling times of weeks with shipping from overseas, and no answer when you ask who made the piece. Dropshipping is not wrong in itself, but you should be told. Here is ours: every canvas is printed in the United States by our print partner, framed canvases ship directly from that partner to you, and rolled canvases come to us in Tinton Falls and we ship them ourselves.",
+    a: "No business name or address, a catalog of thousands of unrelated items, product photos that appear on other sites too, handling times of weeks with shipping from overseas, and no answer when you ask who made the piece. Dropshipping is not wrong in itself, but you should be told. Here is ours: every canvas is printed in the United States by our print partner, framed canvases and the 12 by 18 inch canvas ship directly from that partner to you, and rolled canvases come to us in Tinton Falls and we ship them ourselves.",
   },
   {
     q: "Should I buy Catholic art from a small shop or a big religious goods catalog?",
@@ -129,8 +129,8 @@ export default function AboutPage() {
               us in {ORG.city}, and we pack and ship them ourselves in a protective tube.
             </li>
             <li>
-              <strong>Framed canvases</strong> are printed, framed and shipped directly to you by
-              our print partner.
+              <strong>Framed canvases and the 12&quot; × 18&quot;</strong> ready-to-hang canvas are
+              printed, finished and shipped directly to you by our print partner.
             </li>
             <li>
               <strong>Everything else is ours:</strong> orders, questions, returns and damage
