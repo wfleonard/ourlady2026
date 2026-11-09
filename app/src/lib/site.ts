@@ -21,6 +21,8 @@ export const ORG = {
   description:
     "Our Lady of Guadalupe canvases printed from a digital archive of the Sacred Original, certified in Mexico in 1998 as a faithful reproduction. Printed in the United States.",
   email: "wfleonard@primosmaternos.com",
+  /** Bulk quotes by text or call. */
+  phone: "732-673-4260",
   city: "Tinton Falls",
   state: "NJ",
   country: "US",
@@ -90,3 +92,26 @@ export const RETURN_POLICY = {
 
 /** Business days between an order and it leaving for the carrier. */
 export const HANDLING_DAYS = { min: 5, max: 10 } as const;
+
+/**
+ * Terms for parish, school and diocesan quantity orders, as Bill confirmed them
+ * in November 2026. The bulk Q&A on /parishes, /schools, /dioceses and
+ * /parroquias is written from these, and its FAQPage JSON-LD repeats it, so a
+ * change here reaches the prose and the markup together. Every tier is quoted
+ * by email or text; there is no published discount percentage.
+ */
+export const BULK_ORDERS = {
+  /** Per-SKU quantity tiers. The first tier pays the store price. */
+  retailMax: 4,
+  smallGroup: { min: 5, max: 24 },
+  institutional: { min: 25, max: 99 },
+  diocesanMin: 100,
+  /** Business days to return a written quote. */
+  quoteDays: 1,
+  /** Weeks from the purchase order until a quantity order ships to one address. */
+  fulfillmentWeeks: { min: 3, max: 4 },
+  /** Extra weeks when one order is split across several addresses. */
+  splitExtraWeeks: { min: 1, max: 2 },
+  /** Net 30 is for established accounts; a first order is paid before it ships. */
+  netDays: 30,
+} as const;

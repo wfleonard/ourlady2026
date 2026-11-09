@@ -1,3 +1,4 @@
+import { BulkOrdering } from "@/components/BulkOrdering";
 import Link from "next/link";
 import { BuyButton } from "@/components/BuyButton";
 import { formatPrice } from "@/lib/db";
@@ -254,6 +255,8 @@ export default function SchoolsPage() {
           </p>
         </div>
       </section>
+
+      <BulkOrdering audience="school" path="/schools" />
 
       {/* Final CTA */}
       <section className="bg-[var(--accent)] text-white">

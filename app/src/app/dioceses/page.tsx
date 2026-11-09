@@ -1,3 +1,4 @@
+import { BulkOrdering } from "@/components/BulkOrdering";
 import Link from "next/link";
 import { formatPrice } from "@/lib/db";
 
@@ -269,6 +270,8 @@ export default function DiocesesPage() {
           </li>
         </ol>
       </section>
+
+      <BulkOrdering audience="diocese" path="/dioceses" />
 
       {/* Contact CTA */}
       <section className="bg-[var(--accent)] text-white">

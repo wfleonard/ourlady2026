@@ -1,3 +1,4 @@
+import { BulkOrdering } from "@/components/BulkOrdering";
 import Link from "next/link";
 import { BuyButton } from "@/components/BuyButton";
 import { formatPrice } from "@/lib/db";
@@ -231,6 +232,8 @@ export default function ParroquiasPage() {
           </p>
         </div>
       </section>
+
+      <BulkOrdering audience="parish" path="/parroquias" locale="es" />
 
       {/* Final CTA */}
       <section className="bg-[var(--accent)] text-white">

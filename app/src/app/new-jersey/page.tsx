@@ -62,7 +62,7 @@ const faq = [
   },
   {
     q: "Can a New Jersey parish or Catholic school order in quantity?",
-    a: "Yes. Parishes, schools and diocesan offices order the 24 by 36 inch rolled canvas most often, because it ships flat in a tube and can be framed to match the building. Diocesan orders can be invoiced against a purchase order.",
+    a: "Yes. Parishes, schools and diocesan offices order the 24 by 36 inch rolled canvas most often, because it ships flat in a tube and can be framed to match the building. Parishes, schools and diocesan offices can order against a purchase order, and quantities from five canvases up are quoted by email or text.",
   },
   {
     q: "Is Primos Maternos a local New Jersey business?",
@@ -199,8 +199,28 @@ export default async function NewJerseyPage() {
             seen from across the room.
           </p>
           <p className="mt-4">
-            Purchase-order invoicing is available for diocesan orders. There are pages written
-            for each case:{" "}
+            For New Jersey parishes and Catholic schools, the order comes from a business in{" "}
+            <strong>{ORG.city}, Monmouth County</strong>, not a warehouse out of state. A parish
+            can put a large 36&quot; × 54&quot; canvas in its hall or Hispanic ministry room and a
+            school can hang a 12&quot; × 18&quot; in every classroom, on one quote and one purchase
+            order, shipped to one address or split across several. Volume pricing starts at five
+            canvases, and the terms are on the{" "}
+            <Link href="/parishes#faq" className="text-[var(--accent)] underline">
+              parish page
+            </Link>{" "}
+            and the{" "}
+            <Link href="/schools#faq" className="text-[var(--accent)] underline">
+              school page
+            </Link>
+            . Write to{" "}
+            <a href={`mailto:${ORG.email}`} className="text-[var(--accent)] underline">
+              {ORG.email}
+            </a>{" "}
+            or text {ORG.phone} for a quote.
+          </p>
+          <p className="mt-4">
+            Purchase orders are accepted from parishes, schools and diocesan offices. There are
+            pages written for each case:{" "}
             <Link href="/parishes" className="text-[var(--accent)] underline">
               parishes
             </Link>
