@@ -85,6 +85,10 @@ const faq = [
     a: "A framed canvas arrives stretched and finished in a wooden frame, ready to hang. A gallery wrap is stretched over 0.75 inch stretcher bars with no frame, and also hangs straight from the box. A rolled canvas ships in a protective tube and is printed on archival canvas for you to stretch and frame yourself, which is the usual choice when a parish or a buyer wants a specific frame.",
   },
   {
+    q: "What size Guadalupe canvas works over a fireplace or a home altar?",
+    a: "Over a fireplace, the framed 24 by 36 inch canvas ($214) suits a standard mantel up to about five feet wide, and the 36 by 54 ($324, rolled for local framing) suits a wider mantel or a tall wall. Over a home altar, keep the canvas no wider than the altar: the 12 by 18 ($57) for a shelf or small table, the 24 by 36 for a chest or console. In both cases leave 6 to 10 inches between the top of the mantel or altar and the bottom of the canvas.",
+  },
+  {
     q: "How high should a Guadalupe canvas be hung?",
     a: "Standard gallery practice is to center the image about 57 to 60 inches from the floor, which puts it at eye level for most adults standing. Above a home altar or a piece of furniture, hang it closer, leaving roughly 6 to 10 inches between the top of the furniture and the bottom of the canvas so the two read as one arrangement.",
   },
@@ -246,6 +250,43 @@ export default async function CanvasSizesPage() {
             which is eye level for most adults standing. Over a home altar or a chest, hang it
             lower, leaving roughly 6 to 10 inches between the top of the furniture and the bottom
             of the canvas so the two read as a single arrangement rather than two separate things.
+          </p>
+        </section>
+
+        <section id="fireplace-and-altar">
+          <h2 className="text-2xl md:text-3xl font-bold">Over a fireplace or a home altar</h2>
+          <p className="mt-4">
+            <strong>Over a fireplace.</strong> The{" "}
+            <Link href="/products/olg-24x36-gold" className="text-[var(--accent)] underline">
+              framed 24&quot; × 36&quot;
+            </Link>{" "}
+            ($214, five frames) suits a standard mantel up to about five feet wide. For a wider
+            mantel or a tall wall, the{" "}
+            <Link href="/products/olg-36x54-rolled" className="text-[var(--accent)] underline">
+              36&quot; × 54&quot;
+            </Link>{" "}
+            ($324) ships rolled for a local framer and holds the wall from across the room.
+          </p>
+          <p className="mt-4">
+            <strong>Over a home altar.</strong> Keep the canvas no wider than the altar beneath it.
+            The{" "}
+            <Link href="/products/olg-12x18-gallery-wrap" className="text-[var(--accent)] underline">
+              12&quot; × 18&quot;
+            </Link>{" "}
+            ($57, ready to hang) fits a shelf or a small table; the 24&quot; × 36&quot;, framed or{" "}
+            <Link href="/products/olg-24x36-rolled" className="text-[var(--accent)] underline">
+              unframed
+            </Link>{" "}
+            ($114), fits a chest or a console.
+          </p>
+          <p className="mt-4">
+            Either way, leave 6 to 10 inches between the top of the mantel or altar and the bottom
+            of the canvas. Choosing between framed, rolled and gallery wrap, or between the five
+            frames? See the{" "}
+            <Link href="/canvas-and-frame-guide" className="text-[var(--accent)] underline">
+              canvas and frame guide
+            </Link>
+            .
           </p>
         </section>
 

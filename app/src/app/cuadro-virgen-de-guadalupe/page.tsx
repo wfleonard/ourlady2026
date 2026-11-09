@@ -3,7 +3,8 @@ import { listProducts, formatPrice, type Product } from "@/lib/db";
 import { ProductCard } from "@/components/ProductCard";
 import { JsonLd } from "@/components/JsonLd";
 import { CATALOG_ES, ES_BASE, esProductPath } from "@/lib/catalogEs";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, orderByDate } from "@/lib/site";
+import { GiftOccasions } from "@/components/GiftOccasions";
 
 // Spanish counterpart of /our-lady-of-guadalupe-prints, and the home of the
 // Spanish catalog. Spanish buyers search "cuadro de la Virgen de Guadalupe";
@@ -200,24 +201,25 @@ export default async function CuadrosPage() {
           </section>
         )}
 
-        {/* Seasonal: after December 12, drop the December 4 line; after
-            January 6, replace the dates with year-round occasions (bautizo,
-            primera comunión, confirmación, boda, quinceañera). Same dates as
-            /gifts. */}
-        <section>
+        {/* Fechas de ORDER_BY en site.ts, las mismas que /gifts. */}
+        <section id="regalos">
           <h2 className="text-2xl md:text-3xl font-bold">
             Un regalo para el 12 de diciembre, Navidad o el Día de Reyes
           </h2>
           <p className="mt-4">
             Un cuadro de la Virgen de Guadalupe es un regalo que se queda en la pared: $57 el
             cuadro pequeño listo para colgar, $114 sin marco o $214 con marco, siempre con envío
-            gratis. Haga su pedido a más tardar el <strong>4 de diciembre</strong> para el 12 de
-            diciembre, el <strong>17 de diciembre</strong> para Navidad y el{" "}
-            <strong>30 de diciembre</strong> para el Día de Reyes. Los cuadros con marco tardan
-            unos tres días hábiles más que los enrollados.
+            gratis. Haga su pedido a más tardar el <strong>{orderByDate("dec12", "es")}</strong>{" "}
+            para el 12 de diciembre, el <strong>{orderByDate("christmas", "es")}</strong> para
+            Navidad y el <strong>{orderByDate("threeKings", "es")}</strong> para el Día de Reyes.
+            Cada fecha cuenta hasta diez días hábiles antes del envío, más el tránsito por tierra.
           </p>
         </section>
+      </div>
 
+      <GiftOccasions locale="es" />
+
+      <div className="max-w-4xl mx-auto px-6 pb-14 space-y-14 text-stone-700 leading-relaxed">
         <section>
           <h2 className="text-2xl md:text-3xl font-bold">Para su parroquia</h2>
           <p className="mt-4">

@@ -3,20 +3,47 @@ import { listProducts, formatPrice, type Product } from "@/lib/db";
 import { ProductCard } from "@/components/ProductCard";
 import { ReviewHighlight } from "@/components/ReviewHighlight";
 import { reviews } from "@/lib/reviews";
+import { JsonLd } from "@/components/JsonLd";
+import { GiftOccasions } from "@/components/GiftOccasions";
+import { SITE_URL, orderByDate } from "@/lib/site";
 
 const matthew = reviews.find((r) => r.name === "Matthew");
 
 export const dynamic = "force-dynamic";
 
+// Order-by dates come from ORDER_BY in site.ts; update them there each season.
+// After January 6, the deadlines banner can go and the occasion cards carry
+// the page year-round.
 export const metadata = {
   alternates: { canonical: "/gifts" },
-  // Seasonal: after December 12, drop the December 4 date from the
-  // description and the opening below; after January 6, replace the dates
-  // with the year-round occasions (baptism, confirmation, wedding,
-  // housewarming, ordination).
   title: "Our Lady of Guadalupe Gifts — Canvas Prints from $57, Free Shipping",
-  description:
-    "Our Lady of Guadalupe gifts for December 12, Christmas and Three Kings Day: canvas prints from $57, framed and ready to hang at $214. Free shipping. Order by December 4 for the feast day.",
+  description: `Our Lady of Guadalupe gifts by occasion: Christmas, December 12, Three Kings Day, confirmation, baptism, wedding, ordination, housewarming and a nursery. From $57 with free shipping; framed and ready to hang at $214. Order by ${orderByDate("christmas")} for Christmas.`,
+};
+
+const faq = [
+  {
+    q: "What is a good Christmas gift for a Mexican Catholic grandmother?",
+    a: `An Our Lady of Guadalupe canvas she can hang the same day: the 24 by 36 inch print in a gold frame, $214, ready to hang, or the 12 by 18 inch canvas at $57 for a smaller wall or a home altar. The image was created in Mexico from a scan of the original tilma, the canvas is printed in the USA, and two Mexican certificates come with it. Shipping is free; order by ${orderByDate("christmas")} for Christmas delivery.`,
+  },
+  {
+    q: "Is there an Our Lady of Guadalupe gift under $60?",
+    a: "Yes. The 12 by 18 inch canvas is $57 with free shipping to all 50 states and Puerto Rico. It is stretched over 0.75 inch bars with a hanging wire on the back, so it hangs straight from the box, and it comes with both Mexican certifications.",
+  },
+  {
+    q: "When is the last day to order a Guadalupe gift for December 12, Christmas or Three Kings Day?",
+    a: `${orderByDate("dec12")} for December 12, ${orderByDate("christmas")} for Christmas, and ${orderByDate("threeKings")} for Three Kings Day on January 6. Each date allows up to ten business days before the order ships plus ground transit.`,
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE_URL}/gifts#faq`,
+  mainEntity: faq.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
 };
 
 export default async function GiftsPage() {
@@ -33,11 +60,13 @@ export default async function GiftsPage() {
 
   return (
     <>
+      <JsonLd data={faqJsonLd} />
+
       {/* Hero */}
       <section className="border-b border-stone-200 bg-gradient-to-b from-stone-50 to-[var(--background)]">
         <div className="max-w-5xl mx-auto px-6 py-16 text-center">
           <p className="text-sm uppercase tracking-widest text-[var(--gold)] font-semibold">
-            Advent · December 12 · Christmas
+            Christmas · December 12 · Baptism · Wedding · Ordination
           </p>
           <h1 className="mt-3 text-4xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">
             Our Lady of Guadalupe gifts
@@ -47,9 +76,9 @@ export default async function GiftsPage() {
             the wall: <strong>$57</strong> for a small ready-to-hang picture,{" "}
             <strong>$114</strong> unframed, or <strong>$214</strong> framed
             and ready to hang, all with free shipping. Order by{" "}
-            <strong>December 4</strong> for December 12, by{" "}
-            <strong>December 17</strong> for Christmas, and by{" "}
-            <strong>December 30</strong> for Three Kings Day.
+            <strong>{orderByDate("dec12")}</strong> for December 12, by{" "}
+            <strong>{orderByDate("christmas")}</strong> for Christmas, and by{" "}
+            <strong>{orderByDate("threeKings")}</strong> for Three Kings Day.
           </p>
           <p className="mt-4 text-stone-600 leading-relaxed max-w-2xl mx-auto">
             The tilma image on archival canvas, printed from a digital
@@ -75,7 +104,7 @@ export default async function GiftsPage() {
               <div className="text-sm uppercase tracking-widest opacity-80">
                 For December 12
               </div>
-              <div className="text-2xl font-bold mt-1">Dec 4</div>
+              <div className="text-2xl font-bold mt-1">{orderByDate("dec12")}</div>
               <div className="text-xs opacity-80 mt-1">
                 (last order for feast-day delivery)
               </div>
@@ -84,28 +113,30 @@ export default async function GiftsPage() {
               <div className="text-sm uppercase tracking-widest opacity-80">
                 For Christmas
               </div>
-              <div className="text-2xl font-bold mt-1">Dec 17</div>
+              <div className="text-2xl font-bold mt-1">{orderByDate("christmas")}</div>
               <div className="text-xs opacity-80 mt-1">
-                (last order for Christmas Eve delivery)
+                (last order for delivery before Christmas)
               </div>
             </div>
             <div className="bg-white/10 rounded-lg p-4">
               <div className="text-sm uppercase tracking-widest opacity-80">
                 For Three Kings Day
               </div>
-              <div className="text-2xl font-bold mt-1">Dec 30</div>
+              <div className="text-2xl font-bold mt-1">{orderByDate("threeKings")}</div>
               <div className="text-xs opacity-80 mt-1">
                 (Jan 6 delivery — Día de los Reyes)
               </div>
             </div>
           </div>
           <p className="text-center text-xs opacity-80 mt-4">
-            Framed canvases add ~3 business days over rolled. If gifting a
+            Each date allows up to ten business days before your order ships, plus ground transit. If gifting a
             rolled canvas, allow the recipient additional time for local
             framing.
           </p>
         </div>
       </section>
+
+      <GiftOccasions />
 
       {/* Gift-picker: three price bands */}
       <section className="max-w-5xl mx-auto px-6 py-16">
@@ -224,31 +255,6 @@ export default async function GiftsPage() {
         </div>
       </section>
 
-      {/* Who to give it to */}
-      <section className="max-w-4xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-6">Who this makes sense for</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {[
-            ["Grandparents and parents", "Especially those with roots in Mexico or Latin America — the image carries their whole tradition."],
-            ["A newlywed couple's home", "A first Marian image for a first apartment or house — 12\"×18\" gallery wrap fits any wall."],
-            ["Godchildren and confirmandi", "A gift that outlasts the season and grows in meaning."],
-            ["A pastor or religious", "The 24\"×36\" gold-framed for the rectory office."],
-            ["The person hosting the Guadalupe party", "For the family that puts on the Dec 12 celebration every year."],
-            ["Yourself", "Formalize the shrine you have been meaning to set up."],
-          ].map(([title, desc]) => (
-            <div
-              key={title}
-              className="bg-white p-5 rounded-lg border border-stone-200"
-            >
-              <h3 className="font-semibold text-[var(--accent)] mb-1">
-                {title}
-              </h3>
-              <p className="text-sm text-stone-600 leading-relaxed">{desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Novena tie-in */}
       <section className="bg-stone-50 border-y border-stone-200">
         <div className="max-w-3xl mx-auto px-6 py-14 text-center">
@@ -258,9 +264,9 @@ export default async function GiftsPage() {
           <p className="text-stone-700 leading-relaxed">
             The traditional Novena to Our Lady of Guadalupe runs December
             3–11, one day for each of her apparitions, leading into the
-            feast on December 12. A canvas ordered by Dec 4 arrives in time
-            to unwrap on the first day of the Novena and pray with for the
-            full nine days.
+            feast on December 12. Order by {orderByDate("dec12")} to have the
+            canvas for the feast, and a week or more earlier to have it
+            for the first day of the Novena.
           </p>
         </div>
       </section>
@@ -307,6 +313,18 @@ export default async function GiftsPage() {
               </figcaption>
             </figure>
           </div>
+        </div>
+      </section>
+
+      <section id="faq" className="max-w-4xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-6">Gift questions</h2>
+        <div className="space-y-6 text-stone-700 leading-relaxed">
+          {faq.map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-lg text-stone-800">{q}</h3>
+              <p className="mt-2">{a}</p>
+            </div>
+          ))}
         </div>
       </section>
 

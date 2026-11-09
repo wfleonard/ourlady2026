@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { orderByDate } from "@/lib/site";
 
 export const metadata = {
   alternates: { canonical: "/novena" },
@@ -253,7 +254,7 @@ export default function NovenaPage() {
             <Link href="/gifts" className="text-[var(--accent)] underline">
               see the canvas gift guide
             </Link>
-            . Order by December 4 for December 12 arrival.
+            . Order by {orderByDate("dec12")} for December 12 arrival.
           </p>
         </div>
       </section>

@@ -94,6 +94,33 @@ export const RETURN_POLICY = {
 export const HANDLING_DAYS = { min: 5, max: 10 } as const;
 
 /**
+ * Last day to order for delivery before each December occasion, as Bill set
+ * them for the 2026 season. Each date allows the full handling window
+ * (`HANDLING_DAYS.max` business days) plus about five business days of ground
+ * transit. /gifts, /shipping-and-returns, /novena, /new-jersey and the Spanish
+ * catalog all read these, so update them here once a season (ISO dates, read
+ * as calendar days with no time zone).
+ */
+export const ORDER_BY = {
+  dec12: { orderBy: "2026-11-19", occasion: "December 12", occasionEs: "el 12 de diciembre" },
+  christmas: { orderBy: "2026-12-02", occasion: "Christmas", occasionEs: "Navidad" },
+  threeKings: { orderBy: "2026-12-11", occasion: "Three Kings Day (January 6)", occasionEs: "el Día de Reyes (6 de enero)" },
+} as const;
+
+export type OrderByKey = keyof typeof ORDER_BY;
+
+/** "November 19" / "19 de noviembre", from an ISO date, with no time zone shift. */
+export function orderByDate(key: OrderByKey, locale: "en" | "es" = "en", withYear = false): string {
+  const [y, m, d] = ORDER_BY[key].orderBy.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString(locale === "es" ? "es-US" : "en-US", {
+    month: "long",
+    day: "numeric",
+    ...(withYear ? { year: "numeric" } : {}),
+    timeZone: "UTC",
+  });
+}
+
+/**
  * Terms for parish, school and diocesan quantity orders, as Bill confirmed them
  * in November 2026. The bulk Q&A on /parishes, /schools, /dioceses and
  * /parroquias is written from these, and its FAQPage JSON-LD repeats it, so a

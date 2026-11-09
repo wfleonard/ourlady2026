@@ -2,7 +2,7 @@ import Link from "next/link";
 import { listProducts, formatPrice, type Product } from "@/lib/db";
 import { ProductCard } from "@/components/ProductCard";
 import { JsonLd } from "@/components/JsonLd";
-import { ORG, SITE_URL, absoluteUrl } from "@/lib/site";
+import { ORG, SITE_URL, absoluteUrl, orderByDate } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -70,7 +70,7 @@ const faq = [
   },
   {
     q: "When should a New Jersey parish order for the December 12 feast?",
-    a: "By mid-November for a rolled canvas, which still needs stretching or framing after it arrives, and by the third week of November for a framed or gallery wrap piece. The feast is December 12 and the novena runs December 3 through 11, but orders take five to ten business days to leave us before carrier transit, which is the step people forget to count.",
+    a: `By ${orderByDate("dec12")} for delivery before the feast, and a week or two earlier for a rolled canvas, which still needs stretching or framing after it arrives. The feast is December 12 and the novena runs December 3 through 11, but orders take five to ten business days to leave us before carrier transit, which is the step people forget to count.`,
   },
 ];
 
@@ -249,8 +249,8 @@ export default async function NewJerseyPage() {
           <p className="mt-4">
             The feast of Our Lady of Guadalupe is <strong>December 12</strong>, and the novena
             runs December 3 through 11. Parishes that order a rolled canvas need it in hand with
-            time to stretch or frame it, so mid-November is the point to decide rather than the
-            first week of December. The{" "}
+            time to stretch or frame it: the last day to order for delivery before the feast is{" "}
+            <strong>{orderByDate("dec12")}</strong>, and earlier is better for a rolled canvas. The{" "}
             <Link href="/novena" className="text-[var(--accent)] underline">
               full novena
             </Link>{" "}
