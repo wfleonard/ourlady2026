@@ -15,7 +15,8 @@ export const dynamic = "force-dynamic";
 const PAGES: { path: string; title: string; summary: string }[] = [
   { path: "/our-lady-of-guadalupe-prints", title: "Pictures, prints and canvases", summary: "Every option and price side by side, framed vs unframed, and why the unframed print costs less." },
   { path: ES_BASE, title: "Cuadro de la Virgen de Guadalupe", summary: `The catalog in Spanish: every option and price, framed vs unframed, gift dates, and a Spanish page for each canvas at ${ES_BASE}/{sku}.` },
-  { path: "/authenticity", title: "Authenticity", summary: "What to ask any seller, why Guadalupe prints differ, and the two Mexican certifications behind this image." },
+  { path: "/about", title: "About", summary: "Saxon Enterprises, Inc. of Tinton Falls, NJ: one image, printed in the USA; who prints and ships each order; what to look for in a religious art seller." },
+  { path: "/authenticity", title: "Authenticity", summary: "Why Guadalupe prints differ, the size of the original tilma, hand painted vs printed, print resolution, and the two Mexican certifications behind this image." },
   { path: "/canvas-sizes", title: "Canvas sizes", summary: "12x18 gallery wrap, 24x36 framed or rolled, 36x54 rolled: resolution, viewing distance, and hanging height for each." },
   { path: "/canvas-and-frame-guide", title: "Canvas and frame guide", summary: "Rolled vs gallery wrap vs framed vs poster with prices, the five frames compared, and how to frame, hang, clean and protect the canvas from sagging and fading." },
   { path: "/shipping-and-returns", title: "Shipping and returns", summary: "Free shipping, order-by dates for December 12, Christmas and Three Kings Day, 30-day returns, transit-damage replacement, international orders." },

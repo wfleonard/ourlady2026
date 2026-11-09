@@ -5,7 +5,7 @@ import { SITE_URL, absoluteUrl } from "@/lib/site";
 export const metadata = {
   title: "How to tell if a Guadalupe print is authentic — Primos Maternos",
   description:
-    "What to ask any seller, why Our Lady of Guadalupe prints look so different from each other, and the two Mexican certifications behind the image we print: Cardinal Rivera's 1998 certificate of faithful reproduction and the Virgen Peregrina blessed by John Paul II in 1999.",
+    "Why Guadalupe prints look different, how big the original tilma is, hand painted vs printed, and the two Mexican certifications behind the image we print: Cardinal Rivera's 1998 certificate of faithful reproduction and the Virgen Peregrina blessed by John Paul II in 1999.",
   alternates: { canonical: "/authenticity" },
 };
 
@@ -23,10 +23,6 @@ const faq = [
     a: "Most prints on the market descend from photographs of photographs, and each generation loses detail and shifts color, which is why the face, the gold edging, and the stars on the mantle vary so much between sellers. Ask any seller which digital source their file came from: a print made from a high-resolution archive keeps detail a re-photographed copy has already lost. Ours descends from the digital archive of the Sacred Original that Cardinal Rivera certified in 1998 as a faithful reproduction.",
   },
   {
-    q: "What resolution is the Primos Maternos Our Lady of Guadalupe canvas printed at?",
-    a: "The file is 6,900 by 10,350 pixels, which works out to 287.5 pixels per inch on the 24 by 36 inch canvas and 191.7 on the 36 by 54. Nothing is upscaled to fill the canvas, and the proportions match the canvas exactly, so nothing is cropped away. Full-size crops of the face, the stars on the mantle, the gold edging and the weave of the cloth are published on our authenticity page so they can be compared against any other print.",
-  },
-  {
     q: "What documents come with a Primos Maternos canvas?",
     a: "Two Mexican certifications. The first, dated December 12, 1998 and signed by Cardinal Norberto Rivera Carrera, Archbishop Primate of Mexico, certifies a print as a faithful reproduction of the digital archive of the Sacred Original. The second records that the image known as the Virgen Peregrina was blessed by Pope John Paul II on January 25, 1999 and traveled throughout Mexico until April 2000 for the Great Jubilee.",
   },
@@ -40,11 +36,49 @@ const faq = [
   },
 ];
 
+/**
+ * Questions about the tilma itself and about print quality, shown as headings
+ * in their own section. Facts: tilma size from published measurements
+ * (about 1.68–1.70 m by 1.05 m; sources listed on the page); giclée, pigment
+ * inks and the UV-protective coating confirmed by Bill in November 2026.
+ * Prices must stay in step with db/init.sql.
+ */
+const printFaq = [
+  {
+    q: "How big is the original tilma of Our Lady of Guadalupe?",
+    a: "About 1.7 meters tall by 1.05 meters wide, roughly 66 by 41 inches; published measurements differ by a few centimeters. It hangs above the main altar of the Basilica of Our Lady of Guadalupe in Mexico City. Our canvases are smaller than the cloth: the 36 by 54 inch canvas is about four-fifths of its height, the 24 by 36 a little over half, and the 12 by 18 a little over a quarter.",
+  },
+  {
+    q: "What is the difference between a tilma replica and an ordinary Guadalupe print?",
+    a: "\"Tilma replica\" usually means a reproduction of the whole image as it appears on the cloth, made from a photograph or scan of the original and often near its full size. An ordinary print is usually a smaller copy whose source is never stated, often re-photographed or retouched. The label alone proves nothing: what matters is whether the seller can name the source of the file and show documents for it. Ours comes from the digital archive of the Sacred Original that Cardinal Rivera certified in 1998 as a faithful reproduction. It is not full size; our largest canvas is 36 by 54 inches.",
+  },
+  {
+    q: "Is a hand-painted Our Lady of Guadalupe image better than a printed one?",
+    a: "They are different things. A hand-painted image is an artist's copy of the tilma, with that artist's hand in the face, the colors and the stars. A print made from a scan of the original reproduces the image itself, down to the weave of the cloth. Ours is printed, not painted: a giclée print in pigment inks on archival canvas with a UV-protective coating, made from a 6,900 by 10,350 pixel file.",
+  },
+  {
+    q: "Why do cheap and expensive Guadalupe prints differ?",
+    a: "Mostly in four things: the source file (a copy of a copy, or a high-resolution scan), the resolution it is printed at, the material (poster paper or archival canvas), and the inks and coating that decide how long it lasts. Ours are giclée prints in pigment inks on UV-coated archival canvas, from $57 for a 12 by 18 inch canvas to $324 for a 36 by 54, and each comes with both Mexican certifications.",
+  },
+  {
+    q: "Why do the colors of my print look different from the website?",
+    a: "Screens differ in brightness and color settings, and a screen lights the image from behind while a canvas reflects the light in the room. Warm indoor bulbs make the gold and the rose of the tunic look warmer; daylight makes them cooler. Look at the canvas in daylight before deciding the color is wrong, and if it still looks wrong, email a photo and we will look at it with you.",
+  },
+  {
+    q: "What resolution is behind the largest 36 by 54 inch canvas?",
+    a: "The same 6,900 by 10,350 pixel file as every size, which is 191.7 pixels per inch at 36 by 54 inches, 287.5 at 24 by 36, and 575 at 12 by 18. Nothing is enlarged to fill the canvas and nothing is cropped away. 191.7 is normal for a canvas that size, which is meant to be seen from eight feet or more, across a chapel, a church or a hall.",
+  },
+  {
+    q: "What do the 1998 certified archive and the two Mexican certifications mean, in plain words?",
+    a: "A Mexican firm, Digital Color, S.A. de C.V., captured a digital archive of the Sacred Original, the tilma kept at the Basilica in Mexico City, and made a print from it. The capture date is not recorded, only that the archive existed by December 12, 1998, when Cardinal Norberto Rivera Carrera, Archbishop Primate of Mexico, certified that print as a faithful reproduction of the archive. The second certificate records that the image known as the Virgen Peregrina was blessed by Pope John Paul II on January 25, 1999. In short: image created in Mexico from a scan of the original tilma, canvas printed in the USA, two Mexican certificates included. The certificates describe the image's history, not each canvas printed today.",
+  },
+];
+
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": `${SITE_URL}/authenticity#faq`,
-  mainEntity: faq.map(({ q, a }) => ({
+  mainEntity: [...printFaq, ...faq].map(({ q, a }) => ({
     "@type": "Question",
     name: q,
     acceptedAnswer: { "@type": "Answer", text: a },
@@ -161,6 +195,20 @@ export default function AuthenticityPage() {
             not pretend otherwise. So rather than ask you to take the difference on faith, look
             at the image itself at full size and judge the detail with your own eyes.
           </p>
+        </section>
+
+        <section id="tilma-and-print">
+          <h2 className="text-2xl md:text-3xl font-bold">
+            The tilma, the print, and what the price buys
+          </h2>
+          <div className="mt-6 space-y-8">
+            {printFaq.map(({ q, a }) => (
+              <div key={q}>
+                <h3 className="text-xl font-semibold text-stone-900">{q}</h3>
+                <p className="mt-2">{a}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section>
@@ -419,25 +467,50 @@ export default function AuthenticityPage() {
               </a>{" "}
               — accounts of the Missionary Image, its creation and blessings.
             </li>
+            <li>
+              <a
+                className="underline hover:text-[var(--accent)]"
+                href="https://www.tvazteca.com/aztecanoticias/que-es-el-ayate-la-tela-en-la-que-esta-la-imagen-la-virgen-guadalupe"
+                rel="noopener"
+              >
+                TV Azteca
+              </a>{" "}
+              and{" "}
+              <a
+                className="underline hover:text-[var(--accent)]"
+                href="https://vanguardia.com.mx/vida/este-es-el-lugar-exacto-donde-se-resguarda-el-lienzo-original-de-la-virgen-de-guadalupe-HK18561868"
+                rel="noopener"
+              >
+                Vanguardia
+              </a>{" "}
+              — published measurements of the tilma, about 1.68 to 1.70 m by 1.05 m.
+            </li>
           </ul>
         </section>
 
-        <section>
+        <section id="faq">
           <h2 className="text-2xl md:text-3xl font-bold">Questions people ask</h2>
-          <dl className="mt-6 space-y-6">
+          <div className="mt-6 space-y-6">
             {faq.map(({ q, a }) => (
               <div key={q}>
-                <dt className="font-semibold text-stone-900">{q}</dt>
-                <dd className="mt-2 text-stone-700">{a}</dd>
+                <h3 className="text-lg font-semibold text-stone-900">{q}</h3>
+                <p className="mt-2 text-stone-700">{a}</p>
               </div>
             ))}
-          </dl>
+          </div>
         </section>
 
         <section className="border-t border-stone-200 pt-10 text-center">
           <p className="text-lg">
             Every canvas ships with both certifications, and the image is printed in the United
             States.
+          </p>
+          <p className="mt-3 text-stone-600">
+            Who we are, and who prints and ships your canvas:{" "}
+            <Link href="/about" className="text-[var(--accent)] underline">
+              about Primos Maternos
+            </Link>
+            .
           </p>
           <Link
             href="/#products"

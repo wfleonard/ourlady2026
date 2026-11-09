@@ -117,7 +117,10 @@ export default async function HomePage() {
             both Mexican certifications.{" "}
             <a href="/authenticity" className="underline hover:text-[var(--accent)]">
               Read the certificates and what they do and do not say.
-            </a>
+            </a>{" "}
+            <Link href="/about" className="underline hover:text-[var(--accent)]">
+              Who we are, and who prints and ships your canvas.
+            </Link>
           </p>
 
           <h3 className="text-xl font-semibold mb-4 mt-10">Certificates of Authenticity</h3>

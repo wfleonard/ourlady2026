@@ -28,10 +28,11 @@ const PARISHES = { en: "/parishes", es: "/parroquias" };
  * "now", so these must stay honest.
  */
 const STATIC_ROUTES: Route[] = [
-  { path: "/", priority: 1, updated: "2026-11-05" },
+  { path: "/", priority: 1, updated: "2026-11-09" },
   { path: PRINTS.en, priority: 0.9, updated: "2026-11-05", languages: PRINTS },
   { path: PRINTS.es, priority: 0.9, updated: "2026-11-09", languages: PRINTS },
-  { path: "/authenticity", priority: 0.9, updated: "2026-09-25" },
+  { path: "/authenticity", priority: 0.9, updated: "2026-11-09" },
+  { path: "/about", priority: 0.7, updated: "2026-11-09" },
   { path: "/canvas-sizes", priority: 0.9, updated: "2026-11-09" },
   { path: "/canvas-and-frame-guide", priority: 0.8, updated: "2026-11-09" },
   { path: "/new-jersey", priority: 0.9, updated: "2026-11-09" },
@@ -43,7 +44,7 @@ const STATIC_ROUTES: Route[] = [
   { path: "/novena", priority: 0.7, updated: "2026-11-09" },
   { path: "/shipping-and-returns", priority: 0.7, updated: "2026-11-09" },
   { path: "/blog", priority: 0.7, updated: "2026-10-10" },
-  { path: "/reviews", priority: 0.7, updated: "2026-10-10" },
+  { path: "/reviews", priority: 0.7, updated: "2026-11-09" },
 ];
 
 const abs = (path: string) => `${SITE_URL}${path === "/" ? "" : path}`;

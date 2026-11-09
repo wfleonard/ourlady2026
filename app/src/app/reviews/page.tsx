@@ -29,6 +29,13 @@ export default function ReviewsIndex() {
         Photos and words from the families and parishes who hung the image of Our Lady of
         Guadalupe. Every review is from a buyer, posted with their permission.
       </p>
+      <p className="mt-3 text-stone-600">
+        Bought from{" "}
+        <Link href="/about" className="text-[var(--accent)] underline">
+          Primos Maternos, a small business in Tinton Falls, New Jersey
+        </Link>
+        .
+      </p>
 
       <div className="mt-12 space-y-16">
         {reviews.map((r) => (

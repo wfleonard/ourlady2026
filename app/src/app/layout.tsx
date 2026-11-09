@@ -20,7 +20,7 @@ const NAV_LINKS: NavLink[] = [
   { href: "/blog", label: "Reflections" },
   { href: "/canvas-sizes", label: "Sizes" },
   { href: "/authenticity", label: "Authenticity" },
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/#contact", label: "Contact" },
   // Marked lang="es" so screen readers and crawlers read it as Spanish.
   { href: ES_BASE, label: "Español", lang: "es" },
@@ -43,6 +43,7 @@ const organizationJsonLd = {
   legalName: ORG.legalName,
   url: SITE_URL,
   email: ORG.email,
+  telephone: `+1-${ORG.phone}`,
   description: ORG.description,
   logo: absoluteUrl("/icon.png"),
   address: {
@@ -52,6 +53,8 @@ const organizationJsonLd = {
     addressCountry: ORG.country,
   },
   areaServed: { "@type": "Country", name: "United States" },
+  // The page that says who the business is, who prints and who ships.
+  subjectOf: { "@type": "AboutPage", "@id": `${SITE_URL}/about#webpage`, url: absoluteUrl("/about") },
 };
 
 const webSiteJsonLd = {
@@ -135,6 +138,10 @@ export default function RootLayout({
               <span>·</span>
               <Link href="/reviews" className="hover:text-[var(--accent)]">
                 Reviews
+              </Link>
+              <span>·</span>
+              <Link href="/about" className="hover:text-[var(--accent)]">
+                About
               </Link>
               <span>·</span>
               <Link href="/shipping-and-returns" className="hover:text-[var(--accent)]">

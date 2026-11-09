@@ -143,7 +143,8 @@ export default async function NewJerseyPage() {
           <h2 className="text-2xl md:text-3xl font-bold">Where we are, and what that means</h2>
           <p className="mt-4">
             Saxon Enterprises, Inc., trading as Primos Maternos, operates from{" "}
-            <strong>Tinton Falls in Monmouth County</strong>. Orders ship from here, and shipping
+            <strong>Tinton Falls in Monmouth County</strong>. Rolled canvases ship from here; framed
+            ones ship directly from our US print partner. Either way, shipping
             within New Jersey is free, as it is to the rest of the 50 states and Puerto Rico.
           </p>
           <p className="mt-4">
